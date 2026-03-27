@@ -2,6 +2,37 @@
 
 Graph-tool reasoning project with an MCP server for deterministic execution.
 
+## Acknowledgements and Citation
+
+This project uses:
+
+- GraphInstruct for graph-task data generation.
+- LLaMAFactory for LLM fine-tuning workflows.
+
+If you use this repository, please also cite the upstream works:
+
+```bibtex
+@article{graphinstruct,
+	title={GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability},
+	author={Luo, Zihan and Song, Xiran and Huang, Hong and Lian, Jianxun and Zhang, Chenhao and Jiang, Jinqi and Xie, Xing},
+	journal={CoRR},
+	volume={abs/2403.04483},
+	year={2024},
+	doi={10.48550/ARXIV.2403.04483},
+	url={https://arxiv.org/abs/2403.04483}
+}
+
+@inproceedings{zheng-etal-2024-llamafactory,
+	title={LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models},
+	author={Zheng, Yaowei and Zhang, Richong and Zhang, Junhao and Ye, Yanhan and Luo, Zheyan and Feng, Zhangchi and Ma, Yongqiang},
+	booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations)},
+	year={2024},
+	publisher={Association for Computational Linguistics},
+	address={Bangkok, Thailand},
+	url={https://arxiv.org/abs/2403.13372}
+}
+```
+
 ## Setup
 
 1. Sync dependencies:

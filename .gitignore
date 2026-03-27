@@ -38,3 +38,5 @@ reports/figures/*
 .DS_Store
 Thumbs.db
 .vscode/
+
+data/

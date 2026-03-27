@@ -1,0 +1,89 @@
+# GraphInstruct
+
+This is the benchmark proposed in our paper: [**GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability**](https://arxiv.org/abs/2403.04483)
+
+## Dataset Generation and Evaluation
+
+As a dynamic dataset, GraphInstruct can be generated from scratch and used for evaluation with the following steps:
+
+### Environment Install
+
+The required packages can be installed with pip:
+
+```
+cd GTG
+pip install -e.
+```
+> [!IMPORTANT]
+> Installation is mandatory.
+
+### Dataset Generation
+
+We provide an example script to generate data for all the tasks: `GTG/script/run_all_generation.sh`. 
+You only need to modify the `project_root` in the script to your own path, and run:
+
+```
+bash run_all_generation.sh
+```
+
+Then you'll find the generated dataset in `GTG/data/dataset`. 
+
+
+### Evaluation
+
+We provide scripts for evaluation (see `GTG/script/evaluation` and `GTG/script/run_all_evaluation.py`). 
+The input data file (i.e. LLM's output) should be a csv with 2 columns: `id` (sample ID) and `output` (LLM's output text). 
+For example: 
+
+```
+id,output
+12,"node 5"
+9,"node 33"
+33,"node 10"
+```
+
+## Model Training
+
+Our implementation for training GraphSolver and GraphSolver+ is mainly based on [LLaMAFactory](https://github.com/hiyouga/LLaMA-Factory).
+
+### Dataset Preparation
+
+- Due to space limitation, we only provide our training json files for GraphSolver+ in `LLaMAFactory/data/reasoning`. 
+
+- For getting detailed dataset files, one can refer to the **Dataset Generation** step in GTG.
+
+### Supervised Fine-tuning
+
+One can start the model training step with the following command:
+
+```
+cd LLaMAFactory
+bash run.sh
+```
+
+Note that, to ensure proper functioning, it is necessary to adjust the experiment settings in `examples/train_reasoning/llama3_lora_sft.yaml` and `examples/merge_reasoning/llama3_lora_sft.yaml`.
+
+> [!TIP]
+> For more details about the experimental configuration and environment setting, please refer to the [readme.md](https://github.com/CGCL-codes/GraphInstruct/blob/main/LLaMAFactory/README.md) in LLaMAFactory.
+
+## Citation
+
+If this work is helpful, please kindly cite as:
+
+```bibtex
+@article{graphinstruct,
+  title={GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability},
+  author={Zihan Luo and Xiran Song and Hong Huang and Jianxun Lian and Chenhao Zhang and Jinqi Jiang and Xing Xie},
+  journal={CoRR},
+  volume={abs/2403.04483},
+  year={2024},
+  url={https://doi.org/10.48550/arXiv.2403.04483},
+  doi={10.48550/ARXIV.2403.04483},
+  eprinttype={arXiv},
+  eprint={2403.04483},
+}
+```
+
+## Acknowledgement
+
+This repo benefits from [LLaMAFactory](https://github.com/hiyouga/LLaMA-Factory). Thanks for their wonderful work.
