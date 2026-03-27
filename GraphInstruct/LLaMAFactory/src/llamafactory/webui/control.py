@@ -14,7 +14,7 @@
 
 import json
 import os
-from typing import Any, Optional
+from typing import Any
 
 from transformers.trainer_utils import get_last_checkpoint
 
@@ -36,6 +36,15 @@ from .locales import ALERTS
 
 if is_gradio_available():
     import gradio as gr
+
+
+def switch_hub(hub_name: str) -> None:
+    r"""Switch model hub.
+
+    Inputs: top.hub_name
+    """
+    os.environ["USE_MODELSCOPE_HUB"] = "1" if hub_name == "modelscope" else "0"
+    os.environ["USE_OPENMIND_HUB"] = "1" if hub_name == "openmind" else "0"
 
 
 def can_quantize(finetuning_type: str) -> "gr.Dropdown":
@@ -112,7 +121,7 @@ def get_trainer_info(lang: str, output_path: os.PathLike, do_train: bool) -> tup
     running_log_path = os.path.join(output_path, RUNNING_LOG)
     if os.path.isfile(running_log_path):
         with open(running_log_path, encoding="utf-8") as f:
-            running_log = f.read()[-20000:]  # avoid lengthy log
+            running_log = "```\n" + f.read()[-20000:] + "\n```\n"  # avoid lengthy log
 
     trainer_log_path = os.path.join(output_path, TRAINER_LOG)
     if os.path.isfile(trainer_log_path):
@@ -197,7 +206,7 @@ def list_datasets(dataset_dir: str = None, training_stage: str = list(TRAINING_S
     return gr.Dropdown(choices=datasets)
 
 
-def list_output_dirs(model_name: Optional[str], finetuning_type: str, current_time: str) -> "gr.Dropdown":
+def list_output_dirs(model_name: str | None, finetuning_type: str, current_time: str) -> "gr.Dropdown":
     r"""List all the directories that can resume from.
 
     Inputs: top.model_name, top.finetuning_type, train.current_time

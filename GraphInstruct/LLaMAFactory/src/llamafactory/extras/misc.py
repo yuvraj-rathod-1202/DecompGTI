@@ -18,11 +18,12 @@
 import gc
 import os
 import socket
-from typing import TYPE_CHECKING, Any, Literal, Union
+from typing import TYPE_CHECKING, Any, Literal, Optional, Union
 
 import torch
 import torch.distributed as dist
 import transformers.dynamic_module_utils
+from huggingface_hub.utils import WeakFileLock
 from transformers import InfNanRemoveLogitsProcessor, LogitsProcessorList
 from transformers.dynamic_module_utils import get_relative_imports
 from transformers.utils import (
@@ -35,7 +36,6 @@ from transformers.utils import (
 from transformers.utils.versions import require_version
 
 from . import logging
-from .packages import is_transformers_version_greater_than
 
 
 _is_fp16_available = is_torch_npu_available() or is_torch_cuda_available()
@@ -94,15 +94,11 @@ def check_version(requirement: str, mandatory: bool = False) -> None:
 
 def check_dependencies() -> None:
     r"""Check the version of the required packages."""
-    check_version(
-        "transformers>=4.45.0,<=4.52.4,!=4.46.0,!=4.46.1,!=4.46.2,!=4.46.3,!=4.47.0,!=4.47.1,!=4.48.0,!=4.52.0"
-    )
-    check_version("datasets>=2.16.0,<=3.6.0")
-    check_version("accelerate>=0.34.0,<=1.7.0")
-    check_version("peft>=0.14.0,<=0.15.2")
-    check_version("trl>=0.8.6,<=0.9.6")
-    if is_transformers_version_greater_than("4.46.0") and not is_transformers_version_greater_than("4.48.1"):
-        logger.warning_rank0_once("There are known bugs in transformers v4.46.0-v4.48.0, please use other versions.")
+    check_version("transformers>=4.55.0,<=5.2.0")
+    check_version("datasets>=2.16.0,<=4.0.0")
+    check_version("accelerate>=1.3.0,<=1.11.0")
+    check_version("peft>=0.18.0,<=0.18.1")
+    check_version("trl>=0.18.0,<=0.24.0")
 
 
 def calculate_tps(dataset: list[dict[str, Any]], metrics: dict[str, float], stage: Literal["sft", "rm"]) -> float:
@@ -161,6 +157,33 @@ def get_current_device() -> "torch.device":
     return torch.device(device)
 
 
+def get_device_name() -> str:
+    r"""Get the name of available devices."""
+    if is_torch_xpu_available():
+        device = "xpu"
+    elif is_torch_npu_available():
+        device = "npu"
+    elif is_torch_mps_available():
+        device = "mps"
+    elif is_torch_cuda_available():
+        device = "gpu"
+    else:
+        device = "cpu"
+
+    return device
+
+
+def get_torch_device():
+    r"""Get the torch device namespace for the available devices."""
+    device_name = get_device_name()
+    device_name = "cuda" if device_name == "gpu" else device_name
+    try:
+        return getattr(torch, device_name)
+    except AttributeError:
+        logger.warning_rank0(f"Device namespace '{device_name}' not found in torch, try to load torch.cuda.")
+        return torch.cuda
+
+
 def get_device_count() -> int:
     r"""Get the number of available devices."""
     if is_torch_xpu_available():
@@ -182,8 +205,22 @@ def get_logits_processor() -> "LogitsProcessorList":
     return logits_processor
 
 
+def get_current_memory() -> tuple[int, int]:
+    r"""Get the available and total memory for the current device (in Bytes)."""
+    if is_torch_xpu_available():
+        return torch.xpu.mem_get_info()
+    elif is_torch_npu_available():
+        return torch.npu.mem_get_info()
+    elif is_torch_mps_available():
+        return torch.mps.current_allocated_memory(), torch.mps.recommended_max_memory()
+    elif is_torch_cuda_available():
+        return torch.cuda.mem_get_info()
+    else:
+        return 0, -1
+
+
 def get_peak_memory() -> tuple[int, int]:
-    r"""Get the peak memory usage for the current device (in Bytes)."""
+    r"""Get the peak memory usage (allocated, reserved) for the current device (in Bytes)."""
     if is_torch_xpu_available():
         return torch.xpu.max_memory_allocated(), torch.xpu.max_memory_reserved()
     elif is_torch_npu_available():
@@ -193,7 +230,7 @@ def get_peak_memory() -> tuple[int, int]:
     elif is_torch_cuda_available():
         return torch.cuda.max_memory_allocated(), torch.cuda.max_memory_reserved()
     else:
-        return 0, 0
+        return 0, -1
 
 
 def has_tokenized_data(path: "os.PathLike") -> bool:
@@ -201,9 +238,9 @@ def has_tokenized_data(path: "os.PathLike") -> bool:
     return os.path.isdir(path) and len(os.listdir(path)) > 0
 
 
-def infer_optim_dtype(model_dtype: "torch.dtype") -> "torch.dtype":
+def infer_optim_dtype(model_dtype: Optional["torch.dtype"]) -> "torch.dtype":
     r"""Infer the optimal dtype according to the model_dtype and device compatibility."""
-    if _is_bf16_available and model_dtype == torch.bfloat16:
+    if _is_bf16_available and (model_dtype == torch.bfloat16 or model_dtype is None):
         return torch.bfloat16
     elif _is_fp16_available:
         return torch.float16
@@ -259,25 +296,36 @@ def try_download_model_from_other_hub(model_args: "ModelArguments") -> str:
         return model_args.model_name_or_path
 
     if use_modelscope():
-        check_version("modelscope>=1.11.0", mandatory=True)
+        check_version("modelscope>=1.14.0", mandatory=True)
         from modelscope import snapshot_download  # type: ignore
+        from modelscope.hub.api import HubApi  # type: ignore
+
+        if model_args.ms_hub_token:
+            api = HubApi()
+            api.login(model_args.ms_hub_token)
 
         revision = "master" if model_args.model_revision == "main" else model_args.model_revision
-        return snapshot_download(
-            model_args.model_name_or_path,
-            revision=revision,
-            cache_dir=model_args.cache_dir,
-        )
+        with WeakFileLock(os.path.abspath(os.path.expanduser("~/.cache/llamafactory/modelscope.lock"))):
+            model_path = snapshot_download(
+                model_args.model_name_or_path,
+                revision=revision,
+                cache_dir=model_args.cache_dir,
+            )
+
+        return model_path
 
     if use_openmind():
         check_version("openmind>=0.8.0", mandatory=True)
         from openmind.utils.hub import snapshot_download  # type: ignore
 
-        return snapshot_download(
-            model_args.model_name_or_path,
-            revision=model_args.model_revision,
-            cache_dir=model_args.cache_dir,
-        )
+        with WeakFileLock(os.path.abspath(os.path.expanduser("~/.cache/llamafactory/openmind.lock"))):
+            model_path = snapshot_download(
+                model_args.model_name_or_path,
+                revision=model_args.model_revision,
+                cache_dir=model_args.cache_dir,
+            )
+
+        return model_path
 
 
 def use_modelscope() -> bool:
@@ -290,6 +338,10 @@ def use_openmind() -> bool:
 
 def use_ray() -> bool:
     return is_env_enabled("USE_RAY")
+
+
+def use_kt() -> bool:
+    return is_env_enabled("USE_KT")
 
 
 def find_available_port() -> int:
@@ -305,5 +357,9 @@ def fix_proxy(ipv6_enabled: bool = False) -> None:
     r"""Fix proxy settings for gradio ui."""
     os.environ["no_proxy"] = "localhost,127.0.0.1,0.0.0.0"
     if ipv6_enabled:
-        for name in ("http_proxy", "https_proxy", "HTTP_PROXY", "HTTPS_PROXY"):
-            os.environ.pop(name, None)
+        os.environ.pop("http_proxy", None)
+        os.environ.pop("HTTP_PROXY", None)
+        os.environ.pop("https_proxy", None)
+        os.environ.pop("HTTPS_PROXY", None)
+        os.environ.pop("all_proxy", None)
+        os.environ.pop("ALL_PROXY", None)
