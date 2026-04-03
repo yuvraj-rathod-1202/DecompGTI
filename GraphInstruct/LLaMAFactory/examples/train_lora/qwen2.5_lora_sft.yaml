@@ -16,7 +16,7 @@ quantization_bit: 4
 quantization_method: bitsandbytes
 
 ### dataset
-dataset: decompgti_3step
+dataset: graph_reasoning
 template: qwen
 cutoff_len: 2048
 overwrite_cache: true

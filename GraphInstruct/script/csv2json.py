@@ -123,7 +123,7 @@ def main():
             print(f"  {split}/{task}: {count} samples")
 
     # Write the training JSON
-    output_json = LLAMA_DATA_DIR / "decompgti_3step.json"
+    output_json = LLAMA_DATA_DIR / "graph_reasoning.json"
     with open(output_json, "w", encoding="utf-8") as f:
         json.dump(all_data, f, indent=2, ensure_ascii=False)
 
@@ -141,8 +141,8 @@ def main():
     else:
         info = {}
 
-    info["decompgti_3step"] = {
-        "file_name": "decompgti_3step.json"
+    info["graph_reasoning"] = {
+        "file_name": "graph_reasoning.json"
     }
 
     with open(info_path, "w", encoding="utf-8") as f:
