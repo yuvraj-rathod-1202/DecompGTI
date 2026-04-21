@@ -21,14 +21,28 @@ def _build_graph(edges: list[list[Any]], directed: bool) -> nx.Graph | nx.DiGrap
 
 def bfs(edges: list[list[Any]], source: Any, directed: bool = False) -> dict[str, Any]:
     graph = _build_graph(edges, directed=directed)
-    order = list(nx.bfs_tree(graph, source).nodes())
+    order = list(nx.bfs_tree(graph, source, sort_neighbors=lambda nodes: sorted(list(nodes), key=lambda x: int(x))).nodes())
     return {"order": order}
 
 
 def dfs(edges: list[list[Any]], source: Any, directed: bool = False) -> dict[str, Any]:
     graph = _build_graph(edges, directed=directed)
-    order = list(nx.dfs_preorder_nodes(graph, source=source))
+    order = list(nx.dfs_preorder_nodes(graph, source=source, sort_neighbors=lambda nodes: sorted(list(nodes), key=lambda x: int(x))))
     return {"order": order}
+
+
+def check_connectivity(
+    edges: list[list[Any]],
+    source: Any = None,
+    target: Any = None,
+    directed: bool = False,
+) -> dict[str, Any]:
+    graph = _build_graph(edges, directed=directed)
+    if source is not None and target is not None:
+        connected = nx.has_path(graph, source, target)
+    else:
+        connected = nx.is_connected(graph) if not directed else nx.is_weakly_connected(graph)
+    return {"connected": connected}
 
 
 def dijkstra_shortest_path(

@@ -1,0 +1,232 @@
+{
+  "large": {
+    "total_samples": 84,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 100.0,
+    "parameter_f1": 100.0,
+    "adjacency_extraction_f1": 100.0,
+    "task_success_rate": 97.6,
+    "by_size": {
+      "large": {
+        "count": 84,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 100.0,
+        "task_success": 97.61904761904762
+      }
+    },
+    "by_task": {
+      "connectivity": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 83.33333333333334
+      },
+      "dfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "mst": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "cycle": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "maximum_flow": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "shortest_path": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "bfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      }
+    }
+  },
+  "medium": {
+    "total_samples": 84,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 100.0,
+    "parameter_f1": 100.0,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 96.4,
+    "by_size": {
+      "medium": {
+        "count": 84,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 100.0,
+        "task_success": 96.42857142857143
+      }
+    },
+    "by_task": {
+      "connectivity": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "dfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "mst": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "cycle": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "maximum_flow": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 91.66666666666666
+      },
+      "shortest_path": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 83.33333333333334
+      },
+      "bfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      }
+    }
+  },
+  "small": {
+    "total_samples": 84,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 97.6,
+    "parameter_f1": 98.8,
+    "adjacency_extraction_f1": 100.0,
+    "task_success_rate": 95.2,
+    "by_size": {
+      "small": {
+        "count": 84,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 98.79518072289156,
+        "task_success": 95.23809523809523
+      }
+    },
+    "by_task": {
+      "connectivity": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 91.66666666666666
+      },
+      "dfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 83.33333333333334
+      },
+      "mst": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "cycle": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 91.66666666666666
+      },
+      "maximum_flow": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "shortest_path": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "bfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      }
+    }
+  },
+  "mini": {
+    "total_samples": 89,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 94.4,
+    "parameter_f1": 97.1,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 85.4,
+    "by_size": {
+      "mini": {
+        "count": 89,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 97.10982658959537,
+        "task_success": 85.39325842696628
+      }
+    },
+    "by_task": {
+      "connectivity": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 66.66666666666666
+      },
+      "dfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 58.333333333333336
+      },
+      "topological_sort": {
+        "count": 5,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "mst": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "cycle": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 91.66666666666666
+      },
+      "maximum_flow": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "shortest_path": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 83.33333333333334
+      },
+      "bfs": {
+        "count": 12,
+        "tool_accuracy": 100.0,
+        "task_success": 91.66666666666666
+      }
+    }
+  },
+  "_total_time_s": 7453.9
+}

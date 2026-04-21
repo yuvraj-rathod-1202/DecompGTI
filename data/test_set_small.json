@@ -1,0 +1,1504 @@
+[
+  {
+    "sample_id": 0,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 8), 2 (weight: 7), 6 (weight: 8), 8 (weight: 3).\nNode 1 is connected to nodes 0 (weight: 5), 3 (weight: 3), 4 (weight: 4), 7 (weight: 9).\nNode 2 is connected to nodes 1 (weight: 9), 6 (weight: 5).\nNode 3 is connected to nodes 0 (weight: 10), 1 (weight: 7).\nNode 4 is connected to node 8 (weight: 10).\nNode 5 is connected to nodes 0 (weight: 7), 1 (weight: 6), 2 (weight: 4), 3 (weight: 3), 4 (weight: 9), 6 (weight: 8).\nNode 6 is connected to nodes 1 (weight: 2), 2 (weight: 1), 7 (weight: 2).\nNode 7 is connected to node 0 (weight: 3).\nNode 8 is connected to nodes 0 (weight: 3), 1 (weight: 7), 3 (weight: 10), 4 (weight: 2).",
+    "graph_adj": "{0: [(1, weight:8), (2, weight:7), (6, weight:8), (8, weight:3)],\\n1: [(0, weight:5), (3, weight:3), (4, weight:4), (7, weight:9)],\\n2: [(1, weight:9), (6, weight:5)],\\n3: [(0, weight:10), (1, weight:7)],\\n4: [(8, weight:10)],\\n5: [(0, weight:7), (1, weight:6), (2, weight:4), (3, weight:3), (4, weight:9), (6, weight:8)],\\n6: [(1, weight:2), (2, weight:1), (7, weight:2)],\\n7: [(0, weight:3)],\\n8: [(0, weight:3), (1, weight:7), (3, weight:10), (4, weight:2)]}",
+    "question": "Calculate the distance of the shortest path from node 6 to node 7.",
+    "directed": true,
+    "num_nodes": 9,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 6,
+      "target": 7
+    },
+    "expected_answer": 2.0
+  },
+  {
+    "sample_id": 1,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 3), 7 (weight: 7), 9 (weight: 8), 14 (weight: 8).\nNode 1 is connected to nodes 3 (weight: 4), 6 (weight: 7), 9 (weight: 1), 14 (weight: 3).\nNode 2 is connected to nodes 4 (weight: 7), 9 (weight: 1), 12 (weight: 7), 14 (weight: 5).\nNode 3 is connected to nodes 0 (weight: 3), 1 (weight: 4), 6 (weight: 8), 9 (weight: 5), 12 (weight: 7).\nNode 4 is connected to nodes 2 (weight: 7), 5 (weight: 9), 11 (weight: 8), 12 (weight: 3).\nNode 5 is connected to nodes 4 (weight: 9), 6 (weight: 4), 7 (weight: 5), 8 (weight: 4), 10 (weight: 1), 13 (weight: 10), 14 (weight: 9).\nNode 6 is connected to nodes 1 (weight: 7), 3 (weight: 8), 5 (weight: 4), 8 (weight: 1), 9 (weight: 6).\nNode 7 is connected to nodes 0 (weight: 7), 5 (weight: 5), 8 (weight: 1), 9 (weight: 1).\nNode 8 is connected to nodes 5 (weight: 4), 6 (weight: 1), 7 (weight: 1), 10 (weight: 10), 14 (weight: 8).\nNode 9 is connected to nodes 0 (weight: 8), 1 (weight: 1), 2 (weight: 1), 3 (weight: 5), 6 (weight: 6), 7 (weight: 1), 10 (weight: 9), 13 (weight: 9), 14 (weight: 3).\nNode 10 is connected to nodes 5 (weight: 1), 8 (weight: 10), 9 (weight: 9).\nNode 11 is connected to nodes 4 (weight: 8), 12 (weight: 1).\nNode 12 is connected to nodes 2 (weight: 7), 3 (weight: 7), 4 (weight: 3), 11 (weight: 1).\nNode 13 is connected to nodes 5 (weight: 10), 9 (weight: 9).\nNode 14 is connected to nodes 0 (weight: 8), 1 (weight: 3), 2 (weight: 5), 5 (weight: 9), 8 (weight: 8), 9 (weight: 3).",
+    "graph_adj": "{0: [(3, weight:3), (7, weight:7), (9, weight:8), (14, weight:8)],\\n1: [(3, weight:4), (6, weight:7), (9, weight:1), (14, weight:3)],\\n2: [(4, weight:7), (9, weight:1), (12, weight:7), (14, weight:5)],\\n3: [(0, weight:3), (1, weight:4), (6, weight:8), (9, weight:5), (12, weight:7)],\\n4: [(2, weight:7), (5, weight:9), (11, weight:8), (12, weight:3)],\\n5: [(4, weight:9), (6, weight:4), (7, weight:5), (8, weight:4), (10, weight:1), (13, weight:10), (14, weight:9)],\\n6: [(1, weight:7), (3, weight:8), (5, weight:4), (8, weight:1), (9, weight:6)],\\n7: [(0, weight:7), (5, weight:5), (8, weight:1), (9, weight:1)],\\n8: [(5, weight:4), (6, weight:1), (7, weight:1), (10, weight:10), (14, weight:8)],\\n9: [(0, weight:8), (1, weight:1), (2, weight:1), (3, weight:5), (6, weight:6), (7, weight:1), (10, weight:9), (13, weight:9), (14, weight:3)],\\n10: [(5, weight:1), (8, weight:10), (9, weight:9)],\\n11: [(4, weight:8), (12, weight:1)],\\n12: [(2, weight:7), (3, weight:7), (4, weight:3), (11, weight:1)],\\n13: [(5, weight:10), (9, weight:9)],\\n14: [(0, weight:8), (1, weight:3), (2, weight:5), (5, weight:9), (8, weight:8), (9, weight:3)]}",
+    "question": "Calculate the distance of the shortest path from node 8 to node 1.",
+    "directed": false,
+    "num_nodes": 15,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 8,
+      "target": 1
+    },
+    "expected_answer": 3.0
+  },
+  {
+    "sample_id": 2,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 3), 7 (weight: 7), 8 (weight: 1).\nNode 1 is connected to nodes 3 (weight: 3), 6 (weight: 6), 7 (weight: 7).\nNode 2 is connected to nodes 3 (weight: 4), 6 (weight: 5), 9 (weight: 3).\nNode 3 is connected to nodes 1 (weight: 2), 2 (weight: 7), 4 (weight: 1).\nNode 4 is connected to nodes 5 (weight: 8), 7 (weight: 4).\nNode 5 is connected to nodes 0 (weight: 4), 1 (weight: 8), 2 (weight: 6), 8 (weight: 5).\nNode 6 is connected to nodes 0 (weight: 4), 3 (weight: 4), 5 (weight: 1), 8 (weight: 4).\nNode 7 is connected to nodes 2 (weight: 7), 5 (weight: 6), 6 (weight: 5).\nNode 8 is connected to nodes 1 (weight: 2), 5 (weight: 5).\nNode 9 is connected to nodes 6 (weight: 6), 7 (weight: 9).",
+    "graph_adj": "{0: [(1, weight:3), (7, weight:7), (8, weight:1)],\\n1: [(3, weight:3), (6, weight:6), (7, weight:7)],\\n2: [(3, weight:4), (6, weight:5), (9, weight:3)],\\n3: [(1, weight:2), (2, weight:7), (4, weight:1)],\\n4: [(5, weight:8), (7, weight:4)],\\n5: [(0, weight:4), (1, weight:8), (2, weight:6), (8, weight:5)],\\n6: [(0, weight:4), (3, weight:4), (5, weight:1), (8, weight:4)],\\n7: [(2, weight:7), (5, weight:6), (6, weight:5)],\\n8: [(1, weight:2), (5, weight:5)],\\n9: [(6, weight:6), (7, weight:9)]}",
+    "question": "Calculate the distance of the shortest path from node 6 to node 9.",
+    "directed": true,
+    "num_nodes": 10,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 6,
+      "target": 9
+    },
+    "expected_answer": 10.0
+  },
+  {
+    "sample_id": 3,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 7), 3 (weight: 4), 5 (weight: 3), 6 (weight: 9).\nNode 1 is connected to nodes 0 (weight: 7), 3 (weight: 8), 5 (weight: 1), 12 (weight: 9).\nNode 2 is connected to node 12 (weight: 4).\nNode 3 is connected to nodes 0 (weight: 4), 1 (weight: 8), 4 (weight: 2), 12 (weight: 8).\nNode 4 is connected to nodes 3 (weight: 2), 5 (weight: 3), 11 (weight: 8).\nNode 5 is connected to nodes 0 (weight: 3), 1 (weight: 1), 4 (weight: 3), 8 (weight: 9), 9 (weight: 9).\nNode 6 is connected to nodes 0 (weight: 9), 10 (weight: 10), 11 (weight: 6), 12 (weight: 8).\nNode 7 is connected to nodes 8 (weight: 10), 11 (weight: 9).\nNode 8 is connected to nodes 5 (weight: 9), 7 (weight: 10), 10 (weight: 7).\nNode 9 is connected to nodes 5 (weight: 9), 10 (weight: 9), 12 (weight: 8).\nNode 10 is connected to nodes 6 (weight: 10), 8 (weight: 7), 9 (weight: 9).\nNode 11 is connected to nodes 4 (weight: 8), 6 (weight: 6), 7 (weight: 9), 12 (weight: 3).\nNode 12 is connected to nodes 1 (weight: 9), 2 (weight: 4), 3 (weight: 8), 6 (weight: 8), 9 (weight: 8), 11 (weight: 3).",
+    "graph_adj": "{0: [(1, weight:7), (3, weight:4), (5, weight:3), (6, weight:9)],\\n1: [(0, weight:7), (3, weight:8), (5, weight:1), (12, weight:9)],\\n2: [(12, weight:4)],\\n3: [(0, weight:4), (1, weight:8), (4, weight:2), (12, weight:8)],\\n4: [(3, weight:2), (5, weight:3), (11, weight:8)],\\n5: [(0, weight:3), (1, weight:1), (4, weight:3), (8, weight:9), (9, weight:9)],\\n6: [(0, weight:9), (10, weight:10), (11, weight:6), (12, weight:8)],\\n7: [(8, weight:10), (11, weight:9)],\\n8: [(5, weight:9), (7, weight:10), (10, weight:7)],\\n9: [(5, weight:9), (10, weight:9), (12, weight:8)],\\n10: [(6, weight:10), (8, weight:7), (9, weight:9)],\\n11: [(4, weight:8), (6, weight:6), (7, weight:9), (12, weight:3)],\\n12: [(1, weight:9), (2, weight:4), (3, weight:8), (6, weight:8), (9, weight:8), (11, weight:3)]}",
+    "question": "Calculate the distance of the shortest path from node 11 to node 7.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 11,
+      "target": 7
+    },
+    "expected_answer": 9.0
+  },
+  {
+    "sample_id": 4,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 7), 6 (weight: 10), 7 (weight: 10), 8 (weight: 10), 9 (weight: 4), 12 (weight: 9), 13 (weight: 7).\nNode 1 is connected to nodes 2 (weight: 8), 6 (weight: 8), 14 (weight: 5).\nNode 2 is connected to nodes 9 (weight: 10), 10 (weight: 7), 12 (weight: 5).\nNode 3 is connected to nodes 1 (weight: 10), 4 (weight: 10), 6 (weight: 1), 9 (weight: 10), 11 (weight: 2), 13 (weight: 4).\nNode 4 is connected to nodes 0 (weight: 4), 7 (weight: 5), 8 (weight: 2), 9 (weight: 3).\nNode 5 is connected to nodes 3 (weight: 4), 4 (weight: 3), 6 (weight: 9), 7 (weight: 2), 10 (weight: 3), 13 (weight: 1).\nNode 6 is connected to nodes 1 (weight: 7), 4 (weight: 8), 5 (weight: 10), 12 (weight: 8).\nNode 7 is connected to nodes 0 (weight: 5), 4 (weight: 1).\nNode 8 is connected to nodes 0 (weight: 4), 9 (weight: 5).\nNode 9 is connected to nodes 0 (weight: 5), 3 (weight: 8), 5 (weight: 2), 10 (weight: 4), 12 (weight: 5), 13 (weight: 10).\nNode 10 is connected to nodes 3 (weight: 4), 4 (weight: 7), 6 (weight: 2).\nNode 11 is connected to nodes 0 (weight: 9), 1 (weight: 4), 12 (weight: 3), 13 (weight: 5), 14 (weight: 3).\nNode 12 is connected to nodes 0 (weight: 2), 1 (weight: 1), 4 (weight: 3), 5 (weight: 5), 10 (weight: 10), 11 (weight: 10), 13 (weight: 5), 14 (weight: 8).\nNode 13 is connected to nodes 0 (weight: 2), 1 (weight: 8), 3 (weight: 5), 7 (weight: 7).\nNode 14 is connected to nodes 0 (weight: 5), 1 (weight: 9), 6 (weight: 9), 8 (weight: 8), 9 (weight: 8), 13 (weight: 2).",
+    "graph_adj": "{0: [(1, weight:7), (6, weight:10), (7, weight:10), (8, weight:10), (9, weight:4), (12, weight:9), (13, weight:7)],\\n1: [(2, weight:8), (6, weight:8), (14, weight:5)],\\n2: [(9, weight:10), (10, weight:7), (12, weight:5)],\\n3: [(1, weight:10), (4, weight:10), (6, weight:1), (9, weight:10), (11, weight:2), (13, weight:4)],\\n4: [(0, weight:4), (7, weight:5), (8, weight:2), (9, weight:3)],\\n5: [(3, weight:4), (4, weight:3), (6, weight:9), (7, weight:2), (10, weight:3), (13, weight:1)],\\n6: [(1, weight:7), (4, weight:8), (5, weight:10), (12, weight:8)],\\n7: [(0, weight:5), (4, weight:1)],\\n8: [(0, weight:4), (9, weight:5)],\\n9: [(0, weight:5), (3, weight:8), (5, weight:2), (10, weight:4), (12, weight:5), (13, weight:10)],\\n10: [(3, weight:4), (4, weight:7), (6, weight:2)],\\n11: [(0, weight:9), (1, weight:4), (12, weight:3), (13, weight:5), (14, weight:3)],\\n12: [(0, weight:2), (1, weight:1), (4, weight:3), (5, weight:5), (10, weight:10), (11, weight:10), (13, weight:5), (14, weight:8)],\\n13: [(0, weight:2), (1, weight:8), (3, weight:5), (7, weight:7)],\\n14: [(0, weight:5), (1, weight:9), (6, weight:9), (8, weight:8), (9, weight:8), (13, weight:2)]}",
+    "question": "Calculate the distance of the shortest path from node 9 to node 0.",
+    "directed": true,
+    "num_nodes": 15,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 9,
+      "target": 0
+    },
+    "expected_answer": 5.0
+  },
+  {
+    "sample_id": 5,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 7), 3 (weight: 8), 7 (weight: 6), 12 (weight: 4).\nNode 1 is connected to nodes 3 (weight: 4), 11 (weight: 10), 12 (weight: 7).\nNode 2 is connected to nodes 0 (weight: 7), 7 (weight: 4), 8 (weight: 7), 9 (weight: 1), 10 (weight: 6).\nNode 3 is connected to nodes 0 (weight: 8), 1 (weight: 4), 4 (weight: 8), 7 (weight: 7), 12 (weight: 7), 13 (weight: 3).\nNode 4 is connected to nodes 3 (weight: 8), 5 (weight: 8), 6 (weight: 1), 9 (weight: 3).\nNode 5 is connected to nodes 4 (weight: 8), 6 (weight: 9), 8 (weight: 10), 10 (weight: 6), 13 (weight: 2).\nNode 6 is connected to nodes 4 (weight: 1), 5 (weight: 9), 8 (weight: 8).\nNode 7 is connected to nodes 0 (weight: 6), 2 (weight: 4), 3 (weight: 7), 8 (weight: 2), 9 (weight: 9), 12 (weight: 8), 13 (weight: 1).\nNode 8 is connected to nodes 2 (weight: 7), 5 (weight: 10), 6 (weight: 8), 7 (weight: 2), 13 (weight: 3).\nNode 9 is connected to nodes 2 (weight: 1), 4 (weight: 3), 7 (weight: 9), 10 (weight: 7).\nNode 10 is connected to nodes 2 (weight: 6), 5 (weight: 6), 9 (weight: 7).\nNode 11 is connected to node 1 (weight: 10).\nNode 12 is connected to nodes 0 (weight: 4), 1 (weight: 7), 3 (weight: 7), 7 (weight: 8).\nNode 13 is connected to nodes 3 (weight: 3), 5 (weight: 2), 7 (weight: 1), 8 (weight: 3).",
+    "graph_adj": "{0: [(2, weight:7), (3, weight:8), (7, weight:6), (12, weight:4)],\\n1: [(3, weight:4), (11, weight:10), (12, weight:7)],\\n2: [(0, weight:7), (7, weight:4), (8, weight:7), (9, weight:1), (10, weight:6)],\\n3: [(0, weight:8), (1, weight:4), (4, weight:8), (7, weight:7), (12, weight:7), (13, weight:3)],\\n4: [(3, weight:8), (5, weight:8), (6, weight:1), (9, weight:3)],\\n5: [(4, weight:8), (6, weight:9), (8, weight:10), (10, weight:6), (13, weight:2)],\\n6: [(4, weight:1), (5, weight:9), (8, weight:8)],\\n7: [(0, weight:6), (2, weight:4), (3, weight:7), (8, weight:2), (9, weight:9), (12, weight:8), (13, weight:1)],\\n8: [(2, weight:7), (5, weight:10), (6, weight:8), (7, weight:2), (13, weight:3)],\\n9: [(2, weight:1), (4, weight:3), (7, weight:9), (10, weight:7)],\\n10: [(2, weight:6), (5, weight:6), (9, weight:7)],\\n11: [(1, weight:10)],\\n12: [(0, weight:4), (1, weight:7), (3, weight:7), (7, weight:8)],\\n13: [(3, weight:3), (5, weight:2), (7, weight:1), (8, weight:3)]}",
+    "question": "Calculate the distance of the shortest path from node 13 to node 10.",
+    "directed": false,
+    "num_nodes": 14,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 13,
+      "target": 10
+    },
+    "expected_answer": 8.0
+  },
+  {
+    "sample_id": 6,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 3), 5 (weight: 2).\nNode 1 is connected to nodes 6 (weight: 5), 8 (weight: 6), 9 (weight: 7).\nNode 2 is connected to nodes 0 (weight: 3), 5 (weight: 4), 6 (weight: 3), 7 (weight: 9), 8 (weight: 6).\nNode 3 is connected to nodes 0 (weight: 9), 4 (weight: 9), 7 (weight: 5), 8 (weight: 3).\nNode 4 is connected to node 5 (weight: 5).\nNode 5 is connected to nodes 1 (weight: 8), 3 (weight: 5), 7 (weight: 6).\nNode 6 is connected to nodes 4 (weight: 2), 8 (weight: 8).\nNode 7 is connected to nodes 0 (weight: 2), 3 (weight: 3).\nNode 8 is connected to nodes 3 (weight: 4), 5 (weight: 7), 6 (weight: 9), 7 (weight: 6).\nNode 9 is connected to nodes 2 (weight: 2), 3 (weight: 7), 5 (weight: 1), 7 (weight: 5).",
+    "graph_adj": "{0: [(2, weight:3), (5, weight:2)],\\n1: [(6, weight:5), (8, weight:6), (9, weight:7)],\\n2: [(0, weight:3), (5, weight:4), (6, weight:3), (7, weight:9), (8, weight:6)],\\n3: [(0, weight:9), (4, weight:9), (7, weight:5), (8, weight:3)],\\n4: [(5, weight:5)],\\n5: [(1, weight:8), (3, weight:5), (7, weight:6)],\\n6: [(4, weight:2), (8, weight:8)],\\n7: [(0, weight:2), (3, weight:3)],\\n8: [(3, weight:4), (5, weight:7), (6, weight:9), (7, weight:6)],\\n9: [(2, weight:2), (3, weight:7), (5, weight:1), (7, weight:5)]}",
+    "question": "Calculate the distance of the shortest path from node 8 to node 1.",
+    "directed": true,
+    "num_nodes": 10,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 8,
+      "target": 1
+    },
+    "expected_answer": 15.0
+  },
+  {
+    "sample_id": 7,
+    "graph_nl": "Node 0 is connected to node 2 (weight: 4).\nNode 1 is connected to nodes 3 (weight: 3), 4 (weight: 5), 5 (weight: 5), 7 (weight: 6), 8 (weight: 2).\nNode 2 is connected to nodes 8 (weight: 1), 10 (weight: 8), 12 (weight: 7).\nNode 3 is connected to nodes 4 (weight: 3), 5 (weight: 3), 9 (weight: 7), 10 (weight: 9), 13 (weight: 4).\nNode 4 is connected to nodes 2 (weight: 9), 8 (weight: 9), 12 (weight: 6).\nNode 5 is connected to nodes 2 (weight: 2), 4 (weight: 7), 9 (weight: 1), 10 (weight: 7), 11 (weight: 1), 13 (weight: 8), 14 (weight: 2).\nNode 6 is connected to nodes 4 (weight: 6), 12 (weight: 10).\nNode 7 is connected to nodes 1 (weight: 7), 6 (weight: 10), 8 (weight: 7), 14 (weight: 7).\nNode 8 is connected to node 3 (weight: 5).\nNode 9 is connected to nodes 2 (weight: 2), 6 (weight: 7), 7 (weight: 1), 12 (weight: 6), 13 (weight: 3).\nNode 10 is connected to nodes 7 (weight: 10), 8 (weight: 8), 11 (weight: 6), 13 (weight: 2).\nNode 11 is connected to nodes 3 (weight: 7), 4 (weight: 2), 5 (weight: 4).\nNode 12 is connected to nodes 1 (weight: 7), 2 (weight: 10), 6 (weight: 7), 7 (weight: 9), 9 (weight: 2), 13 (weight: 7).\nNode 13 is connected to nodes 2 (weight: 5), 8 (weight: 6), 10 (weight: 4), 11 (weight: 6).\nNode 14 is connected to nodes 2 (weight: 3), 5 (weight: 2), 10 (weight: 9), 12 (weight: 2), 13 (weight: 9).",
+    "graph_adj": "{0: [(2, weight:4)],\\n1: [(3, weight:3), (4, weight:5), (5, weight:5), (7, weight:6), (8, weight:2)],\\n2: [(8, weight:1), (10, weight:8), (12, weight:7)],\\n3: [(4, weight:3), (5, weight:3), (9, weight:7), (10, weight:9), (13, weight:4)],\\n4: [(2, weight:9), (8, weight:9), (12, weight:6)],\\n5: [(2, weight:2), (4, weight:7), (9, weight:1), (10, weight:7), (11, weight:1), (13, weight:8), (14, weight:2)],\\n6: [(4, weight:6), (12, weight:10)],\\n7: [(1, weight:7), (6, weight:10), (8, weight:7), (14, weight:7)],\\n8: [(3, weight:5)],\\n9: [(2, weight:2), (6, weight:7), (7, weight:1), (12, weight:6), (13, weight:3)],\\n10: [(7, weight:10), (8, weight:8), (11, weight:6), (13, weight:2)],\\n11: [(3, weight:7), (4, weight:2), (5, weight:4)],\\n12: [(1, weight:7), (2, weight:10), (6, weight:7), (7, weight:9), (9, weight:2), (13, weight:7)],\\n13: [(2, weight:5), (8, weight:6), (10, weight:4), (11, weight:6)],\\n14: [(2, weight:3), (5, weight:2), (10, weight:9), (12, weight:2), (13, weight:9)]}",
+    "question": "Calculate the distance of the shortest path from node 8 to node 3.",
+    "directed": true,
+    "num_nodes": 15,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 8,
+      "target": 3
+    },
+    "expected_answer": 5.0
+  },
+  {
+    "sample_id": 8,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 8), 4 (weight: 6), 5 (weight: 1), 6 (weight: 7), 7 (weight: 1), 9 (weight: 7).\nNode 2 is connected to nodes 4 (weight: 9), 6 (weight: 6), 8 (weight: 4), 11 (weight: 7).\nNode 3 is connected to nodes 5 (weight: 2), 8 (weight: 6).\nNode 4 is connected to nodes 3 (weight: 4), 6 (weight: 1).\nNode 5 is connected to nodes 3 (weight: 6), 10 (weight: 2).\nNode 6 is connected to nodes 1 (weight: 6), 2 (weight: 3), 9 (weight: 3), 11 (weight: 1).\nNode 7 is connected to nodes 2 (weight: 5), 8 (weight: 8), 11 (weight: 3).\nNode 8 is connected to nodes 3 (weight: 8), 5 (weight: 8), 6 (weight: 10).\nNode 9 is connected to nodes 4 (weight: 1), 5 (weight: 2), 11 (weight: 1).\nNode 10 is connected to nodes 5 (weight: 5), 6 (weight: 4), 11 (weight: 3).\nNode 11 is connected to nodes 6 (weight: 9), 7 (weight: 10), 10 (weight: 9).\nNode 12 is connected to nodes 4 (weight: 7), 5 (weight: 2), 6 (weight: 5), 10 (weight: 4).",
+    "graph_adj": "{0: [(3, weight:8), (4, weight:6), (5, weight:1), (6, weight:7), (7, weight:1), (9, weight:7)],\\n1: [],\\n2: [(4, weight:9), (6, weight:6), (8, weight:4), (11, weight:7)],\\n3: [(5, weight:2), (8, weight:6)],\\n4: [(3, weight:4), (6, weight:1)],\\n5: [(3, weight:6), (10, weight:2)],\\n6: [(1, weight:6), (2, weight:3), (9, weight:3), (11, weight:1)],\\n7: [(2, weight:5), (8, weight:8), (11, weight:3)],\\n8: [(3, weight:8), (5, weight:8), (6, weight:10)],\\n9: [(4, weight:1), (5, weight:2), (11, weight:1)],\\n10: [(5, weight:5), (6, weight:4), (11, weight:3)],\\n11: [(6, weight:9), (7, weight:10), (10, weight:9)],\\n12: [(4, weight:7), (5, weight:2), (6, weight:5), (10, weight:4)]}",
+    "question": "Calculate the distance of the shortest path from node 4 to node 1.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 4,
+      "target": 1
+    },
+    "expected_answer": 7.0
+  },
+  {
+    "sample_id": 9,
+    "graph_nl": "Node 0 is connected to node 3 (weight: 4).\nNode 1 is connected to nodes 3 (weight: 5), 4 (weight: 6), 7 (weight: 1).\nNode 3 is connected to nodes 0 (weight: 6), 2 (weight: 5).\nNode 4 is connected to nodes 0 (weight: 2), 1 (weight: 6), 3 (weight: 7), 7 (weight: 7).\nNode 6 is connected to nodes 0 (weight: 8), 1 (weight: 7), 4 (weight: 6), 5 (weight: 3).\nNode 7 is connected to node 6 (weight: 8).",
+    "graph_adj": "{0: [(3, weight:4)],\\n1: [(3, weight:5), (4, weight:6), (7, weight:1)],\\n2: [],\\n3: [(0, weight:6), (2, weight:5)],\\n4: [(0, weight:2), (1, weight:6), (3, weight:7), (7, weight:7)],\\n5: [],\\n6: [(0, weight:8), (1, weight:7), (4, weight:6), (5, weight:3)],\\n7: [(6, weight:8)]}",
+    "question": "Calculate the distance of the shortest path from node 7 to node 2.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 7,
+      "target": 2
+    },
+    "expected_answer": 25.0
+  },
+  {
+    "sample_id": 10,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 6), 7 (weight: 2).\nNode 1 is connected to nodes 4 (weight: 9), 8 (weight: 9), 11 (weight: 5).\nNode 2 is connected to nodes 0 (weight: 6), 8 (weight: 5), 11 (weight: 3).\nNode 3 is connected to node 4 (weight: 3).\nNode 4 is connected to nodes 1 (weight: 9), 3 (weight: 3), 11 (weight: 6).\nNode 5 is connected to nodes 6 (weight: 9), 11 (weight: 4).\nNode 6 is connected to nodes 5 (weight: 9), 7 (weight: 2), 10 (weight: 4).\nNode 7 is connected to nodes 0 (weight: 2), 6 (weight: 2), 9 (weight: 3).\nNode 8 is connected to nodes 1 (weight: 9), 2 (weight: 5), 11 (weight: 4).\nNode 9 is connected to node 7 (weight: 3).\nNode 10 is connected to node 6 (weight: 4).\nNode 11 is connected to nodes 1 (weight: 5), 2 (weight: 3), 4 (weight: 6), 5 (weight: 4), 8 (weight: 4).",
+    "graph_adj": "{0: [(2, weight:6), (7, weight:2)],\\n1: [(4, weight:9), (8, weight:9), (11, weight:5)],\\n2: [(0, weight:6), (8, weight:5), (11, weight:3)],\\n3: [(4, weight:3)],\\n4: [(1, weight:9), (3, weight:3), (11, weight:6)],\\n5: [(6, weight:9), (11, weight:4)],\\n6: [(5, weight:9), (7, weight:2), (10, weight:4)],\\n7: [(0, weight:2), (6, weight:2), (9, weight:3)],\\n8: [(1, weight:9), (2, weight:5), (11, weight:4)],\\n9: [(7, weight:3)],\\n10: [(6, weight:4)],\\n11: [(1, weight:5), (2, weight:3), (4, weight:6), (5, weight:4), (8, weight:4)]}",
+    "question": "Calculate the distance of the shortest path from node 7 to node 0.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 7,
+      "target": 0
+    },
+    "expected_answer": 2.0
+  },
+  {
+    "sample_id": 11,
+    "graph_nl": "Node 0 is connected to nodes 5 (weight: 9), 12 (weight: 9).\nNode 1 is connected to node 10 (weight: 2).\nNode 2 is connected to nodes 4 (weight: 6), 5 (weight: 4), 6 (weight: 8), 7 (weight: 2).\nNode 3 is connected to nodes 5 (weight: 5), 8 (weight: 8), 12 (weight: 4).\nNode 4 is connected to nodes 2 (weight: 6), 6 (weight: 3).\nNode 5 is connected to nodes 0 (weight: 9), 2 (weight: 4), 3 (weight: 5), 6 (weight: 2), 7 (weight: 1), 9 (weight: 5).\nNode 6 is connected to nodes 2 (weight: 8), 4 (weight: 3), 5 (weight: 2), 10 (weight: 7).\nNode 7 is connected to nodes 2 (weight: 2), 5 (weight: 1), 10 (weight: 10), 11 (weight: 7), 12 (weight: 4).\nNode 8 is connected to nodes 3 (weight: 8), 11 (weight: 3).\nNode 9 is connected to node 5 (weight: 5).\nNode 10 is connected to nodes 1 (weight: 2), 6 (weight: 7), 7 (weight: 10).\nNode 11 is connected to nodes 7 (weight: 7), 8 (weight: 3), 12 (weight: 6).\nNode 12 is connected to nodes 0 (weight: 9), 3 (weight: 4), 7 (weight: 4), 11 (weight: 6).",
+    "graph_adj": "{0: [(5, weight:9), (12, weight:9)],\\n1: [(10, weight:2)],\\n2: [(4, weight:6), (5, weight:4), (6, weight:8), (7, weight:2)],\\n3: [(5, weight:5), (8, weight:8), (12, weight:4)],\\n4: [(2, weight:6), (6, weight:3)],\\n5: [(0, weight:9), (2, weight:4), (3, weight:5), (6, weight:2), (7, weight:1), (9, weight:5)],\\n6: [(2, weight:8), (4, weight:3), (5, weight:2), (10, weight:7)],\\n7: [(2, weight:2), (5, weight:1), (10, weight:10), (11, weight:7), (12, weight:4)],\\n8: [(3, weight:8), (11, weight:3)],\\n9: [(5, weight:5)],\\n10: [(1, weight:2), (6, weight:7), (7, weight:10)],\\n11: [(7, weight:7), (8, weight:3), (12, weight:6)],\\n12: [(0, weight:9), (3, weight:4), (7, weight:4), (11, weight:6)]}",
+    "question": "Calculate the distance of the shortest path from node 9 to node 12.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "shortest_path",
+    "graph_size": "small",
+    "expected_tool": "shortest_path",
+    "expected_params": {
+      "source": 9,
+      "target": 12
+    },
+    "expected_answer": 10.0
+  },
+  {
+    "sample_id": 12,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 3), 6 (weight: 7), 9 (weight: 8), 11 (weight: 8), 12 (weight: 4).\nNode 1 is connected to nodes 4 (weight: 5), 5 (weight: 6), 6 (weight: 5), 7 (weight: 1), 8 (weight: 2), 11 (weight: 10), 12 (weight: 4).\nNode 2 is connected to nodes 3 (weight: 9), 10 (weight: 1), 11 (weight: 3).\nNode 3 is connected to nodes 4 (weight: 7), 7 (weight: 3), 8 (weight: 1), 12 (weight: 7).\nNode 4 is connected to node 1 (weight: 8).\nNode 5 is connected to nodes 1 (weight: 3), 3 (weight: 5), 11 (weight: 1).\nNode 6 is connected to nodes 2 (weight: 1), 3 (weight: 5), 11 (weight: 10).\nNode 7 is connected to nodes 1 (weight: 10), 5 (weight: 2).\nNode 9 is connected to nodes 1 (weight: 6), 4 (weight: 5), 5 (weight: 8).\nNode 10 is connected to nodes 4 (weight: 9), 12 (weight: 9).\nNode 11 is connected to nodes 0 (weight: 8), 2 (weight: 3), 6 (weight: 9), 8 (weight: 8), 10 (weight: 5), 12 (weight: 4).\nNode 12 is connected to nodes 1 (weight: 2), 2 (weight: 6), 4 (weight: 3), 5 (weight: 8), 6 (weight: 5), 10 (weight: 3).",
+    "graph_adj": "{0: [(1, weight:3), (6, weight:7), (9, weight:8), (11, weight:8), (12, weight:4)],\\n1: [(4, weight:5), (5, weight:6), (6, weight:5), (7, weight:1), (8, weight:2), (11, weight:10), (12, weight:4)],\\n2: [(3, weight:9), (10, weight:1), (11, weight:3)],\\n3: [(4, weight:7), (7, weight:3), (8, weight:1), (12, weight:7)],\\n4: [(1, weight:8)],\\n5: [(1, weight:3), (3, weight:5), (11, weight:1)],\\n6: [(2, weight:1), (3, weight:5), (11, weight:10)],\\n7: [(1, weight:10), (5, weight:2)],\\n8: [],\\n9: [(1, weight:6), (4, weight:5), (5, weight:8)],\\n10: [(4, weight:9), (12, weight:9)],\\n11: [(0, weight:8), (2, weight:3), (6, weight:9), (8, weight:8), (10, weight:5), (12, weight:4)],\\n12: [(1, weight:2), (2, weight:6), (4, weight:3), (5, weight:8), (6, weight:5), (10, weight:3)]}",
+    "question": "Perform a breadth-first search starting from node 0.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 0
+    },
+    "expected_answer": [
+      0,
+      1,
+      6,
+      9,
+      11,
+      12,
+      4,
+      5,
+      7,
+      8,
+      2,
+      3,
+      10
+    ]
+  },
+  {
+    "sample_id": 13,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 6), 8 (weight: 2), 10 (weight: 9), 11 (weight: 1).\nNode 1 is connected to nodes 2 (weight: 2), 3 (weight: 8), 4 (weight: 1), 9 (weight: 5), 12 (weight: 7).\nNode 2 is connected to nodes 1 (weight: 2), 3 (weight: 3), 10 (weight: 3), 12 (weight: 7).\nNode 3 is connected to nodes 0 (weight: 6), 1 (weight: 8), 2 (weight: 3), 5 (weight: 6), 6 (weight: 7), 7 (weight: 8).\nNode 4 is connected to nodes 1 (weight: 1), 7 (weight: 7), 8 (weight: 7), 11 (weight: 2).\nNode 5 is connected to nodes 3 (weight: 6), 7 (weight: 9), 9 (weight: 3).\nNode 6 is connected to nodes 3 (weight: 7), 7 (weight: 6), 10 (weight: 2), 11 (weight: 3).\nNode 7 is connected to nodes 3 (weight: 8), 4 (weight: 7), 5 (weight: 9), 6 (weight: 6), 8 (weight: 9).\nNode 8 is connected to nodes 0 (weight: 2), 4 (weight: 7), 7 (weight: 9), 10 (weight: 7).\nNode 9 is connected to nodes 1 (weight: 5), 5 (weight: 3).\nNode 10 is connected to nodes 0 (weight: 9), 2 (weight: 3), 6 (weight: 2), 8 (weight: 7).\nNode 11 is connected to nodes 0 (weight: 1), 4 (weight: 2), 6 (weight: 3), 12 (weight: 9).\nNode 12 is connected to nodes 1 (weight: 7), 2 (weight: 7), 11 (weight: 9).",
+    "graph_adj": "{0: [(3, weight:6), (8, weight:2), (10, weight:9), (11, weight:1)],\\n1: [(2, weight:2), (3, weight:8), (4, weight:1), (9, weight:5), (12, weight:7)],\\n2: [(1, weight:2), (3, weight:3), (10, weight:3), (12, weight:7)],\\n3: [(0, weight:6), (1, weight:8), (2, weight:3), (5, weight:6), (6, weight:7), (7, weight:8)],\\n4: [(1, weight:1), (7, weight:7), (8, weight:7), (11, weight:2)],\\n5: [(3, weight:6), (7, weight:9), (9, weight:3)],\\n6: [(3, weight:7), (7, weight:6), (10, weight:2), (11, weight:3)],\\n7: [(3, weight:8), (4, weight:7), (5, weight:9), (6, weight:6), (8, weight:9)],\\n8: [(0, weight:2), (4, weight:7), (7, weight:9), (10, weight:7)],\\n9: [(1, weight:5), (5, weight:3)],\\n10: [(0, weight:9), (2, weight:3), (6, weight:2), (8, weight:7)],\\n11: [(0, weight:1), (4, weight:2), (6, weight:3), (12, weight:9)],\\n12: [(1, weight:7), (2, weight:7), (11, weight:9)]}",
+    "question": "Perform a breadth-first search starting from node 2.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 2
+    },
+    "expected_answer": [
+      2,
+      1,
+      3,
+      10,
+      12,
+      4,
+      9,
+      0,
+      5,
+      6,
+      7,
+      8,
+      11
+    ]
+  },
+  {
+    "sample_id": 14,
+    "graph_nl": "Node 0 is connected to nodes 7 (weight: 7), 9 (weight: 3), 10 (weight: 5).\nNode 1 is connected to nodes 4 (weight: 7), 9 (weight: 3), 10 (weight: 9).\nNode 2 is connected to nodes 7 (weight: 8), 8 (weight: 4).\nNode 3 is connected to nodes 6 (weight: 4), 8 (weight: 5).\nNode 4 is connected to nodes 1 (weight: 7), 8 (weight: 3).\nNode 5 is connected to node 8 (weight: 8).\nNode 6 is connected to nodes 3 (weight: 4), 8 (weight: 1).\nNode 7 is connected to nodes 0 (weight: 7), 2 (weight: 8), 8 (weight: 9).\nNode 8 is connected to nodes 2 (weight: 4), 3 (weight: 5), 4 (weight: 3), 5 (weight: 8), 6 (weight: 1), 7 (weight: 9).\nNode 9 is connected to nodes 0 (weight: 3), 1 (weight: 3).\nNode 10 is connected to nodes 0 (weight: 5), 1 (weight: 9).",
+    "graph_adj": "{0: [(7, weight:7), (9, weight:3), (10, weight:5)],\\n1: [(4, weight:7), (9, weight:3), (10, weight:9)],\\n2: [(7, weight:8), (8, weight:4)],\\n3: [(6, weight:4), (8, weight:5)],\\n4: [(1, weight:7), (8, weight:3)],\\n5: [(8, weight:8)],\\n6: [(3, weight:4), (8, weight:1)],\\n7: [(0, weight:7), (2, weight:8), (8, weight:9)],\\n8: [(2, weight:4), (3, weight:5), (4, weight:3), (5, weight:8), (6, weight:1), (7, weight:9)],\\n9: [(0, weight:3), (1, weight:3)],\\n10: [(0, weight:5), (1, weight:9)]}",
+    "question": "Perform a breadth-first search starting from node 6.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 6
+    },
+    "expected_answer": [
+      6,
+      3,
+      8,
+      2,
+      4,
+      5,
+      7,
+      1,
+      0,
+      9,
+      10
+    ]
+  },
+  {
+    "sample_id": 15,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 9), 3 (weight: 9), 8 (weight: 7).\nNode 1 is connected to nodes 2 (weight: 1), 3 (weight: 1), 7 (weight: 9), 8 (weight: 5).\nNode 2 is connected to nodes 3 (weight: 9), 4 (weight: 5).\nNode 3 is connected to nodes 2 (weight: 1), 5 (weight: 9).\nNode 4 is connected to nodes 7 (weight: 7), 9 (weight: 3).\nNode 5 is connected to nodes 2 (weight: 2), 7 (weight: 2), 8 (weight: 9), 9 (weight: 3).\nNode 6 is connected to node 1 (weight: 4).\nNode 7 is connected to nodes 3 (weight: 4), 5 (weight: 10).\nNode 8 is connected to nodes 2 (weight: 9), 4 (weight: 5), 5 (weight: 6), 6 (weight: 5), 9 (weight: 7).\nNode 9 is connected to nodes 0 (weight: 2), 1 (weight: 6), 3 (weight: 7), 8 (weight: 8).",
+    "graph_adj": "{0: [(1, weight:9), (3, weight:9), (8, weight:7)],\\n1: [(2, weight:1), (3, weight:1), (7, weight:9), (8, weight:5)],\\n2: [(3, weight:9), (4, weight:5)],\\n3: [(2, weight:1), (5, weight:9)],\\n4: [(7, weight:7), (9, weight:3)],\\n5: [(2, weight:2), (7, weight:2), (8, weight:9), (9, weight:3)],\\n6: [(1, weight:4)],\\n7: [(3, weight:4), (5, weight:10)],\\n8: [(2, weight:9), (4, weight:5), (5, weight:6), (6, weight:5), (9, weight:7)],\\n9: [(0, weight:2), (1, weight:6), (3, weight:7), (8, weight:8)]}",
+    "question": "Perform a breadth-first search starting from node 9.",
+    "directed": true,
+    "num_nodes": 10,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 9
+    },
+    "expected_answer": [
+      9,
+      0,
+      1,
+      3,
+      8,
+      2,
+      7,
+      5,
+      4,
+      6
+    ]
+  },
+  {
+    "sample_id": 16,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 8), 5 (weight: 10).\nNode 1 is connected to nodes 0 (weight: 10), 9 (weight: 4).\nNode 2 is connected to nodes 3 (weight: 8), 6 (weight: 2), 9 (weight: 3).\nNode 3 is connected to nodes 0 (weight: 5), 1 (weight: 1), 2 (weight: 7), 7 (weight: 6).\nNode 4 is connected to nodes 7 (weight: 10), 10 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 6), 1 (weight: 8).\nNode 6 is connected to nodes 0 (weight: 6), 3 (weight: 7), 8 (weight: 10), 9 (weight: 3), 10 (weight: 5).\nNode 7 is connected to nodes 0 (weight: 6), 3 (weight: 10), 6 (weight: 4).\nNode 8 is connected to nodes 0 (weight: 8), 1 (weight: 6), 5 (weight: 3), 6 (weight: 7).\nNode 9 is connected to nodes 1 (weight: 6), 7 (weight: 5).\nNode 10 is connected to nodes 0 (weight: 8), 1 (weight: 10), 2 (weight: 4), 3 (weight: 6), 4 (weight: 7), 5 (weight: 5), 6 (weight: 7).",
+    "graph_adj": "{0: [(2, weight:8), (5, weight:10)],\\n1: [(0, weight:10), (9, weight:4)],\\n2: [(3, weight:8), (6, weight:2), (9, weight:3)],\\n3: [(0, weight:5), (1, weight:1), (2, weight:7), (7, weight:6)],\\n4: [(7, weight:10), (10, weight:7)],\\n5: [(0, weight:6), (1, weight:8)],\\n6: [(0, weight:6), (3, weight:7), (8, weight:10), (9, weight:3), (10, weight:5)],\\n7: [(0, weight:6), (3, weight:10), (6, weight:4)],\\n8: [(0, weight:8), (1, weight:6), (5, weight:3), (6, weight:7)],\\n9: [(1, weight:6), (7, weight:5)],\\n10: [(0, weight:8), (1, weight:10), (2, weight:4), (3, weight:6), (4, weight:7), (5, weight:5), (6, weight:7)]}",
+    "question": "Perform a breadth-first search starting from node 5.",
+    "directed": true,
+    "num_nodes": 11,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 5
+    },
+    "expected_answer": [
+      5,
+      0,
+      1,
+      2,
+      9,
+      3,
+      6,
+      7,
+      8,
+      10,
+      4
+    ]
+  },
+  {
+    "sample_id": 17,
+    "graph_nl": "Node 0 is connected to nodes 8 (weight: 8), 2 (weight: 2).\nNode 1 is connected to nodes 6 (weight: 5), 10 (weight: 7).\nNode 2 is connected to node 0 (weight: 2).\nNode 3 is connected to node 8 (weight: 2).\nNode 4 is connected to node 7 (weight: 2).\nNode 5 is connected to nodes 9 (weight: 3), 10 (weight: 6).\nNode 6 is connected to node 1 (weight: 5).\nNode 7 is connected to node 4 (weight: 2).\nNode 8 is connected to nodes 0 (weight: 8), 3 (weight: 2).\nNode 9 is connected to node 5 (weight: 3).\nNode 10 is connected to nodes 1 (weight: 7), 5 (weight: 6).",
+    "graph_adj": "{0: [(8, weight:8), (2, weight:2)],\\n1: [(6, weight:5), (10, weight:7)],\\n2: [(0, weight:2)],\\n3: [(8, weight:2)],\\n4: [(7, weight:2)],\\n5: [(9, weight:3), (10, weight:6)],\\n6: [(1, weight:5)],\\n7: [(4, weight:2)],\\n8: [(0, weight:8), (3, weight:2)],\\n9: [(5, weight:3)],\\n10: [(1, weight:7), (5, weight:6)]}",
+    "question": "Perform a breadth-first search starting from node 4.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 4
+    },
+    "expected_answer": [
+      4,
+      7
+    ]
+  },
+  {
+    "sample_id": 18,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 7), 6 (weight: 2), 7 (weight: 4), 9 (weight: 5), 11 (weight: 1).\nNode 1 is connected to node 9 (weight: 8).\nNode 2 is connected to nodes 4 (weight: 5), 5 (weight: 6), 6 (weight: 2), 13 (weight: 8), 14 (weight: 2).\nNode 3 is connected to nodes 0 (weight: 7), 10 (weight: 4), 13 (weight: 4).\nNode 4 is connected to nodes 2 (weight: 5), 10 (weight: 10), 11 (weight: 6), 13 (weight: 10).\nNode 5 is connected to nodes 2 (weight: 6), 13 (weight: 7), 14 (weight: 3).\nNode 6 is connected to nodes 0 (weight: 2), 2 (weight: 2), 7 (weight: 10), 8 (weight: 3), 14 (weight: 4).\nNode 7 is connected to nodes 0 (weight: 4), 6 (weight: 10).\nNode 8 is connected to nodes 6 (weight: 3), 9 (weight: 4), 12 (weight: 1), 13 (weight: 10), 14 (weight: 6).\nNode 9 is connected to nodes 0 (weight: 5), 1 (weight: 8), 8 (weight: 4), 10 (weight: 9).\nNode 10 is connected to nodes 3 (weight: 4), 4 (weight: 10), 9 (weight: 9), 13 (weight: 5).\nNode 11 is connected to nodes 0 (weight: 1), 4 (weight: 6).\nNode 12 is connected to node 8 (weight: 1).\nNode 13 is connected to nodes 2 (weight: 8), 3 (weight: 4), 4 (weight: 10), 5 (weight: 7), 8 (weight: 10), 10 (weight: 5), 14 (weight: 10).\nNode 14 is connected to nodes 2 (weight: 2), 5 (weight: 3), 6 (weight: 4), 8 (weight: 6), 13 (weight: 10).",
+    "graph_adj": "{0: [(3, weight:7), (6, weight:2), (7, weight:4), (9, weight:5), (11, weight:1)],\\n1: [(9, weight:8)],\\n2: [(4, weight:5), (5, weight:6), (6, weight:2), (13, weight:8), (14, weight:2)],\\n3: [(0, weight:7), (10, weight:4), (13, weight:4)],\\n4: [(2, weight:5), (10, weight:10), (11, weight:6), (13, weight:10)],\\n5: [(2, weight:6), (13, weight:7), (14, weight:3)],\\n6: [(0, weight:2), (2, weight:2), (7, weight:10), (8, weight:3), (14, weight:4)],\\n7: [(0, weight:4), (6, weight:10)],\\n8: [(6, weight:3), (9, weight:4), (12, weight:1), (13, weight:10), (14, weight:6)],\\n9: [(0, weight:5), (1, weight:8), (8, weight:4), (10, weight:9)],\\n10: [(3, weight:4), (4, weight:10), (9, weight:9), (13, weight:5)],\\n11: [(0, weight:1), (4, weight:6)],\\n12: [(8, weight:1)],\\n13: [(2, weight:8), (3, weight:4), (4, weight:10), (5, weight:7), (8, weight:10), (10, weight:5), (14, weight:10)],\\n14: [(2, weight:2), (5, weight:3), (6, weight:4), (8, weight:6), (13, weight:10)]}",
+    "question": "Perform a breadth-first search starting from node 8.",
+    "directed": false,
+    "num_nodes": 15,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 8
+    },
+    "expected_answer": [
+      8,
+      6,
+      9,
+      12,
+      13,
+      14,
+      0,
+      2,
+      7,
+      1,
+      10,
+      3,
+      4,
+      5,
+      11
+    ]
+  },
+  {
+    "sample_id": 19,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 2), 7 (weight: 2), 10 (weight: 1), 11 (weight: 4).\nNode 1 is connected to nodes 0 (weight: 2), 3 (weight: 8), 4 (weight: 2), 6 (weight: 3), 9 (weight: 10).\nNode 2 is connected to node 3 (weight: 4).\nNode 3 is connected to nodes 1 (weight: 8), 2 (weight: 4), 6 (weight: 9).\nNode 4 is connected to nodes 1 (weight: 2), 9 (weight: 8), 11 (weight: 1).\nNode 5 is connected to nodes 9 (weight: 1), 12 (weight: 6).\nNode 6 is connected to nodes 1 (weight: 3), 3 (weight: 9), 8 (weight: 2).\nNode 7 is connected to node 0 (weight: 2).\nNode 8 is connected to nodes 6 (weight: 2), 9 (weight: 7), 11 (weight: 3).\nNode 9 is connected to nodes 1 (weight: 10), 4 (weight: 8), 5 (weight: 1), 8 (weight: 7), 11 (weight: 8).\nNode 10 is connected to node 0 (weight: 1).\nNode 11 is connected to nodes 0 (weight: 4), 4 (weight: 1), 8 (weight: 3), 9 (weight: 8).\nNode 12 is connected to node 5 (weight: 6).",
+    "graph_adj": "{0: [(1, weight:2), (7, weight:2), (10, weight:1), (11, weight:4)],\\n1: [(0, weight:2), (3, weight:8), (4, weight:2), (6, weight:3), (9, weight:10)],\\n2: [(3, weight:4)],\\n3: [(1, weight:8), (2, weight:4), (6, weight:9)],\\n4: [(1, weight:2), (9, weight:8), (11, weight:1)],\\n5: [(9, weight:1), (12, weight:6)],\\n6: [(1, weight:3), (3, weight:9), (8, weight:2)],\\n7: [(0, weight:2)],\\n8: [(6, weight:2), (9, weight:7), (11, weight:3)],\\n9: [(1, weight:10), (4, weight:8), (5, weight:1), (8, weight:7), (11, weight:8)],\\n10: [(0, weight:1)],\\n11: [(0, weight:4), (4, weight:1), (8, weight:3), (9, weight:8)],\\n12: [(5, weight:6)]}",
+    "question": "Perform a breadth-first search starting from node 1.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 1
+    },
+    "expected_answer": [
+      1,
+      0,
+      3,
+      4,
+      6,
+      9,
+      7,
+      10,
+      11,
+      2,
+      8,
+      5,
+      12
+    ]
+  },
+  {
+    "sample_id": 20,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 5), 4 (weight: 2), 10 (weight: 4), 13 (weight: 9).\nNode 1 is connected to nodes 2 (weight: 4), 7 (weight: 7), 9 (weight: 8), 10 (weight: 1).\nNode 2 is connected to nodes 1 (weight: 3), 4 (weight: 5), 7 (weight: 2), 9 (weight: 1), 12 (weight: 4).\nNode 3 is connected to nodes 0 (weight: 9), 6 (weight: 7), 8 (weight: 6), 10 (weight: 8), 12 (weight: 2).\nNode 4 is connected to nodes 6 (weight: 10), 9 (weight: 2), 11 (weight: 9), 12 (weight: 3).\nNode 5 is connected to nodes 2 (weight: 7), 10 (weight: 2), 11 (weight: 10), 12 (weight: 10).\nNode 6 is connected to nodes 1 (weight: 1), 11 (weight: 7), 12 (weight: 3).\nNode 7 is connected to nodes 0 (weight: 4), 2 (weight: 5), 5 (weight: 5), 6 (weight: 6), 8 (weight: 7), 9 (weight: 6).\nNode 8 is connected to nodes 0 (weight: 6), 5 (weight: 8), 11 (weight: 5).\nNode 9 is connected to nodes 2 (weight: 4), 4 (weight: 2), 5 (weight: 4), 10 (weight: 3), 12 (weight: 10).\nNode 10 is connected to nodes 0 (weight: 2), 1 (weight: 3), 4 (weight: 2), 6 (weight: 3), 11 (weight: 8), 12 (weight: 8).\nNode 11 is connected to nodes 3 (weight: 6), 5 (weight: 7), 6 (weight: 2), 8 (weight: 9).\nNode 12 is connected to nodes 1 (weight: 6), 4 (weight: 4), 7 (weight: 8).\nNode 13 is connected to nodes 2 (weight: 5), 4 (weight: 8), 8 (weight: 5).",
+    "graph_adj": "{0: [(2, weight:5), (4, weight:2), (10, weight:4), (13, weight:9)],\\n1: [(2, weight:4), (7, weight:7), (9, weight:8), (10, weight:1)],\\n2: [(1, weight:3), (4, weight:5), (7, weight:2), (9, weight:1), (12, weight:4)],\\n3: [(0, weight:9), (6, weight:7), (8, weight:6), (10, weight:8), (12, weight:2)],\\n4: [(6, weight:10), (9, weight:2), (11, weight:9), (12, weight:3)],\\n5: [(2, weight:7), (10, weight:2), (11, weight:10), (12, weight:10)],\\n6: [(1, weight:1), (11, weight:7), (12, weight:3)],\\n7: [(0, weight:4), (2, weight:5), (5, weight:5), (6, weight:6), (8, weight:7), (9, weight:6)],\\n8: [(0, weight:6), (5, weight:8), (11, weight:5)],\\n9: [(2, weight:4), (4, weight:2), (5, weight:4), (10, weight:3), (12, weight:10)],\\n10: [(0, weight:2), (1, weight:3), (4, weight:2), (6, weight:3), (11, weight:8), (12, weight:8)],\\n11: [(3, weight:6), (5, weight:7), (6, weight:2), (8, weight:9)],\\n12: [(1, weight:6), (4, weight:4), (7, weight:8)],\\n13: [(2, weight:5), (4, weight:8), (8, weight:5)]}",
+    "question": "Perform a breadth-first search starting from node 13.",
+    "directed": true,
+    "num_nodes": 14,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 13
+    },
+    "expected_answer": [
+      13,
+      2,
+      4,
+      8,
+      1,
+      7,
+      9,
+      12,
+      6,
+      11,
+      0,
+      5,
+      10,
+      3
+    ]
+  },
+  {
+    "sample_id": 21,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 8), 7 (weight: 6), 8 (weight: 10).\nNode 1 is connected to nodes 4 (weight: 9), 6 (weight: 6).\nNode 2 is connected to nodes 1 (weight: 7), 5 (weight: 5), 6 (weight: 3).\nNode 3 is connected to nodes 0 (weight: 1), 7 (weight: 6).\nNode 4 is connected to nodes 0 (weight: 10), 1 (weight: 4), 5 (weight: 1).\nNode 5 is connected to nodes 0 (weight: 5), 2 (weight: 1), 7 (weight: 8).\nNode 6 is connected to nodes 0 (weight: 9), 1 (weight: 6), 2 (weight: 10), 3 (weight: 4), 5 (weight: 3), 8 (weight: 2).\nNode 7 is connected to nodes 0 (weight: 4), 3 (weight: 4), 4 (weight: 5), 5 (weight: 9), 6 (weight: 1).",
+    "graph_adj": "{0: [(4, weight:8), (7, weight:6), (8, weight:10)],\\n1: [(4, weight:9), (6, weight:6)],\\n2: [(1, weight:7), (5, weight:5), (6, weight:3)],\\n3: [(0, weight:1), (7, weight:6)],\\n4: [(0, weight:10), (1, weight:4), (5, weight:1)],\\n5: [(0, weight:5), (2, weight:1), (7, weight:8)],\\n6: [(0, weight:9), (1, weight:6), (2, weight:10), (3, weight:4), (5, weight:3), (8, weight:2)],\\n7: [(0, weight:4), (3, weight:4), (4, weight:5), (5, weight:9), (6, weight:1)],\\n8: []}",
+    "question": "Perform a breadth-first search starting from node 3.",
+    "directed": true,
+    "num_nodes": 9,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 3
+    },
+    "expected_answer": [
+      3,
+      0,
+      7,
+      4,
+      8,
+      5,
+      6,
+      1,
+      2
+    ]
+  },
+  {
+    "sample_id": 22,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 6), 3 (weight: 8), 11 (weight: 1).\nNode 1 is connected to nodes 6 (weight: 5), 7 (weight: 4), 8 (weight: 4), 10 (weight: 2).\nNode 2 is connected to nodes 0 (weight: 6), 6 (weight: 6), 9 (weight: 5), 10 (weight: 2), 12 (weight: 1).\nNode 3 is connected to nodes 0 (weight: 8), 4 (weight: 1), 7 (weight: 7).\nNode 4 is connected to node 3 (weight: 1).\nNode 5 is connected to node 12 (weight: 8).\nNode 6 is connected to nodes 1 (weight: 5), 2 (weight: 6), 7 (weight: 7), 8 (weight: 3), 9 (weight: 7).\nNode 7 is connected to nodes 1 (weight: 4), 3 (weight: 7), 6 (weight: 7), 10 (weight: 8).\nNode 8 is connected to nodes 1 (weight: 4), 6 (weight: 3), 11 (weight: 7).\nNode 9 is connected to nodes 2 (weight: 5), 6 (weight: 7), 11 (weight: 6).\nNode 10 is connected to nodes 1 (weight: 2), 2 (weight: 2), 7 (weight: 8).\nNode 11 is connected to nodes 0 (weight: 1), 8 (weight: 7), 9 (weight: 6).\nNode 12 is connected to nodes 2 (weight: 1), 5 (weight: 8).",
+    "graph_adj": "{0: [(2, weight:6), (3, weight:8), (11, weight:1)],\\n1: [(6, weight:5), (7, weight:4), (8, weight:4), (10, weight:2)],\\n2: [(0, weight:6), (6, weight:6), (9, weight:5), (10, weight:2), (12, weight:1)],\\n3: [(0, weight:8), (4, weight:1), (7, weight:7)],\\n4: [(3, weight:1)],\\n5: [(12, weight:8)],\\n6: [(1, weight:5), (2, weight:6), (7, weight:7), (8, weight:3), (9, weight:7)],\\n7: [(1, weight:4), (3, weight:7), (6, weight:7), (10, weight:8)],\\n8: [(1, weight:4), (6, weight:3), (11, weight:7)],\\n9: [(2, weight:5), (6, weight:7), (11, weight:6)],\\n10: [(1, weight:2), (2, weight:2), (7, weight:8)],\\n11: [(0, weight:1), (8, weight:7), (9, weight:6)],\\n12: [(2, weight:1), (5, weight:8)]}",
+    "question": "Perform a breadth-first search starting from node 8.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 8
+    },
+    "expected_answer": [
+      8,
+      1,
+      6,
+      11,
+      7,
+      10,
+      2,
+      9,
+      0,
+      3,
+      12,
+      4,
+      5
+    ]
+  },
+  {
+    "sample_id": 23,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 8), 7 (weight: 3), 8 (weight: 1).\nNode 1 is connected to nodes 2 (weight: 6), 3 (weight: 1), 6 (weight: 7), 7 (weight: 2).\nNode 2 is connected to node 1 (weight: 6).\nNode 3 is connected to nodes 1 (weight: 1), 7 (weight: 5).\nNode 4 is connected to node 0 (weight: 8).\nNode 5 is connected to node 8 (weight: 10).\nNode 6 is connected to nodes 1 (weight: 7), 7 (weight: 8).\nNode 7 is connected to nodes 0 (weight: 3), 1 (weight: 2), 3 (weight: 5), 6 (weight: 8).\nNode 8 is connected to nodes 0 (weight: 1), 5 (weight: 10).",
+    "graph_adj": "{0: [(4, weight:8), (7, weight:3), (8, weight:1)],\\n1: [(2, weight:6), (3, weight:1), (6, weight:7), (7, weight:2)],\\n2: [(1, weight:6)],\\n3: [(1, weight:1), (7, weight:5)],\\n4: [(0, weight:8)],\\n5: [(8, weight:10)],\\n6: [(1, weight:7), (7, weight:8)],\\n7: [(0, weight:3), (1, weight:2), (3, weight:5), (6, weight:8)],\\n8: [(0, weight:1), (5, weight:10)]}",
+    "question": "Perform a breadth-first search starting from node 3.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "bfs",
+    "graph_size": "small",
+    "expected_tool": "breadth_first_search",
+    "expected_params": {
+      "source": 3
+    },
+    "expected_answer": [
+      3,
+      1,
+      7,
+      2,
+      6,
+      0,
+      4,
+      8,
+      5
+    ]
+  },
+  {
+    "sample_id": 24,
+    "graph_nl": "Node 0 is connected to node 4 (weight: 6).\nNode 1 is connected to nodes 0 (weight: 2), 6 (weight: 2), 7 (weight: 7).\nNode 2 is connected to nodes 1 (weight: 9), 5 (weight: 7), 7 (weight: 9).\nNode 3 is connected to nodes 5 (weight: 6), 6 (weight: 5).\nNode 4 is connected to nodes 6 (weight: 9), 7 (weight: 8).\nNode 5 is connected to node 2 (weight: 1).\nNode 6 is connected to nodes 0 (weight: 10), 4 (weight: 10), 5 (weight: 9), 7 (weight: 7).\nNode 7 is connected to nodes 0 (weight: 2), 1 (weight: 7), 3 (weight: 3), 5 (weight: 3).",
+    "graph_adj": "{0: [(4, weight:6)],\\n1: [(0, weight:2), (6, weight:2), (7, weight:7)],\\n2: [(1, weight:9), (5, weight:7), (7, weight:9)],\\n3: [(5, weight:6), (6, weight:5)],\\n4: [(6, weight:9), (7, weight:8)],\\n5: [(2, weight:1)],\\n6: [(0, weight:10), (4, weight:10), (5, weight:9), (7, weight:7)],\\n7: [(0, weight:2), (1, weight:7), (3, weight:3), (5, weight:3)]}",
+    "question": "Perform a depth-first search starting from node 1.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 1
+    },
+    "expected_answer": [
+      1,
+      0,
+      4,
+      6,
+      5,
+      2,
+      7,
+      3
+    ]
+  },
+  {
+    "sample_id": 25,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 4), 2 (weight: 7).\nNode 1 is connected to nodes 0 (weight: 4), 2 (weight: 8), 3 (weight: 9), 4 (weight: 6), 7 (weight: 1).\nNode 2 is connected to nodes 0 (weight: 7), 1 (weight: 8), 4 (weight: 9), 8 (weight: 3).\nNode 3 is connected to nodes 1 (weight: 9), 6 (weight: 2).\nNode 4 is connected to nodes 1 (weight: 6), 2 (weight: 9), 5 (weight: 5), 7 (weight: 9).\nNode 5 is connected to nodes 4 (weight: 5), 8 (weight: 7).\nNode 6 is connected to node 3 (weight: 2).\nNode 7 is connected to nodes 1 (weight: 1), 4 (weight: 9), 8 (weight: 3).\nNode 8 is connected to nodes 2 (weight: 3), 5 (weight: 7), 7 (weight: 3).",
+    "graph_adj": "{0: [(1, weight:4), (2, weight:7)],\\n1: [(0, weight:4), (2, weight:8), (3, weight:9), (4, weight:6), (7, weight:1)],\\n2: [(0, weight:7), (1, weight:8), (4, weight:9), (8, weight:3)],\\n3: [(1, weight:9), (6, weight:2)],\\n4: [(1, weight:6), (2, weight:9), (5, weight:5), (7, weight:9)],\\n5: [(4, weight:5), (8, weight:7)],\\n6: [(3, weight:2)],\\n7: [(1, weight:1), (4, weight:9), (8, weight:3)],\\n8: [(2, weight:3), (5, weight:7), (7, weight:3)]}",
+    "question": "Perform a depth-first search starting from node 8.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 8
+    },
+    "expected_answer": [
+      8,
+      2,
+      0,
+      1,
+      3,
+      6,
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "sample_id": 26,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 6), 3 (weight: 9), 4 (weight: 10), 5 (weight: 10), 7 (weight: 5).\nNode 1 is connected to node 6 (weight: 5).\nNode 2 is connected to node 7 (weight: 2).\nNode 3 is connected to nodes 1 (weight: 8), 2 (weight: 2), 4 (weight: 6), 7 (weight: 5).\nNode 4 is connected to nodes 0 (weight: 6), 1 (weight: 5), 2 (weight: 5).\nNode 5 is connected to nodes 2 (weight: 5), 3 (weight: 4), 6 (weight: 3).\nNode 6 is connected to node 3 (weight: 9).\nNode 7 is connected to nodes 0 (weight: 4), 5 (weight: 1).",
+    "graph_adj": "{0: [(2, weight:6), (3, weight:9), (4, weight:10), (5, weight:10), (7, weight:5)],\\n1: [(6, weight:5)],\\n2: [(7, weight:2)],\\n3: [(1, weight:8), (2, weight:2), (4, weight:6), (7, weight:5)],\\n4: [(0, weight:6), (1, weight:5), (2, weight:5)],\\n5: [(2, weight:5), (3, weight:4), (6, weight:3)],\\n6: [(3, weight:9)],\\n7: [(0, weight:4), (5, weight:1)]}",
+    "question": "Perform a depth-first search starting from node 6.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 6
+    },
+    "expected_answer": [
+      6,
+      3,
+      1,
+      2,
+      7,
+      0,
+      4,
+      5
+    ]
+  },
+  {
+    "sample_id": 27,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 6), 7 (weight: 1), 10 (weight: 6), 12 (weight: 9).\nNode 1 is connected to nodes 10 (weight: 4), 11 (weight: 1), 12 (weight: 1).\nNode 2 is connected to nodes 3 (weight: 4), 6 (weight: 4), 9 (weight: 6).\nNode 3 is connected to nodes 2 (weight: 4), 6 (weight: 5), 7 (weight: 3).\nNode 4 is connected to nodes 0 (weight: 6), 5 (weight: 2), 10 (weight: 7), 11 (weight: 9).\nNode 5 is connected to nodes 4 (weight: 2), 6 (weight: 10), 7 (weight: 5).\nNode 6 is connected to nodes 2 (weight: 4), 3 (weight: 5), 5 (weight: 10), 11 (weight: 3).\nNode 7 is connected to nodes 0 (weight: 1), 3 (weight: 3), 5 (weight: 5), 8 (weight: 2), 9 (weight: 1), 11 (weight: 5).\nNode 8 is connected to nodes 7 (weight: 2), 11 (weight: 5).\nNode 9 is connected to nodes 2 (weight: 6), 7 (weight: 1).\nNode 10 is connected to nodes 0 (weight: 6), 1 (weight: 4), 4 (weight: 7), 12 (weight: 8).\nNode 11 is connected to nodes 1 (weight: 1), 4 (weight: 9), 6 (weight: 3), 7 (weight: 5), 8 (weight: 5), 12 (weight: 9).\nNode 12 is connected to nodes 0 (weight: 9), 1 (weight: 1), 10 (weight: 8), 11 (weight: 9).",
+    "graph_adj": "{0: [(4, weight:6), (7, weight:1), (10, weight:6), (12, weight:9)],\\n1: [(10, weight:4), (11, weight:1), (12, weight:1)],\\n2: [(3, weight:4), (6, weight:4), (9, weight:6)],\\n3: [(2, weight:4), (6, weight:5), (7, weight:3)],\\n4: [(0, weight:6), (5, weight:2), (10, weight:7), (11, weight:9)],\\n5: [(4, weight:2), (6, weight:10), (7, weight:5)],\\n6: [(2, weight:4), (3, weight:5), (5, weight:10), (11, weight:3)],\\n7: [(0, weight:1), (3, weight:3), (5, weight:5), (8, weight:2), (9, weight:1), (11, weight:5)],\\n8: [(7, weight:2), (11, weight:5)],\\n9: [(2, weight:6), (7, weight:1)],\\n10: [(0, weight:6), (1, weight:4), (4, weight:7), (12, weight:8)],\\n11: [(1, weight:1), (4, weight:9), (6, weight:3), (7, weight:5), (8, weight:5), (12, weight:9)],\\n12: [(0, weight:9), (1, weight:1), (10, weight:8), (11, weight:9)]}",
+    "question": "Perform a depth-first search starting from node 9.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 9
+    },
+    "expected_answer": [
+      9,
+      2,
+      3,
+      6,
+      5,
+      4,
+      0,
+      7,
+      8,
+      11,
+      1,
+      10,
+      12
+    ]
+  },
+  {
+    "sample_id": 28,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 4), 6 (weight: 2), 9 (weight: 8), 10 (weight: 8), 12 (weight: 10).\nNode 1 is connected to nodes 0 (weight: 8), 3 (weight: 2), 11 (weight: 8), 12 (weight: 8).\nNode 2 is connected to nodes 1 (weight: 6), 3 (weight: 2), 5 (weight: 8), 6 (weight: 1), 8 (weight: 2), 10 (weight: 7), 12 (weight: 7).\nNode 3 is connected to node 8 (weight: 1).\nNode 4 is connected to nodes 5 (weight: 9), 10 (weight: 9), 11 (weight: 1), 12 (weight: 2).\nNode 5 is connected to nodes 0 (weight: 10), 6 (weight: 10), 12 (weight: 5).\nNode 6 is connected to nodes 0 (weight: 9), 8 (weight: 9), 11 (weight: 4), 12 (weight: 8).\nNode 7 is connected to nodes 4 (weight: 6), 9 (weight: 6).\nNode 8 is connected to nodes 4 (weight: 1), 5 (weight: 4), 10 (weight: 8).\nNode 10 is connected to nodes 1 (weight: 6), 3 (weight: 9), 8 (weight: 10).\nNode 11 is connected to nodes 7 (weight: 10), 12 (weight: 8).\nNode 12 is connected to nodes 4 (weight: 6), 8 (weight: 8).",
+    "graph_adj": "{0: [(2, weight:4), (6, weight:2), (9, weight:8), (10, weight:8), (12, weight:10)],\\n1: [(0, weight:8), (3, weight:2), (11, weight:8), (12, weight:8)],\\n2: [(1, weight:6), (3, weight:2), (5, weight:8), (6, weight:1), (8, weight:2), (10, weight:7), (12, weight:7)],\\n3: [(8, weight:1)],\\n4: [(5, weight:9), (10, weight:9), (11, weight:1), (12, weight:2)],\\n5: [(0, weight:10), (6, weight:10), (12, weight:5)],\\n6: [(0, weight:9), (8, weight:9), (11, weight:4), (12, weight:8)],\\n7: [(4, weight:6), (9, weight:6)],\\n8: [(4, weight:1), (5, weight:4), (10, weight:8)],\\n9: [],\\n10: [(1, weight:6), (3, weight:9), (8, weight:10)],\\n11: [(7, weight:10), (12, weight:8)],\\n12: [(4, weight:6), (8, weight:8)]}",
+    "question": "Perform a depth-first search starting from node 1.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 1
+    },
+    "expected_answer": [
+      1,
+      0,
+      2,
+      3,
+      8,
+      4,
+      5,
+      6,
+      11,
+      7,
+      9,
+      12,
+      10
+    ]
+  },
+  {
+    "sample_id": 29,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 10), 5 (weight: 3), 8 (weight: 3).\nNode 1 is connected to nodes 0 (weight: 10), 2 (weight: 2), 3 (weight: 7), 6 (weight: 10), 8 (weight: 10).\nNode 2 is connected to nodes 1 (weight: 2), 8 (weight: 6), 7 (weight: 9).\nNode 3 is connected to node 1 (weight: 7).\nNode 4 is connected to node 8 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 3), 8 (weight: 7).\nNode 6 is connected to node 1 (weight: 10).\nNode 7 is connected to node 2 (weight: 9).\nNode 8 is connected to nodes 0 (weight: 3), 1 (weight: 10), 2 (weight: 6), 4 (weight: 7), 5 (weight: 7).",
+    "graph_adj": "{0: [(1, weight:10), (5, weight:3), (8, weight:3)],\\n1: [(0, weight:10), (2, weight:2), (3, weight:7), (6, weight:10), (8, weight:10)],\\n2: [(1, weight:2), (8, weight:6), (7, weight:9)],\\n3: [(1, weight:7)],\\n4: [(8, weight:7)],\\n5: [(0, weight:3), (8, weight:7)],\\n6: [(1, weight:10)],\\n7: [(2, weight:9)],\\n8: [(0, weight:3), (1, weight:10), (2, weight:6), (4, weight:7), (5, weight:7)]}",
+    "question": "Perform a depth-first search starting from node 3.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 3
+    },
+    "expected_answer": [
+      3,
+      1,
+      0,
+      5,
+      8,
+      2,
+      7,
+      4,
+      6
+    ]
+  },
+  {
+    "sample_id": 30,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 7), 4 (weight: 2).\nNode 1 is connected to nodes 2 (weight: 7), 3 (weight: 5), 7 (weight: 9), 10 (weight: 5).\nNode 3 is connected to nodes 1 (weight: 1), 2 (weight: 9), 5 (weight: 6), 6 (weight: 9), 7 (weight: 9), 11 (weight: 8).\nNode 4 is connected to nodes 0 (weight: 8), 2 (weight: 1), 10 (weight: 5).\nNode 5 is connected to node 6 (weight: 4).\nNode 6 is connected to nodes 0 (weight: 6), 2 (weight: 9), 7 (weight: 2).\nNode 7 is connected to nodes 1 (weight: 2), 3 (weight: 3), 6 (weight: 9), 10 (weight: 9), 11 (weight: 1).\nNode 8 is connected to nodes 0 (weight: 2), 1 (weight: 4), 2 (weight: 4), 4 (weight: 7), 7 (weight: 2).\nNode 9 is connected to node 5 (weight: 4).\nNode 10 is connected to nodes 0 (weight: 9), 7 (weight: 7).\nNode 11 is connected to nodes 3 (weight: 2), 5 (weight: 3), 8 (weight: 1), 9 (weight: 8).",
+    "graph_adj": "{0: [(2, weight:7), (4, weight:2)],\\n1: [(2, weight:7), (3, weight:5), (7, weight:9), (10, weight:5)],\\n2: [],\\n3: [(1, weight:1), (2, weight:9), (5, weight:6), (6, weight:9), (7, weight:9), (11, weight:8)],\\n4: [(0, weight:8), (2, weight:1), (10, weight:5)],\\n5: [(6, weight:4)],\\n6: [(0, weight:6), (2, weight:9), (7, weight:2)],\\n7: [(1, weight:2), (3, weight:3), (6, weight:9), (10, weight:9), (11, weight:1)],\\n8: [(0, weight:2), (1, weight:4), (2, weight:4), (4, weight:7), (7, weight:2)],\\n9: [(5, weight:4)],\\n10: [(0, weight:9), (7, weight:7)],\\n11: [(3, weight:2), (5, weight:3), (8, weight:1), (9, weight:8)]}",
+    "question": "Perform a depth-first search starting from node 11.",
+    "directed": true,
+    "num_nodes": 12,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 11
+    },
+    "expected_answer": [
+      11,
+      3,
+      1,
+      2,
+      7,
+      6,
+      0,
+      4,
+      10,
+      5,
+      8,
+      9
+    ]
+  },
+  {
+    "sample_id": 31,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 1), 2 (weight: 6), 3 (weight: 2), 4 (weight: 9), 12 (weight: 5).\nNode 1 is connected to nodes 0 (weight: 5), 3 (weight: 10), 5 (weight: 9), 9 (weight: 10), 12 (weight: 3).\nNode 2 is connected to nodes 4 (weight: 7), 5 (weight: 7), 6 (weight: 6), 10 (weight: 10), 12 (weight: 2).\nNode 3 is connected to nodes 6 (weight: 9), 8 (weight: 5), 9 (weight: 7).\nNode 4 is connected to nodes 0 (weight: 4), 1 (weight: 9), 5 (weight: 7), 8 (weight: 6), 9 (weight: 6), 11 (weight: 8), 12 (weight: 8).\nNode 5 is connected to nodes 2 (weight: 10), 8 (weight: 1), 10 (weight: 9), 11 (weight: 3).\nNode 6 is connected to nodes 3 (weight: 8), 4 (weight: 3), 5 (weight: 4), 7 (weight: 2), 12 (weight: 9).\nNode 7 is connected to nodes 3 (weight: 5), 9 (weight: 4).\nNode 8 is connected to nodes 4 (weight: 3), 6 (weight: 3), 7 (weight: 3), 11 (weight: 6).\nNode 9 is connected to nodes 8 (weight: 10), 10 (weight: 2), 11 (weight: 4).\nNode 10 is connected to nodes 2 (weight: 7), 7 (weight: 6), 9 (weight: 2), 12 (weight: 8).\nNode 11 is connected to nodes 0 (weight: 8), 5 (weight: 8), 6 (weight: 4), 10 (weight: 10).\nNode 12 is connected to nodes 1 (weight: 3), 3 (weight: 7), 4 (weight: 1), 5 (weight: 4).",
+    "graph_adj": "{0: [(1, weight:1), (2, weight:6), (3, weight:2), (4, weight:9), (12, weight:5)],\\n1: [(0, weight:5), (3, weight:10), (5, weight:9), (9, weight:10), (12, weight:3)],\\n2: [(4, weight:7), (5, weight:7), (6, weight:6), (10, weight:10), (12, weight:2)],\\n3: [(6, weight:9), (8, weight:5), (9, weight:7)],\\n4: [(0, weight:4), (1, weight:9), (5, weight:7), (8, weight:6), (9, weight:6), (11, weight:8), (12, weight:8)],\\n5: [(2, weight:10), (8, weight:1), (10, weight:9), (11, weight:3)],\\n6: [(3, weight:8), (4, weight:3), (5, weight:4), (7, weight:2), (12, weight:9)],\\n7: [(3, weight:5), (9, weight:4)],\\n8: [(4, weight:3), (6, weight:3), (7, weight:3), (11, weight:6)],\\n9: [(8, weight:10), (10, weight:2), (11, weight:4)],\\n10: [(2, weight:7), (7, weight:6), (9, weight:2), (12, weight:8)],\\n11: [(0, weight:8), (5, weight:8), (6, weight:4), (10, weight:10)],\\n12: [(1, weight:3), (3, weight:7), (4, weight:1), (5, weight:4)]}",
+    "question": "Perform a depth-first search starting from node 0.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 0
+    },
+    "expected_answer": [
+      0,
+      1,
+      3,
+      6,
+      4,
+      5,
+      2,
+      10,
+      7,
+      9,
+      8,
+      11,
+      12
+    ]
+  },
+  {
+    "sample_id": 32,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 8), 3 (weight: 3), 5 (weight: 10), 6 (weight: 9), 7 (weight: 1).\nNode 1 is connected to nodes 0 (weight: 8), 3 (weight: 7), 6 (weight: 9), 7 (weight: 7).\nNode 2 is connected to nodes 4 (weight: 6), 9 (weight: 1).\nNode 3 is connected to nodes 0 (weight: 3), 1 (weight: 7), 5 (weight: 9).\nNode 4 is connected to nodes 2 (weight: 6), 5 (weight: 7), 7 (weight: 4), 8 (weight: 8).\nNode 5 is connected to nodes 0 (weight: 10), 3 (weight: 9), 4 (weight: 7), 8 (weight: 7), 9 (weight: 6).\nNode 6 is connected to nodes 0 (weight: 9), 1 (weight: 9), 9 (weight: 10).\nNode 7 is connected to nodes 0 (weight: 1), 1 (weight: 7), 4 (weight: 4).\nNode 8 is connected to nodes 4 (weight: 8), 5 (weight: 7), 9 (weight: 10).\nNode 9 is connected to nodes 2 (weight: 1), 5 (weight: 6), 6 (weight: 10), 8 (weight: 10).",
+    "graph_adj": "{0: [(1, weight:8), (3, weight:3), (5, weight:10), (6, weight:9), (7, weight:1)],\\n1: [(0, weight:8), (3, weight:7), (6, weight:9), (7, weight:7)],\\n2: [(4, weight:6), (9, weight:1)],\\n3: [(0, weight:3), (1, weight:7), (5, weight:9)],\\n4: [(2, weight:6), (5, weight:7), (7, weight:4), (8, weight:8)],\\n5: [(0, weight:10), (3, weight:9), (4, weight:7), (8, weight:7), (9, weight:6)],\\n6: [(0, weight:9), (1, weight:9), (9, weight:10)],\\n7: [(0, weight:1), (1, weight:7), (4, weight:4)],\\n8: [(4, weight:8), (5, weight:7), (9, weight:10)],\\n9: [(2, weight:1), (5, weight:6), (6, weight:10), (8, weight:10)]}",
+    "question": "Perform a depth-first search starting from node 1.",
+    "directed": false,
+    "num_nodes": 10,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 1
+    },
+    "expected_answer": [
+      1,
+      0,
+      3,
+      5,
+      4,
+      2,
+      9,
+      6,
+      8,
+      7
+    ]
+  },
+  {
+    "sample_id": 33,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 2), 4 (weight: 9), 7 (weight: 8), 11 (weight: 6), 12 (weight: 1).\nNode 1 is connected to nodes 4 (weight: 1), 6 (weight: 4), 10 (weight: 7).\nNode 2 is connected to node 5 (weight: 10).\nNode 3 is connected to nodes 1 (weight: 2), 2 (weight: 6), 9 (weight: 6), 11 (weight: 10), 12 (weight: 5), 13 (weight: 3).\nNode 4 is connected to nodes 2 (weight: 9), 3 (weight: 5), 5 (weight: 4), 6 (weight: 5).\nNode 5 is connected to nodes 3 (weight: 8), 7 (weight: 10), 8 (weight: 6), 11 (weight: 6), 12 (weight: 3), 13 (weight: 8).\nNode 6 is connected to nodes 0 (weight: 7), 1 (weight: 4), 2 (weight: 7), 11 (weight: 6), 12 (weight: 6), 13 (weight: 7).\nNode 7 is connected to nodes 4 (weight: 5), 6 (weight: 8), 10 (weight: 3), 12 (weight: 10), 13 (weight: 3).\nNode 8 is connected to node 0 (weight: 10).\nNode 9 is connected to nodes 3 (weight: 4), 4 (weight: 2), 5 (weight: 5), 10 (weight: 4).\nNode 10 is connected to nodes 0 (weight: 9), 2 (weight: 7), 3 (weight: 7), 6 (weight: 4), 12 (weight: 3).\nNode 11 is connected to nodes 3 (weight: 3), 6 (weight: 8), 7 (weight: 1), 8 (weight: 3), 10 (weight: 7), 12 (weight: 8).\nNode 12 is connected to node 5 (weight: 3).\nNode 13 is connected to nodes 2 (weight: 9), 3 (weight: 9), 5 (weight: 6), 12 (weight: 8).",
+    "graph_adj": "{0: [(2, weight:2), (4, weight:9), (7, weight:8), (11, weight:6), (12, weight:1)],\\n1: [(4, weight:1), (6, weight:4), (10, weight:7)],\\n2: [(5, weight:10)],\\n3: [(1, weight:2), (2, weight:6), (9, weight:6), (11, weight:10), (12, weight:5), (13, weight:3)],\\n4: [(2, weight:9), (3, weight:5), (5, weight:4), (6, weight:5)],\\n5: [(3, weight:8), (7, weight:10), (8, weight:6), (11, weight:6), (12, weight:3), (13, weight:8)],\\n6: [(0, weight:7), (1, weight:4), (2, weight:7), (11, weight:6), (12, weight:6), (13, weight:7)],\\n7: [(4, weight:5), (6, weight:8), (10, weight:3), (12, weight:10), (13, weight:3)],\\n8: [(0, weight:10)],\\n9: [(3, weight:4), (4, weight:2), (5, weight:5), (10, weight:4)],\\n10: [(0, weight:9), (2, weight:7), (3, weight:7), (6, weight:4), (12, weight:3)],\\n11: [(3, weight:3), (6, weight:8), (7, weight:1), (8, weight:3), (10, weight:7), (12, weight:8)],\\n12: [(5, weight:3)],\\n13: [(2, weight:9), (3, weight:9), (5, weight:6), (12, weight:8)]}",
+    "question": "Perform a depth-first search starting from node 4.",
+    "directed": true,
+    "num_nodes": 14,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 4
+    },
+    "expected_answer": [
+      4,
+      2,
+      5,
+      3,
+      1,
+      6,
+      0,
+      7,
+      10,
+      12,
+      13,
+      11,
+      8,
+      9
+    ]
+  },
+  {
+    "sample_id": 34,
+    "graph_nl": "Node 0 is connected to node 4 (weight: 2).\nNode 1 is connected to nodes 3 (weight: 2), 4 (weight: 5), 5 (weight: 10), 8 (weight: 3), 11 (weight: 2).\nNode 2 is connected to node 10 (weight: 7).\nNode 3 is connected to nodes 1 (weight: 2), 4 (weight: 5), 5 (weight: 4), 11 (weight: 4).\nNode 4 is connected to nodes 0 (weight: 2), 1 (weight: 5), 3 (weight: 5), 5 (weight: 5), 6 (weight: 8), 8 (weight: 3), 9 (weight: 3), 11 (weight: 9).\nNode 5 is connected to nodes 1 (weight: 10), 3 (weight: 4), 4 (weight: 5).\nNode 6 is connected to nodes 4 (weight: 8), 7 (weight: 3), 8 (weight: 1).\nNode 7 is connected to nodes 6 (weight: 3), 9 (weight: 1), 10 (weight: 6), 11 (weight: 6).\nNode 8 is connected to nodes 1 (weight: 3), 4 (weight: 3), 6 (weight: 1), 9 (weight: 8).\nNode 9 is connected to nodes 4 (weight: 3), 7 (weight: 1), 8 (weight: 8), 10 (weight: 8).\nNode 10 is connected to nodes 2 (weight: 7), 7 (weight: 6), 9 (weight: 8).\nNode 11 is connected to nodes 1 (weight: 2), 3 (weight: 4), 4 (weight: 9), 7 (weight: 6).",
+    "graph_adj": "{0: [(4, weight:2)],\\n1: [(3, weight:2), (4, weight:5), (5, weight:10), (8, weight:3), (11, weight:2)],\\n2: [(10, weight:7)],\\n3: [(1, weight:2), (4, weight:5), (5, weight:4), (11, weight:4)],\\n4: [(0, weight:2), (1, weight:5), (3, weight:5), (5, weight:5), (6, weight:8), (8, weight:3), (9, weight:3), (11, weight:9)],\\n5: [(1, weight:10), (3, weight:4), (4, weight:5)],\\n6: [(4, weight:8), (7, weight:3), (8, weight:1)],\\n7: [(6, weight:3), (9, weight:1), (10, weight:6), (11, weight:6)],\\n8: [(1, weight:3), (4, weight:3), (6, weight:1), (9, weight:8)],\\n9: [(4, weight:3), (7, weight:1), (8, weight:8), (10, weight:8)],\\n10: [(2, weight:7), (7, weight:6), (9, weight:8)],\\n11: [(1, weight:2), (3, weight:4), (4, weight:9), (7, weight:6)]}",
+    "question": "Perform a depth-first search starting from node 8.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 8
+    },
+    "expected_answer": [
+      8,
+      1,
+      3,
+      4,
+      0,
+      5,
+      6,
+      7,
+      9,
+      10,
+      2,
+      11
+    ]
+  },
+  {
+    "sample_id": 35,
+    "graph_nl": "Node 0 is connected to node 1 (weight: 1).\nNode 1 is connected to nodes 0 (weight: 1), 3 (weight: 4), 4 (weight: 2), 7 (weight: 3), 8 (weight: 1), 11 (weight: 8).\nNode 2 is connected to nodes 3 (weight: 4), 8 (weight: 6).\nNode 3 is connected to nodes 1 (weight: 4), 2 (weight: 4), 6 (weight: 7), 9 (weight: 5).\nNode 4 is connected to nodes 1 (weight: 2), 6 (weight: 8), 7 (weight: 6).\nNode 5 is connected to nodes 7 (weight: 8), 10 (weight: 1), 11 (weight: 6).\nNode 6 is connected to nodes 3 (weight: 7), 4 (weight: 8), 7 (weight: 2), 8 (weight: 3), 9 (weight: 1).\nNode 7 is connected to nodes 1 (weight: 3), 4 (weight: 6), 5 (weight: 8), 6 (weight: 2), 11 (weight: 5).\nNode 8 is connected to nodes 1 (weight: 1), 2 (weight: 6), 6 (weight: 3), 10 (weight: 7).\nNode 9 is connected to nodes 3 (weight: 5), 6 (weight: 1), 10 (weight: 2), 11 (weight: 9).\nNode 10 is connected to nodes 5 (weight: 1), 8 (weight: 7), 9 (weight: 2).\nNode 11 is connected to nodes 1 (weight: 8), 5 (weight: 6), 7 (weight: 5), 9 (weight: 9).",
+    "graph_adj": "{0: [(1, weight:1)],\\n1: [(0, weight:1), (3, weight:4), (4, weight:2), (7, weight:3), (8, weight:1), (11, weight:8)],\\n2: [(3, weight:4), (8, weight:6)],\\n3: [(1, weight:4), (2, weight:4), (6, weight:7), (9, weight:5)],\\n4: [(1, weight:2), (6, weight:8), (7, weight:6)],\\n5: [(7, weight:8), (10, weight:1), (11, weight:6)],\\n6: [(3, weight:7), (4, weight:8), (7, weight:2), (8, weight:3), (9, weight:1)],\\n7: [(1, weight:3), (4, weight:6), (5, weight:8), (6, weight:2), (11, weight:5)],\\n8: [(1, weight:1), (2, weight:6), (6, weight:3), (10, weight:7)],\\n9: [(3, weight:5), (6, weight:1), (10, weight:2), (11, weight:9)],\\n10: [(5, weight:1), (8, weight:7), (9, weight:2)],\\n11: [(1, weight:8), (5, weight:6), (7, weight:5), (9, weight:9)]}",
+    "question": "Perform a depth-first search starting from node 7.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "dfs",
+    "graph_size": "small",
+    "expected_tool": "depth_first_search",
+    "expected_params": {
+      "source": 7
+    },
+    "expected_answer": [
+      7,
+      1,
+      0,
+      3,
+      2,
+      8,
+      6,
+      4,
+      9,
+      10,
+      5,
+      11
+    ]
+  },
+  {
+    "sample_id": 36,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 9), 6 (weight: 7).\nNode 1 is connected to node 0 (weight: 4).\nNode 2 is connected to nodes 1 (weight: 9), 5 (weight: 8), 7 (weight: 9).\nNode 3 is connected to nodes 0 (weight: 3), 1 (weight: 10), 5 (weight: 5), 6 (weight: 6), 7 (weight: 7), 9 (weight: 6).\nNode 4 is connected to nodes 0 (weight: 2), 6 (weight: 2), 7 (weight: 9), 8 (weight: 2).\nNode 5 is connected to nodes 3 (weight: 1), 8 (weight: 3), 9 (weight: 3).\nNode 6 is connected to nodes 5 (weight: 1), 9 (weight: 4).\nNode 7 is connected to nodes 3 (weight: 2), 5 (weight: 8), 6 (weight: 4).\nNode 8 is connected to nodes 0 (weight: 2), 4 (weight: 1), 5 (weight: 10), 6 (weight: 7), 7 (weight: 8).\nNode 9 is connected to nodes 0 (weight: 9), 3 (weight: 10), 4 (weight: 10), 7 (weight: 5).",
+    "graph_adj": "{0: [(4, weight:9), (6, weight:7)],\\n1: [(0, weight:4)],\\n2: [(1, weight:9), (5, weight:8), (7, weight:9)],\\n3: [(0, weight:3), (1, weight:10), (5, weight:5), (6, weight:6), (7, weight:7), (9, weight:6)],\\n4: [(0, weight:2), (6, weight:2), (7, weight:9), (8, weight:2)],\\n5: [(3, weight:1), (8, weight:3), (9, weight:3)],\\n6: [(5, weight:1), (9, weight:4)],\\n7: [(3, weight:2), (5, weight:8), (6, weight:4)],\\n8: [(0, weight:2), (4, weight:1), (5, weight:10), (6, weight:7), (7, weight:8)],\\n9: [(0, weight:9), (3, weight:10), (4, weight:10), (7, weight:5)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": true,
+    "num_nodes": 10,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 37,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 5), 4 (weight: 6), 7 (weight: 8).\nNode 1 is connected to node 2 (weight: 8).\nNode 2 is connected to nodes 1 (weight: 7), 3 (weight: 1), 4 (weight: 1).\nNode 3 is connected to nodes 0 (weight: 5), 4 (weight: 10), 6 (weight: 1).\nNode 4 is connected to nodes 0 (weight: 9), 3 (weight: 3).\nNode 5 is connected to nodes 2 (weight: 5), 3 (weight: 1), 7 (weight: 5).\nNode 7 is connected to node 5 (weight: 4).",
+    "graph_adj": "{0: [(2, weight:5), (4, weight:6), (7, weight:8)],\\n1: [(2, weight:8)],\\n2: [(1, weight:7), (3, weight:1), (4, weight:1)],\\n3: [(0, weight:5), (4, weight:10), (6, weight:1)],\\n4: [(0, weight:9), (3, weight:3)],\\n5: [(2, weight:5), (3, weight:1), (7, weight:5)],\\n6: [],\\n7: [(5, weight:4)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 38,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 2), 4 (weight: 4), 8 (weight: 7), 9 (weight: 5).\nNode 1 is connected to nodes 0 (weight: 2), 2 (weight: 7), 5 (weight: 3), 7 (weight: 3).\nNode 2 is connected to nodes 1 (weight: 7), 5 (weight: 6).\nNode 3 is connected to nodes 7 (weight: 2), 8 (weight: 8).\nNode 4 is connected to nodes 0 (weight: 4), 9 (weight: 10).\nNode 5 is connected to nodes 1 (weight: 3), 2 (weight: 6), 7 (weight: 1).\nNode 6 is connected to nodes 7 (weight: 9), 9 (weight: 7).\nNode 7 is connected to nodes 1 (weight: 3), 3 (weight: 2), 5 (weight: 1), 6 (weight: 9), 8 (weight: 5), 9 (weight: 2).\nNode 8 is connected to nodes 0 (weight: 7), 3 (weight: 8), 7 (weight: 5), 10 (weight: 7).\nNode 9 is connected to nodes 0 (weight: 5), 4 (weight: 10), 6 (weight: 7), 7 (weight: 2).\nNode 10 is connected to node 8 (weight: 7).",
+    "graph_adj": "{0: [(1, weight:2), (4, weight:4), (8, weight:7), (9, weight:5)],\\n1: [(0, weight:2), (2, weight:7), (5, weight:3), (7, weight:3)],\\n2: [(1, weight:7), (5, weight:6)],\\n3: [(7, weight:2), (8, weight:8)],\\n4: [(0, weight:4), (9, weight:10)],\\n5: [(1, weight:3), (2, weight:6), (7, weight:1)],\\n6: [(7, weight:9), (9, weight:7)],\\n7: [(1, weight:3), (3, weight:2), (5, weight:1), (6, weight:9), (8, weight:5), (9, weight:2)],\\n8: [(0, weight:7), (3, weight:8), (7, weight:5), (10, weight:7)],\\n9: [(0, weight:5), (4, weight:10), (6, weight:7), (7, weight:2)],\\n10: [(8, weight:7)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 39,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 4), 2 (weight: 9), 6 (weight: 5), 9 (weight: 1), 10 (weight: 5).\nNode 1 is connected to nodes 0 (weight: 4), 2 (weight: 7), 8 (weight: 1).\nNode 2 is connected to nodes 0 (weight: 9), 1 (weight: 7), 3 (weight: 9), 4 (weight: 5), 6 (weight: 4), 10 (weight: 3), 11 (weight: 6).\nNode 3 is connected to nodes 2 (weight: 9), 6 (weight: 7), 8 (weight: 3), 10 (weight: 2), 11 (weight: 7), 13 (weight: 9).\nNode 4 is connected to nodes 2 (weight: 5), 6 (weight: 10), 9 (weight: 4), 11 (weight: 7).\nNode 5 is connected to nodes 6 (weight: 4), 7 (weight: 10), 8 (weight: 3), 11 (weight: 7), 13 (weight: 5).\nNode 6 is connected to nodes 0 (weight: 5), 2 (weight: 4), 3 (weight: 7), 4 (weight: 10), 5 (weight: 4), 8 (weight: 10), 12 (weight: 6).\nNode 7 is connected to nodes 5 (weight: 10), 9 (weight: 8), 12 (weight: 9).\nNode 8 is connected to nodes 1 (weight: 1), 3 (weight: 3), 5 (weight: 3), 6 (weight: 10), 11 (weight: 3).\nNode 9 is connected to nodes 0 (weight: 1), 4 (weight: 4), 7 (weight: 8), 11 (weight: 4), 12 (weight: 3).\nNode 10 is connected to nodes 0 (weight: 5), 2 (weight: 3), 3 (weight: 2), 13 (weight: 10).\nNode 11 is connected to nodes 2 (weight: 6), 3 (weight: 7), 4 (weight: 7), 5 (weight: 7), 8 (weight: 3), 9 (weight: 4).\nNode 12 is connected to nodes 6 (weight: 6), 7 (weight: 9), 9 (weight: 3).\nNode 13 is connected to nodes 3 (weight: 9), 5 (weight: 5), 10 (weight: 10).",
+    "graph_adj": "{0: [(1, weight:4), (2, weight:9), (6, weight:5), (9, weight:1), (10, weight:5)],\\n1: [(0, weight:4), (2, weight:7), (8, weight:1)],\\n2: [(0, weight:9), (1, weight:7), (3, weight:9), (4, weight:5), (6, weight:4), (10, weight:3), (11, weight:6)],\\n3: [(2, weight:9), (6, weight:7), (8, weight:3), (10, weight:2), (11, weight:7), (13, weight:9)],\\n4: [(2, weight:5), (6, weight:10), (9, weight:4), (11, weight:7)],\\n5: [(6, weight:4), (7, weight:10), (8, weight:3), (11, weight:7), (13, weight:5)],\\n6: [(0, weight:5), (2, weight:4), (3, weight:7), (4, weight:10), (5, weight:4), (8, weight:10), (12, weight:6)],\\n7: [(5, weight:10), (9, weight:8), (12, weight:9)],\\n8: [(1, weight:1), (3, weight:3), (5, weight:3), (6, weight:10), (11, weight:3)],\\n9: [(0, weight:1), (4, weight:4), (7, weight:8), (11, weight:4), (12, weight:3)],\\n10: [(0, weight:5), (2, weight:3), (3, weight:2), (13, weight:10)],\\n11: [(2, weight:6), (3, weight:7), (4, weight:7), (5, weight:7), (8, weight:3), (9, weight:4)],\\n12: [(6, weight:6), (7, weight:9), (9, weight:3)],\\n13: [(3, weight:9), (5, weight:5), (10, weight:10)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 14,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 40,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 8), 7 (weight: 10).\nNode 1 is connected to node 4 (weight: 8).\nNode 2 is connected to nodes 8 (weight: 6), 10 (weight: 8).\nNode 3 is connected to nodes 4 (weight: 4), 7 (weight: 7), 9 (weight: 7), 10 (weight: 1).\nNode 4 is connected to nodes 0 (weight: 8), 1 (weight: 8), 3 (weight: 4).\nNode 5 is connected to node 10 (weight: 10).\nNode 6 is connected to nodes 7 (weight: 7), 8 (weight: 6), 10 (weight: 7).\nNode 7 is connected to nodes 0 (weight: 10), 3 (weight: 7), 6 (weight: 7), 8 (weight: 10).\nNode 8 is connected to nodes 2 (weight: 6), 6 (weight: 6), 7 (weight: 10).\nNode 9 is connected to nodes 3 (weight: 7), 10 (weight: 10).\nNode 10 is connected to nodes 2 (weight: 8), 3 (weight: 1), 5 (weight: 10), 6 (weight: 7), 9 (weight: 10).",
+    "graph_adj": "{0: [(4, weight:8), (7, weight:10)],\\n1: [(4, weight:8)],\\n2: [(8, weight:6), (10, weight:8)],\\n3: [(4, weight:4), (7, weight:7), (9, weight:7), (10, weight:1)],\\n4: [(0, weight:8), (1, weight:8), (3, weight:4)],\\n5: [(10, weight:10)],\\n6: [(7, weight:7), (8, weight:6), (10, weight:7)],\\n7: [(0, weight:10), (3, weight:7), (6, weight:7), (8, weight:10)],\\n8: [(2, weight:6), (6, weight:6), (7, weight:10)],\\n9: [(3, weight:7), (10, weight:10)],\\n10: [(2, weight:8), (3, weight:1), (5, weight:10), (6, weight:7), (9, weight:10)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 41,
+    "graph_nl": "Node 0 is connected to node 3 (weight: 7).\nNode 1 is connected to nodes 5 (weight: 7), 6 (weight: 6), 2 (weight: 8).\nNode 2 is connected to node 1 (weight: 8).\nNode 3 is connected to nodes 0 (weight: 7), 4 (weight: 1), 6 (weight: 3).\nNode 4 is connected to nodes 3 (weight: 1), 7 (weight: 8).\nNode 5 is connected to node 1 (weight: 7).\nNode 6 is connected to nodes 1 (weight: 6), 3 (weight: 3).\nNode 7 is connected to node 4 (weight: 8).",
+    "graph_adj": "{0: [(3, weight:7)],\\n1: [(5, weight:7), (6, weight:6), (2, weight:8)],\\n2: [(1, weight:8)],\\n3: [(0, weight:7), (4, weight:1), (6, weight:3)],\\n4: [(3, weight:1), (7, weight:8)],\\n5: [(1, weight:7)],\\n6: [(1, weight:6), (3, weight:3)],\\n7: [(4, weight:8)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 8,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": false
+  },
+  {
+    "sample_id": 42,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 1), 5 (weight: 10), 7 (weight: 10), 10 (weight: 5).\nNode 1 is connected to nodes 0 (weight: 1), 6 (weight: 6), 8 (weight: 2), 9 (weight: 1).\nNode 2 is connected to nodes 5 (weight: 2), 6 (weight: 7), 8 (weight: 3).\nNode 3 is connected to nodes 5 (weight: 3), 6 (weight: 5), 9 (weight: 10).\nNode 4 is connected to node 5 (weight: 10).\nNode 5 is connected to nodes 0 (weight: 10), 2 (weight: 2), 3 (weight: 3), 4 (weight: 10), 6 (weight: 10).\nNode 6 is connected to nodes 1 (weight: 6), 2 (weight: 7), 3 (weight: 5), 5 (weight: 10), 7 (weight: 9), 9 (weight: 3).\nNode 7 is connected to nodes 0 (weight: 10), 6 (weight: 9), 9 (weight: 8), 10 (weight: 10).\nNode 8 is connected to nodes 1 (weight: 2), 2 (weight: 3), 9 (weight: 6).\nNode 9 is connected to nodes 1 (weight: 1), 3 (weight: 10), 6 (weight: 3), 7 (weight: 8), 8 (weight: 6), 10 (weight: 1).\nNode 10 is connected to nodes 0 (weight: 5), 7 (weight: 10), 9 (weight: 1).",
+    "graph_adj": "{0: [(1, weight:1), (5, weight:10), (7, weight:10), (10, weight:5)],\\n1: [(0, weight:1), (6, weight:6), (8, weight:2), (9, weight:1)],\\n2: [(5, weight:2), (6, weight:7), (8, weight:3)],\\n3: [(5, weight:3), (6, weight:5), (9, weight:10)],\\n4: [(5, weight:10)],\\n5: [(0, weight:10), (2, weight:2), (3, weight:3), (4, weight:10), (6, weight:10)],\\n6: [(1, weight:6), (2, weight:7), (3, weight:5), (5, weight:10), (7, weight:9), (9, weight:3)],\\n7: [(0, weight:10), (6, weight:9), (9, weight:8), (10, weight:10)],\\n8: [(1, weight:2), (2, weight:3), (9, weight:6)],\\n9: [(1, weight:1), (3, weight:10), (6, weight:3), (7, weight:8), (8, weight:6), (10, weight:1)],\\n10: [(0, weight:5), (7, weight:10), (9, weight:1)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 43,
+    "graph_nl": "Node 0 is connected to nodes 6 (weight: 1), 8 (weight: 2).\nNode 1 is connected to nodes 5 (weight: 1), 6 (weight: 8), 7 (weight: 2).\nNode 2 is connected to node 5 (weight: 4).\nNode 3 is connected to nodes 7 (weight: 10), 4 (weight: 7).\nNode 4 is connected to node 3 (weight: 7).\nNode 5 is connected to nodes 1 (weight: 1), 2 (weight: 4).\nNode 6 is connected to nodes 0 (weight: 1), 1 (weight: 8), 8 (weight: 7).\nNode 7 is connected to nodes 1 (weight: 2), 3 (weight: 10), 8 (weight: 1).\nNode 8 is connected to nodes 0 (weight: 2), 6 (weight: 7), 7 (weight: 1).",
+    "graph_adj": "{0: [(6, weight:1), (8, weight:2)],\\n1: [(5, weight:1), (6, weight:8), (7, weight:2)],\\n2: [(5, weight:4)],\\n3: [(7, weight:10), (4, weight:7)],\\n4: [(3, weight:7)],\\n5: [(1, weight:1), (2, weight:4)],\\n6: [(0, weight:1), (1, weight:8), (8, weight:7)],\\n7: [(1, weight:2), (3, weight:10), (8, weight:1)],\\n8: [(0, weight:2), (6, weight:7), (7, weight:1)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 44,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 6), 5 (weight: 8), 6 (weight: 8), 10 (weight: 1).\nNode 1 is connected to nodes 4 (weight: 2), 9 (weight: 8), 10 (weight: 2), 11 (weight: 6).\nNode 2 is connected to nodes 6 (weight: 8), 11 (weight: 8).\nNode 3 is connected to nodes 4 (weight: 3), 5 (weight: 5), 10 (weight: 6), 12 (weight: 10).\nNode 4 is connected to nodes 0 (weight: 10), 6 (weight: 3), 7 (weight: 9).\nNode 5 is connected to nodes 0 (weight: 2), 2 (weight: 7), 3 (weight: 2), 4 (weight: 6), 9 (weight: 9).\nNode 6 is connected to nodes 3 (weight: 2), 8 (weight: 5), 9 (weight: 9), 12 (weight: 8).\nNode 7 is connected to nodes 1 (weight: 7), 6 (weight: 10), 10 (weight: 7).\nNode 8 is connected to nodes 0 (weight: 4), 1 (weight: 10), 2 (weight: 4), 6 (weight: 9), 7 (weight: 3), 9 (weight: 8), 12 (weight: 7).\nNode 9 is connected to nodes 2 (weight: 2), 6 (weight: 6), 11 (weight: 4), 12 (weight: 10).\nNode 10 is connected to nodes 1 (weight: 7), 3 (weight: 7).\nNode 11 is connected to nodes 0 (weight: 10), 3 (weight: 6), 7 (weight: 9), 10 (weight: 4).\nNode 12 is connected to nodes 4 (weight: 3), 6 (weight: 2), 8 (weight: 10).",
+    "graph_adj": "{0: [(2, weight:6), (5, weight:8), (6, weight:8), (10, weight:1)],\\n1: [(4, weight:2), (9, weight:8), (10, weight:2), (11, weight:6)],\\n2: [(6, weight:8), (11, weight:8)],\\n3: [(4, weight:3), (5, weight:5), (10, weight:6), (12, weight:10)],\\n4: [(0, weight:10), (6, weight:3), (7, weight:9)],\\n5: [(0, weight:2), (2, weight:7), (3, weight:2), (4, weight:6), (9, weight:9)],\\n6: [(3, weight:2), (8, weight:5), (9, weight:9), (12, weight:8)],\\n7: [(1, weight:7), (6, weight:10), (10, weight:7)],\\n8: [(0, weight:4), (1, weight:10), (2, weight:4), (6, weight:9), (7, weight:3), (9, weight:8), (12, weight:7)],\\n9: [(2, weight:2), (6, weight:6), (11, weight:4), (12, weight:10)],\\n10: [(1, weight:7), (3, weight:7)],\\n11: [(0, weight:10), (3, weight:6), (7, weight:9), (10, weight:4)],\\n12: [(4, weight:3), (6, weight:2), (8, weight:10)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 45,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 6), 13 (weight: 9), 14 (weight: 1).\nNode 1 is connected to nodes 0 (weight: 1), 8 (weight: 2), 11 (weight: 1), 13 (weight: 7).\nNode 2 is connected to node 12 (weight: 2).\nNode 3 is connected to nodes 0 (weight: 9), 4 (weight: 2), 5 (weight: 8), 6 (weight: 6), 13 (weight: 4), 14 (weight: 5).\nNode 4 is connected to nodes 0 (weight: 5), 6 (weight: 4), 8 (weight: 1), 9 (weight: 1), 11 (weight: 10).\nNode 5 is connected to nodes 0 (weight: 2), 1 (weight: 1), 13 (weight: 10).\nNode 6 is connected to nodes 0 (weight: 4), 4 (weight: 10), 8 (weight: 2), 9 (weight: 2), 14 (weight: 2).\nNode 7 is connected to nodes 4 (weight: 10), 9 (weight: 3).\nNode 8 is connected to nodes 4 (weight: 7), 12 (weight: 10), 13 (weight: 3).\nNode 9 is connected to nodes 3 (weight: 2), 8 (weight: 3), 11 (weight: 5), 13 (weight: 5), 14 (weight: 8).\nNode 10 is connected to nodes 1 (weight: 2), 3 (weight: 8), 4 (weight: 5), 12 (weight: 7), 14 (weight: 6).\nNode 11 is connected to nodes 0 (weight: 5), 2 (weight: 3), 14 (weight: 2).\nNode 12 is connected to nodes 2 (weight: 5), 3 (weight: 1), 5 (weight: 7), 11 (weight: 7).\nNode 13 is connected to nodes 0 (weight: 6), 3 (weight: 1), 9 (weight: 5).\nNode 14 is connected to nodes 1 (weight: 5), 2 (weight: 3), 4 (weight: 8), 8 (weight: 2).",
+    "graph_adj": "{0: [(3, weight:6), (13, weight:9), (14, weight:1)],\\n1: [(0, weight:1), (8, weight:2), (11, weight:1), (13, weight:7)],\\n2: [(12, weight:2)],\\n3: [(0, weight:9), (4, weight:2), (5, weight:8), (6, weight:6), (13, weight:4), (14, weight:5)],\\n4: [(0, weight:5), (6, weight:4), (8, weight:1), (9, weight:1), (11, weight:10)],\\n5: [(0, weight:2), (1, weight:1), (13, weight:10)],\\n6: [(0, weight:4), (4, weight:10), (8, weight:2), (9, weight:2), (14, weight:2)],\\n7: [(4, weight:10), (9, weight:3)],\\n8: [(4, weight:7), (12, weight:10), (13, weight:3)],\\n9: [(3, weight:2), (8, weight:3), (11, weight:5), (13, weight:5), (14, weight:8)],\\n10: [(1, weight:2), (3, weight:8), (4, weight:5), (12, weight:7), (14, weight:6)],\\n11: [(0, weight:5), (2, weight:3), (14, weight:2)],\\n12: [(2, weight:5), (3, weight:1), (5, weight:7), (11, weight:7)],\\n13: [(0, weight:6), (3, weight:1), (9, weight:5)],\\n14: [(1, weight:5), (2, weight:3), (4, weight:8), (8, weight:2)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": true,
+    "num_nodes": 15,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 46,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 2), 4 (weight: 4), 8 (weight: 7), 10 (weight: 6), 11 (weight: 7), 12 (weight: 6).\nNode 1 is connected to nodes 0 (weight: 2), 2 (weight: 2), 5 (weight: 10), 6 (weight: 9), 8 (weight: 3), 11 (weight: 6).\nNode 2 is connected to nodes 1 (weight: 2), 6 (weight: 4), 7 (weight: 1), 11 (weight: 10).\nNode 3 is connected to nodes 5 (weight: 3), 13 (weight: 6), 14 (weight: 2).\nNode 4 is connected to nodes 0 (weight: 4), 8 (weight: 2), 10 (weight: 5).\nNode 5 is connected to nodes 1 (weight: 10), 3 (weight: 3), 6 (weight: 3), 7 (weight: 7), 8 (weight: 3), 10 (weight: 6).\nNode 6 is connected to nodes 1 (weight: 9), 2 (weight: 4), 5 (weight: 3), 10 (weight: 9).\nNode 7 is connected to nodes 2 (weight: 1), 5 (weight: 7), 8 (weight: 3).\nNode 8 is connected to nodes 0 (weight: 7), 1 (weight: 3), 4 (weight: 2), 5 (weight: 3), 7 (weight: 3), 9 (weight: 8), 10 (weight: 4), 13 (weight: 10).\nNode 9 is connected to nodes 8 (weight: 8), 11 (weight: 1), 13 (weight: 3).\nNode 10 is connected to nodes 0 (weight: 6), 4 (weight: 5), 5 (weight: 6), 6 (weight: 9), 8 (weight: 4), 13 (weight: 2).\nNode 11 is connected to nodes 0 (weight: 7), 1 (weight: 6), 2 (weight: 10), 9 (weight: 1), 13 (weight: 10).\nNode 12 is connected to nodes 0 (weight: 6), 13 (weight: 7).\nNode 13 is connected to nodes 3 (weight: 6), 8 (weight: 10), 9 (weight: 3), 10 (weight: 2), 11 (weight: 10), 12 (weight: 7).\nNode 14 is connected to node 3 (weight: 2).",
+    "graph_adj": "{0: [(1, weight:2), (4, weight:4), (8, weight:7), (10, weight:6), (11, weight:7), (12, weight:6)],\\n1: [(0, weight:2), (2, weight:2), (5, weight:10), (6, weight:9), (8, weight:3), (11, weight:6)],\\n2: [(1, weight:2), (6, weight:4), (7, weight:1), (11, weight:10)],\\n3: [(5, weight:3), (13, weight:6), (14, weight:2)],\\n4: [(0, weight:4), (8, weight:2), (10, weight:5)],\\n5: [(1, weight:10), (3, weight:3), (6, weight:3), (7, weight:7), (8, weight:3), (10, weight:6)],\\n6: [(1, weight:9), (2, weight:4), (5, weight:3), (10, weight:9)],\\n7: [(2, weight:1), (5, weight:7), (8, weight:3)],\\n8: [(0, weight:7), (1, weight:3), (4, weight:2), (5, weight:3), (7, weight:3), (9, weight:8), (10, weight:4), (13, weight:10)],\\n9: [(8, weight:8), (11, weight:1), (13, weight:3)],\\n10: [(0, weight:6), (4, weight:5), (5, weight:6), (6, weight:9), (8, weight:4), (13, weight:2)],\\n11: [(0, weight:7), (1, weight:6), (2, weight:10), (9, weight:1), (13, weight:10)],\\n12: [(0, weight:6), (13, weight:7)],\\n13: [(3, weight:6), (8, weight:10), (9, weight:3), (10, weight:2), (11, weight:10), (12, weight:7)],\\n14: [(3, weight:2)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": false,
+    "num_nodes": 15,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 47,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 5), 3 (weight: 10), 4 (weight: 3).\nNode 1 is connected to nodes 2 (weight: 10), 8 (weight: 3), 9 (weight: 10).\nNode 2 is connected to nodes 6 (weight: 9), 7 (weight: 4), 8 (weight: 2).\nNode 3 is connected to nodes 0 (weight: 7), 5 (weight: 9), 8 (weight: 8), 9 (weight: 4).\nNode 4 is connected to nodes 5 (weight: 10), 7 (weight: 8), 9 (weight: 8).\nNode 5 is connected to nodes 4 (weight: 5), 8 (weight: 1).\nNode 6 is connected to nodes 1 (weight: 7), 7 (weight: 4).\nNode 7 is connected to nodes 2 (weight: 4), 6 (weight: 6).\nNode 8 is connected to nodes 1 (weight: 7), 5 (weight: 10).\nNode 9 is connected to nodes 0 (weight: 4), 1 (weight: 10), 3 (weight: 3), 4 (weight: 10), 7 (weight: 1).",
+    "graph_adj": "{0: [(2, weight:5), (3, weight:10), (4, weight:3)],\\n1: [(2, weight:10), (8, weight:3), (9, weight:10)],\\n2: [(6, weight:9), (7, weight:4), (8, weight:2)],\\n3: [(0, weight:7), (5, weight:9), (8, weight:8), (9, weight:4)],\\n4: [(5, weight:10), (7, weight:8), (9, weight:8)],\\n5: [(4, weight:5), (8, weight:1)],\\n6: [(1, weight:7), (7, weight:4)],\\n7: [(2, weight:4), (6, weight:6)],\\n8: [(1, weight:7), (5, weight:10)],\\n9: [(0, weight:4), (1, weight:10), (3, weight:3), (4, weight:10), (7, weight:1)]}",
+    "question": "Determine whether the graph contains a cycle.",
+    "directed": true,
+    "num_nodes": 10,
+    "task_type": "cycle",
+    "graph_size": "small",
+    "expected_tool": "detect_cycle",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 48,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 3), 4 (weight: 5), 10 (weight: 2), 12 (weight: 2).\nNode 1 is connected to nodes 0 (weight: 3), 3 (weight: 3), 4 (weight: 5), 6 (weight: 2), 12 (weight: 3).\nNode 2 is connected to node 11 (weight: 8).\nNode 3 is connected to nodes 1 (weight: 3), 4 (weight: 3), 6 (weight: 4), 11 (weight: 9).\nNode 4 is connected to nodes 0 (weight: 5), 1 (weight: 5), 3 (weight: 3), 5 (weight: 1), 9 (weight: 5), 13 (weight: 7).\nNode 5 is connected to nodes 4 (weight: 1), 7 (weight: 9), 9 (weight: 3), 11 (weight: 8), 12 (weight: 6).\nNode 6 is connected to nodes 1 (weight: 2), 3 (weight: 4), 10 (weight: 7), 12 (weight: 8).\nNode 7 is connected to nodes 5 (weight: 9), 8 (weight: 1), 10 (weight: 5), 11 (weight: 4).\nNode 8 is connected to nodes 7 (weight: 1), 10 (weight: 2).\nNode 9 is connected to nodes 4 (weight: 5), 5 (weight: 3), 10 (weight: 1).\nNode 10 is connected to nodes 0 (weight: 2), 6 (weight: 7), 7 (weight: 5), 8 (weight: 2), 9 (weight: 1), 13 (weight: 4).\nNode 11 is connected to nodes 2 (weight: 8), 3 (weight: 9), 5 (weight: 8), 7 (weight: 4).\nNode 12 is connected to nodes 0 (weight: 2), 1 (weight: 3), 5 (weight: 6), 6 (weight: 8), 13 (weight: 9).\nNode 13 is connected to nodes 4 (weight: 7), 10 (weight: 4), 12 (weight: 9).",
+    "graph_adj": "{0: [(1, weight:3), (4, weight:5), (10, weight:2), (12, weight:2)],\\n1: [(0, weight:3), (3, weight:3), (4, weight:5), (6, weight:2), (12, weight:3)],\\n2: [(11, weight:8)],\\n3: [(1, weight:3), (4, weight:3), (6, weight:4), (11, weight:9)],\\n4: [(0, weight:5), (1, weight:5), (3, weight:3), (5, weight:1), (9, weight:5), (13, weight:7)],\\n5: [(4, weight:1), (7, weight:9), (9, weight:3), (11, weight:8), (12, weight:6)],\\n6: [(1, weight:2), (3, weight:4), (10, weight:7), (12, weight:8)],\\n7: [(5, weight:9), (8, weight:1), (10, weight:5), (11, weight:4)],\\n8: [(7, weight:1), (10, weight:2)],\\n9: [(4, weight:5), (5, weight:3), (10, weight:1)],\\n10: [(0, weight:2), (6, weight:7), (7, weight:5), (8, weight:2), (9, weight:1), (13, weight:4)],\\n11: [(2, weight:8), (3, weight:9), (5, weight:8), (7, weight:4)],\\n12: [(0, weight:2), (1, weight:3), (5, weight:6), (6, weight:8), (13, weight:9)],\\n13: [(4, weight:7), (10, weight:4), (12, weight:9)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 14,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 49,
+    "graph_nl": "Node 0 is connected to nodes 9 (weight: 2), 11 (weight: 6), 12 (weight: 9).\nNode 1 is connected to nodes 4 (weight: 10), 7 (weight: 1), 10 (weight: 5).\nNode 2 is connected to nodes 3 (weight: 3), 4 (weight: 10), 5 (weight: 1), 7 (weight: 3), 8 (weight: 6), 9 (weight: 8), 11 (weight: 3).\nNode 3 is connected to nodes 4 (weight: 6), 9 (weight: 3), 12 (weight: 1).\nNode 4 is connected to nodes 6 (weight: 5), 10 (weight: 6).\nNode 5 is connected to nodes 4 (weight: 7), 11 (weight: 6), 12 (weight: 1).\nNode 6 is connected to nodes 2 (weight: 5), 4 (weight: 5), 5 (weight: 9), 10 (weight: 2), 12 (weight: 9).\nNode 7 is connected to nodes 5 (weight: 4), 10 (weight: 3).\nNode 8 is connected to nodes 1 (weight: 2), 6 (weight: 10), 12 (weight: 3).\nNode 9 is connected to nodes 1 (weight: 9), 2 (weight: 6), 6 (weight: 6), 10 (weight: 5).\nNode 10 is connected to nodes 4 (weight: 5), 5 (weight: 6), 8 (weight: 2).\nNode 11 is connected to nodes 2 (weight: 9), 3 (weight: 10), 4 (weight: 6).\nNode 12 is connected to nodes 1 (weight: 3), 2 (weight: 1), 3 (weight: 3), 5 (weight: 9).",
+    "graph_adj": "{0: [(9, weight:2), (11, weight:6), (12, weight:9)],\\n1: [(4, weight:10), (7, weight:1), (10, weight:5)],\\n2: [(3, weight:3), (4, weight:10), (5, weight:1), (7, weight:3), (8, weight:6), (9, weight:8), (11, weight:3)],\\n3: [(4, weight:6), (9, weight:3), (12, weight:1)],\\n4: [(6, weight:5), (10, weight:6)],\\n5: [(4, weight:7), (11, weight:6), (12, weight:1)],\\n6: [(2, weight:5), (4, weight:5), (5, weight:9), (10, weight:2), (12, weight:9)],\\n7: [(5, weight:4), (10, weight:3)],\\n8: [(1, weight:2), (6, weight:10), (12, weight:3)],\\n9: [(1, weight:9), (2, weight:6), (6, weight:6), (10, weight:5)],\\n10: [(4, weight:5), (5, weight:6), (8, weight:2)],\\n11: [(2, weight:9), (3, weight:10), (4, weight:6)],\\n12: [(1, weight:3), (2, weight:1), (3, weight:3), (5, weight:9)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": false
+  },
+  {
+    "sample_id": 50,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 2), 5 (weight: 4), 6 (weight: 7), 7 (weight: 8).\nNode 1 is connected to nodes 4 (weight: 5), 6 (weight: 10).\nNode 2 is connected to nodes 7 (weight: 10), 9 (weight: 5), 11 (weight: 7).\nNode 3 is connected to nodes 0 (weight: 6), 1 (weight: 8), 2 (weight: 10), 4 (weight: 7), 7 (weight: 8), 10 (weight: 9), 11 (weight: 5).\nNode 4 is connected to nodes 2 (weight: 3), 3 (weight: 8), 5 (weight: 2), 6 (weight: 2), 11 (weight: 5).\nNode 5 is connected to nodes 1 (weight: 8), 3 (weight: 8), 9 (weight: 4).\nNode 6 is connected to nodes 0 (weight: 3), 2 (weight: 1), 4 (weight: 2), 5 (weight: 1), 7 (weight: 2), 8 (weight: 8).\nNode 7 is connected to nodes 0 (weight: 1), 1 (weight: 3), 9 (weight: 7).\nNode 8 is connected to nodes 0 (weight: 10), 1 (weight: 6), 2 (weight: 3), 4 (weight: 5), 5 (weight: 10), 6 (weight: 10), 11 (weight: 2).\nNode 9 is connected to nodes 1 (weight: 2), 2 (weight: 9), 8 (weight: 8), 11 (weight: 8).\nNode 10 is connected to nodes 0 (weight: 4), 4 (weight: 5), 7 (weight: 8), 11 (weight: 8).\nNode 11 is connected to nodes 0 (weight: 9), 3 (weight: 5), 6 (weight: 9).",
+    "graph_adj": "{0: [(4, weight:2), (5, weight:4), (6, weight:7), (7, weight:8)],\\n1: [(4, weight:5), (6, weight:10)],\\n2: [(7, weight:10), (9, weight:5), (11, weight:7)],\\n3: [(0, weight:6), (1, weight:8), (2, weight:10), (4, weight:7), (7, weight:8), (10, weight:9), (11, weight:5)],\\n4: [(2, weight:3), (3, weight:8), (5, weight:2), (6, weight:2), (11, weight:5)],\\n5: [(1, weight:8), (3, weight:8), (9, weight:4)],\\n6: [(0, weight:3), (2, weight:1), (4, weight:2), (5, weight:1), (7, weight:2), (8, weight:8)],\\n7: [(0, weight:1), (1, weight:3), (9, weight:7)],\\n8: [(0, weight:10), (1, weight:6), (2, weight:3), (4, weight:5), (5, weight:10), (6, weight:10), (11, weight:2)],\\n9: [(1, weight:2), (2, weight:9), (8, weight:8), (11, weight:8)],\\n10: [(0, weight:4), (4, weight:5), (7, weight:8), (11, weight:8)],\\n11: [(0, weight:9), (3, weight:5), (6, weight:9)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": true,
+    "num_nodes": 12,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 51,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 2), 6 (weight: 9), 10 (weight: 4), 11 (weight: 5).\nNode 1 is connected to node 4 (weight: 5).\nNode 2 is connected to nodes 0 (weight: 2), 5 (weight: 1), 6 (weight: 5), 7 (weight: 10), 12 (weight: 7).\nNode 3 is connected to nodes 4 (weight: 4), 6 (weight: 10).\nNode 4 is connected to nodes 1 (weight: 5), 3 (weight: 4), 8 (weight: 2), 9 (weight: 10), 10 (weight: 2), 12 (weight: 10).\nNode 5 is connected to nodes 2 (weight: 1), 8 (weight: 6), 9 (weight: 5), 11 (weight: 2).\nNode 6 is connected to nodes 0 (weight: 9), 2 (weight: 5), 3 (weight: 10), 10 (weight: 10), 12 (weight: 9).\nNode 7 is connected to nodes 2 (weight: 10), 11 (weight: 8).\nNode 8 is connected to nodes 4 (weight: 2), 5 (weight: 6), 10 (weight: 7).\nNode 9 is connected to nodes 4 (weight: 10), 5 (weight: 5), 11 (weight: 4), 12 (weight: 6).\nNode 10 is connected to nodes 0 (weight: 4), 4 (weight: 2), 6 (weight: 10), 8 (weight: 7), 12 (weight: 2).\nNode 11 is connected to nodes 0 (weight: 5), 5 (weight: 2), 7 (weight: 8), 9 (weight: 4).\nNode 12 is connected to nodes 2 (weight: 7), 4 (weight: 10), 6 (weight: 9), 9 (weight: 6), 10 (weight: 2).",
+    "graph_adj": "{0: [(2, weight:2), (6, weight:9), (10, weight:4), (11, weight:5)],\\n1: [(4, weight:5)],\\n2: [(0, weight:2), (5, weight:1), (6, weight:5), (7, weight:10), (12, weight:7)],\\n3: [(4, weight:4), (6, weight:10)],\\n4: [(1, weight:5), (3, weight:4), (8, weight:2), (9, weight:10), (10, weight:2), (12, weight:10)],\\n5: [(2, weight:1), (8, weight:6), (9, weight:5), (11, weight:2)],\\n6: [(0, weight:9), (2, weight:5), (3, weight:10), (10, weight:10), (12, weight:9)],\\n7: [(2, weight:10), (11, weight:8)],\\n8: [(4, weight:2), (5, weight:6), (10, weight:7)],\\n9: [(4, weight:10), (5, weight:5), (11, weight:4), (12, weight:6)],\\n10: [(0, weight:4), (4, weight:2), (6, weight:10), (8, weight:7), (12, weight:2)],\\n11: [(0, weight:5), (5, weight:2), (7, weight:8), (9, weight:4)],\\n12: [(2, weight:7), (4, weight:10), (6, weight:9), (9, weight:6), (10, weight:2)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 52,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 2), 5 (weight: 7).\nNode 1 is connected to nodes 0 (weight: 2), 2 (weight: 3), 7 (weight: 4).\nNode 2 is connected to nodes 1 (weight: 3), 5 (weight: 2), 6 (weight: 10), 8 (weight: 9).\nNode 3 is connected to nodes 9 (weight: 2), 10 (weight: 9), 11 (weight: 10).\nNode 4 is connected to nodes 6 (weight: 9), 7 (weight: 5), 8 (weight: 8), 9 (weight: 2).\nNode 5 is connected to nodes 0 (weight: 7), 2 (weight: 2), 10 (weight: 4), 11 (weight: 10).\nNode 6 is connected to nodes 2 (weight: 10), 4 (weight: 9), 7 (weight: 2), 9 (weight: 6).\nNode 7 is connected to nodes 1 (weight: 4), 4 (weight: 5), 6 (weight: 2), 8 (weight: 6), 11 (weight: 10).\nNode 8 is connected to nodes 2 (weight: 9), 4 (weight: 8), 7 (weight: 6), 11 (weight: 7).\nNode 9 is connected to nodes 3 (weight: 2), 4 (weight: 2), 6 (weight: 6), 10 (weight: 4).\nNode 10 is connected to nodes 3 (weight: 9), 5 (weight: 4), 9 (weight: 4).\nNode 11 is connected to nodes 3 (weight: 10), 5 (weight: 10), 7 (weight: 10), 8 (weight: 7).",
+    "graph_adj": "{0: [(1, weight:2), (5, weight:7)],\\n1: [(0, weight:2), (2, weight:3), (7, weight:4)],\\n2: [(1, weight:3), (5, weight:2), (6, weight:10), (8, weight:9)],\\n3: [(9, weight:2), (10, weight:9), (11, weight:10)],\\n4: [(6, weight:9), (7, weight:5), (8, weight:8), (9, weight:2)],\\n5: [(0, weight:7), (2, weight:2), (10, weight:4), (11, weight:10)],\\n6: [(2, weight:10), (4, weight:9), (7, weight:2), (9, weight:6)],\\n7: [(1, weight:4), (4, weight:5), (6, weight:2), (8, weight:6), (11, weight:10)],\\n8: [(2, weight:9), (4, weight:8), (7, weight:6), (11, weight:7)],\\n9: [(3, weight:2), (4, weight:2), (6, weight:6), (10, weight:4)],\\n10: [(3, weight:9), (5, weight:4), (9, weight:4)],\\n11: [(3, weight:10), (5, weight:10), (7, weight:10), (8, weight:7)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 53,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 8), 2 (weight: 5), 3 (weight: 6), 6 (weight: 7), 9 (weight: 5), 12 (weight: 5), 13 (weight: 10).\nNode 1 is connected to nodes 2 (weight: 5), 8 (weight: 9), 11 (weight: 6).\nNode 2 is connected to nodes 0 (weight: 7), 8 (weight: 3), 10 (weight: 6).\nNode 3 is connected to nodes 4 (weight: 8), 6 (weight: 3), 12 (weight: 9), 13 (weight: 8).\nNode 4 is connected to nodes 8 (weight: 1), 9 (weight: 4), 10 (weight: 3), 11 (weight: 1).\nNode 5 is connected to nodes 6 (weight: 4), 9 (weight: 3), 10 (weight: 1), 13 (weight: 8).\nNode 6 is connected to nodes 0 (weight: 5), 4 (weight: 3), 11 (weight: 8), 12 (weight: 7).\nNode 7 is connected to nodes 1 (weight: 2), 2 (weight: 8), 9 (weight: 1), 10 (weight: 8), 13 (weight: 6).\nNode 8 is connected to nodes 0 (weight: 9), 2 (weight: 8), 4 (weight: 8), 7 (weight: 8), 10 (weight: 2), 12 (weight: 3).\nNode 9 is connected to nodes 4 (weight: 2), 5 (weight: 6), 8 (weight: 2), 13 (weight: 4).\nNode 10 is connected to nodes 0 (weight: 5), 3 (weight: 3), 4 (weight: 3), 6 (weight: 9), 8 (weight: 5), 11 (weight: 10).\nNode 11 is connected to nodes 0 (weight: 10), 5 (weight: 4), 9 (weight: 10), 12 (weight: 1).\nNode 12 is connected to nodes 7 (weight: 9), 13 (weight: 10).\nNode 13 is connected to nodes 1 (weight: 3), 2 (weight: 7), 3 (weight: 2), 7 (weight: 4), 10 (weight: 8).",
+    "graph_adj": "{0: [(1, weight:8), (2, weight:5), (3, weight:6), (6, weight:7), (9, weight:5), (12, weight:5), (13, weight:10)],\\n1: [(2, weight:5), (8, weight:9), (11, weight:6)],\\n2: [(0, weight:7), (8, weight:3), (10, weight:6)],\\n3: [(4, weight:8), (6, weight:3), (12, weight:9), (13, weight:8)],\\n4: [(8, weight:1), (9, weight:4), (10, weight:3), (11, weight:1)],\\n5: [(6, weight:4), (9, weight:3), (10, weight:1), (13, weight:8)],\\n6: [(0, weight:5), (4, weight:3), (11, weight:8), (12, weight:7)],\\n7: [(1, weight:2), (2, weight:8), (9, weight:1), (10, weight:8), (13, weight:6)],\\n8: [(0, weight:9), (2, weight:8), (4, weight:8), (7, weight:8), (10, weight:2), (12, weight:3)],\\n9: [(4, weight:2), (5, weight:6), (8, weight:2), (13, weight:4)],\\n10: [(0, weight:5), (3, weight:3), (4, weight:3), (6, weight:9), (8, weight:5), (11, weight:10)],\\n11: [(0, weight:10), (5, weight:4), (9, weight:10), (12, weight:1)],\\n12: [(7, weight:9), (13, weight:10)],\\n13: [(1, weight:3), (2, weight:7), (3, weight:2), (7, weight:4), (10, weight:8)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": true,
+    "num_nodes": 14,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 54,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 4), 8 (weight: 3).\nNode 1 is connected to nodes 0 (weight: 4), 2 (weight: 7), 8 (weight: 7).\nNode 2 is connected to node 1 (weight: 7).\nNode 3 is connected to nodes 6 (weight: 5), 7 (weight: 3).\nNode 4 is connected to nodes 6 (weight: 2), 7 (weight: 5).\nNode 5 is connected to node 8 (weight: 8).\nNode 6 is connected to nodes 3 (weight: 5), 4 (weight: 2).\nNode 7 is connected to nodes 3 (weight: 3), 4 (weight: 5), 8 (weight: 7).\nNode 8 is connected to nodes 0 (weight: 3), 1 (weight: 7), 5 (weight: 8), 7 (weight: 7).",
+    "graph_adj": "{0: [(1, weight:4), (8, weight:3)],\\n1: [(0, weight:4), (2, weight:7), (8, weight:7)],\\n2: [(1, weight:7)],\\n3: [(6, weight:5), (7, weight:3)],\\n4: [(6, weight:2), (7, weight:5)],\\n5: [(8, weight:8)],\\n6: [(3, weight:5), (4, weight:2)],\\n7: [(3, weight:3), (4, weight:5), (8, weight:7)],\\n8: [(0, weight:3), (1, weight:7), (5, weight:8), (7, weight:7)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 55,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 9), 5 (weight: 1), 8 (weight: 1), 10 (weight: 7).\nNode 1 is connected to nodes 3 (weight: 2), 5 (weight: 1).\nNode 2 is connected to nodes 5 (weight: 3), 7 (weight: 8).\nNode 3 is connected to nodes 0 (weight: 9), 1 (weight: 2), 5 (weight: 8).\nNode 4 is connected to node 7 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 1), 1 (weight: 1), 2 (weight: 3), 3 (weight: 8), 6 (weight: 10), 11 (weight: 8).\nNode 6 is connected to node 5 (weight: 10).\nNode 7 is connected to nodes 2 (weight: 8), 4 (weight: 7).\nNode 8 is connected to nodes 0 (weight: 1), 10 (weight: 5), 11 (weight: 10).\nNode 9 is connected to node 11 (weight: 10).\nNode 10 is connected to nodes 0 (weight: 7), 8 (weight: 5).\nNode 11 is connected to nodes 5 (weight: 8), 8 (weight: 10), 9 (weight: 10).",
+    "graph_adj": "{0: [(3, weight:9), (5, weight:1), (8, weight:1), (10, weight:7)],\\n1: [(3, weight:2), (5, weight:1)],\\n2: [(5, weight:3), (7, weight:8)],\\n3: [(0, weight:9), (1, weight:2), (5, weight:8)],\\n4: [(7, weight:7)],\\n5: [(0, weight:1), (1, weight:1), (2, weight:3), (3, weight:8), (6, weight:10), (11, weight:8)],\\n6: [(5, weight:10)],\\n7: [(2, weight:8), (4, weight:7)],\\n8: [(0, weight:1), (10, weight:5), (11, weight:10)],\\n9: [(11, weight:10)],\\n10: [(0, weight:7), (8, weight:5)],\\n11: [(5, weight:8), (8, weight:10), (9, weight:10)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 56,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 8), 5 (weight: 3), 6 (weight: 10), 9 (weight: 4), 10 (weight: 5), 12 (weight: 2).\nNode 1 is connected to nodes 2 (weight: 8), 6 (weight: 3), 8 (weight: 3), 10 (weight: 4).\nNode 2 is connected to nodes 1 (weight: 8), 5 (weight: 3), 7 (weight: 10), 8 (weight: 8), 12 (weight: 2).\nNode 3 is connected to node 11 (weight: 7).\nNode 4 is connected to nodes 0 (weight: 8), 10 (weight: 8), 11 (weight: 5), 12 (weight: 4).\nNode 5 is connected to nodes 0 (weight: 3), 2 (weight: 3), 8 (weight: 4), 11 (weight: 9).\nNode 6 is connected to nodes 0 (weight: 10), 1 (weight: 3), 10 (weight: 1).\nNode 7 is connected to node 2 (weight: 10).\nNode 8 is connected to nodes 1 (weight: 3), 2 (weight: 8), 5 (weight: 4).\nNode 9 is connected to node 0 (weight: 4).\nNode 10 is connected to nodes 0 (weight: 5), 1 (weight: 4), 4 (weight: 8), 6 (weight: 1).\nNode 11 is connected to nodes 3 (weight: 7), 4 (weight: 5), 5 (weight: 9).\nNode 12 is connected to nodes 0 (weight: 2), 2 (weight: 2), 4 (weight: 4).",
+    "graph_adj": "{0: [(4, weight:8), (5, weight:3), (6, weight:10), (9, weight:4), (10, weight:5), (12, weight:2)],\\n1: [(2, weight:8), (6, weight:3), (8, weight:3), (10, weight:4)],\\n2: [(1, weight:8), (5, weight:3), (7, weight:10), (8, weight:8), (12, weight:2)],\\n3: [(11, weight:7)],\\n4: [(0, weight:8), (10, weight:8), (11, weight:5), (12, weight:4)],\\n5: [(0, weight:3), (2, weight:3), (8, weight:4), (11, weight:9)],\\n6: [(0, weight:10), (1, weight:3), (10, weight:1)],\\n7: [(2, weight:10)],\\n8: [(1, weight:3), (2, weight:8), (5, weight:4)],\\n9: [(0, weight:4)],\\n10: [(0, weight:5), (1, weight:4), (4, weight:8), (6, weight:1)],\\n11: [(3, weight:7), (4, weight:5), (5, weight:9)],\\n12: [(0, weight:2), (2, weight:2), (4, weight:4)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 57,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 7), 3 (weight: 6).\nNode 1 is connected to nodes 0 (weight: 4), 2 (weight: 3).\nNode 2 is connected to node 7 (weight: 9).\nNode 3 is connected to node 0 (weight: 7).\nNode 4 is connected to nodes 2 (weight: 4), 6 (weight: 3), 7 (weight: 7).\nNode 5 is connected to node 0 (weight: 7).\nNode 6 is connected to nodes 0 (weight: 7), 3 (weight: 8), 4 (weight: 9).\nNode 7 is connected to nodes 0 (weight: 6), 3 (weight: 1), 4 (weight: 8), 5 (weight: 3).",
+    "graph_adj": "{0: [(1, weight:7), (3, weight:6)],\\n1: [(0, weight:4), (2, weight:3)],\\n2: [(7, weight:9)],\\n3: [(0, weight:7)],\\n4: [(2, weight:4), (6, weight:3), (7, weight:7)],\\n5: [(0, weight:7)],\\n6: [(0, weight:7), (3, weight:8), (4, weight:9)],\\n7: [(0, weight:6), (3, weight:1), (4, weight:8), (5, weight:3)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 58,
+    "graph_nl": "Node 0 is connected to node 2 (weight: 4).\nNode 1 is connected to nodes 2 (weight: 9), 4 (weight: 10).\nNode 2 is connected to nodes 0 (weight: 4), 1 (weight: 9).\nNode 3 is connected to node 6 (weight: 10).\nNode 4 is connected to node 1 (weight: 10).\nNode 5 is connected to node 7 (weight: 8).\nNode 6 is connected to node 3 (weight: 10).\nNode 7 is connected to node 5 (weight: 8).",
+    "graph_adj": "{0: [(2, weight:4)],\\n1: [(2, weight:9), (4, weight:10)],\\n2: [(0, weight:4), (1, weight:9)],\\n3: [(6, weight:10)],\\n4: [(1, weight:10)],\\n5: [(7, weight:8)],\\n6: [(3, weight:10)],\\n7: [(5, weight:8)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 8,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": false
+  },
+  {
+    "sample_id": 59,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 3), 5 (weight: 9), 9 (weight: 9), 11 (weight: 2), 12 (weight: 4).\nNode 1 is connected to nodes 5 (weight: 8), 6 (weight: 8), 9 (weight: 1).\nNode 2 is connected to nodes 3 (weight: 3), 4 (weight: 9), 8 (weight: 6), 10 (weight: 2), 11 (weight: 10).\nNode 3 is connected to nodes 0 (weight: 3), 2 (weight: 3).\nNode 4 is connected to nodes 2 (weight: 9), 6 (weight: 7), 12 (weight: 2).\nNode 5 is connected to nodes 0 (weight: 9), 1 (weight: 8), 10 (weight: 2).\nNode 6 is connected to nodes 1 (weight: 8), 4 (weight: 7), 7 (weight: 6), 8 (weight: 10).\nNode 7 is connected to nodes 6 (weight: 6), 12 (weight: 5).\nNode 8 is connected to nodes 2 (weight: 6), 6 (weight: 10).\nNode 9 is connected to nodes 0 (weight: 9), 1 (weight: 1).\nNode 10 is connected to nodes 2 (weight: 2), 5 (weight: 2), 11 (weight: 1), 12 (weight: 9).\nNode 11 is connected to nodes 0 (weight: 2), 2 (weight: 10), 10 (weight: 1).\nNode 12 is connected to nodes 0 (weight: 4), 4 (weight: 2), 7 (weight: 5), 10 (weight: 9).",
+    "graph_adj": "{0: [(3, weight:3), (5, weight:9), (9, weight:9), (11, weight:2), (12, weight:4)],\\n1: [(5, weight:8), (6, weight:8), (9, weight:1)],\\n2: [(3, weight:3), (4, weight:9), (8, weight:6), (10, weight:2), (11, weight:10)],\\n3: [(0, weight:3), (2, weight:3)],\\n4: [(2, weight:9), (6, weight:7), (12, weight:2)],\\n5: [(0, weight:9), (1, weight:8), (10, weight:2)],\\n6: [(1, weight:8), (4, weight:7), (7, weight:6), (8, weight:10)],\\n7: [(6, weight:6), (12, weight:5)],\\n8: [(2, weight:6), (6, weight:10)],\\n9: [(0, weight:9), (1, weight:1)],\\n10: [(2, weight:2), (5, weight:2), (11, weight:1), (12, weight:9)],\\n11: [(0, weight:2), (2, weight:10), (10, weight:1)],\\n12: [(0, weight:4), (4, weight:2), (7, weight:5), (10, weight:9)]}",
+    "question": "Determine whether the graph is connected.",
+    "directed": false,
+    "num_nodes": 13,
+    "task_type": "connectivity",
+    "graph_size": "small",
+    "expected_tool": "check_connectivity",
+    "expected_params": {},
+    "expected_answer": true
+  },
+  {
+    "sample_id": 60,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 8), 3 (weight: 7), 9 (weight: 8), 10 (weight: 8), 13 (weight: 7).\nNode 1 is connected to nodes 5 (weight: 1), 6 (weight: 1), 7 (weight: 7), 9 (weight: 5), 13 (weight: 4).\nNode 2 is connected to nodes 0 (weight: 8), 5 (weight: 5), 6 (weight: 6), 13 (weight: 10), 14 (weight: 8).\nNode 3 is connected to nodes 0 (weight: 7), 6 (weight: 4), 9 (weight: 2), 11 (weight: 8), 14 (weight: 4).\nNode 4 is connected to nodes 9 (weight: 1), 13 (weight: 4).\nNode 5 is connected to nodes 1 (weight: 1), 2 (weight: 5), 7 (weight: 4), 8 (weight: 3), 9 (weight: 5), 10 (weight: 10), 12 (weight: 7), 14 (weight: 8).\nNode 6 is connected to nodes 1 (weight: 1), 2 (weight: 6), 3 (weight: 4), 7 (weight: 6), 13 (weight: 8), 14 (weight: 5).\nNode 7 is connected to nodes 1 (weight: 7), 5 (weight: 4), 6 (weight: 6).\nNode 8 is connected to nodes 5 (weight: 3), 9 (weight: 6).\nNode 9 is connected to nodes 0 (weight: 8), 1 (weight: 5), 3 (weight: 2), 4 (weight: 1), 5 (weight: 5), 8 (weight: 6), 10 (weight: 2), 13 (weight: 1), 14 (weight: 5).\nNode 10 is connected to nodes 0 (weight: 8), 5 (weight: 10), 9 (weight: 2), 13 (weight: 9).\nNode 11 is connected to nodes 3 (weight: 8), 14 (weight: 5).\nNode 12 is connected to nodes 5 (weight: 7), 14 (weight: 9).\nNode 13 is connected to nodes 0 (weight: 7), 1 (weight: 4), 2 (weight: 10), 4 (weight: 4), 6 (weight: 8), 9 (weight: 1), 10 (weight: 9).\nNode 14 is connected to nodes 2 (weight: 8), 3 (weight: 4), 5 (weight: 8), 6 (weight: 5), 9 (weight: 5), 11 (weight: 5), 12 (weight: 9).",
+    "graph_adj": "{0: [(2, weight:8), (3, weight:7), (9, weight:8), (10, weight:8), (13, weight:7)],\\n1: [(5, weight:1), (6, weight:1), (7, weight:7), (9, weight:5), (13, weight:4)],\\n2: [(0, weight:8), (5, weight:5), (6, weight:6), (13, weight:10), (14, weight:8)],\\n3: [(0, weight:7), (6, weight:4), (9, weight:2), (11, weight:8), (14, weight:4)],\\n4: [(9, weight:1), (13, weight:4)],\\n5: [(1, weight:1), (2, weight:5), (7, weight:4), (8, weight:3), (9, weight:5), (10, weight:10), (12, weight:7), (14, weight:8)],\\n6: [(1, weight:1), (2, weight:6), (3, weight:4), (7, weight:6), (13, weight:8), (14, weight:5)],\\n7: [(1, weight:7), (5, weight:4), (6, weight:6)],\\n8: [(5, weight:3), (9, weight:6)],\\n9: [(0, weight:8), (1, weight:5), (3, weight:2), (4, weight:1), (5, weight:5), (8, weight:6), (10, weight:2), (13, weight:1), (14, weight:5)],\\n10: [(0, weight:8), (5, weight:10), (9, weight:2), (13, weight:9)],\\n11: [(3, weight:8), (14, weight:5)],\\n12: [(5, weight:7), (14, weight:9)],\\n13: [(0, weight:7), (1, weight:4), (2, weight:10), (4, weight:4), (6, weight:8), (9, weight:1), (10, weight:9)],\\n14: [(2, weight:8), (3, weight:4), (5, weight:8), (6, weight:5), (9, weight:5), (11, weight:5), (12, weight:9)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 15,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 47.0
+  },
+  {
+    "sample_id": 61,
+    "graph_nl": "Node 0 is connected to nodes 5 (weight: 6), 6 (weight: 7), 7 (weight: 6).\nNode 1 is connected to nodes 3 (weight: 8), 5 (weight: 3).\nNode 2 is connected to node 6 (weight: 9).\nNode 3 is connected to nodes 1 (weight: 8), 4 (weight: 10), 7 (weight: 8).\nNode 4 is connected to nodes 3 (weight: 10), 5 (weight: 3).\nNode 5 is connected to nodes 0 (weight: 6), 1 (weight: 3), 4 (weight: 3).\nNode 6 is connected to nodes 0 (weight: 7), 2 (weight: 9).\nNode 7 is connected to nodes 0 (weight: 6), 3 (weight: 8).",
+    "graph_adj": "{0: [(5, weight:6), (6, weight:7), (7, weight:6)],\\n1: [(3, weight:8), (5, weight:3)],\\n2: [(6, weight:9)],\\n3: [(1, weight:8), (4, weight:10), (7, weight:8)],\\n4: [(3, weight:10), (5, weight:3)],\\n5: [(0, weight:6), (1, weight:3), (4, weight:3)],\\n6: [(0, weight:7), (2, weight:9)],\\n7: [(0, weight:6), (3, weight:8)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 8,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 42.0
+  },
+  {
+    "sample_id": 62,
+    "graph_nl": "Node 0 is connected to node 3 (weight: 1).\nNode 1 is connected to nodes 2 (weight: 8), 7 (weight: 4).\nNode 2 is connected to nodes 1 (weight: 8), 8 (weight: 6), 9 (weight: 2).\nNode 3 is connected to nodes 0 (weight: 1), 6 (weight: 3).\nNode 4 is connected to node 9 (weight: 9).\nNode 5 is connected to nodes 8 (weight: 10), 9 (weight: 7).\nNode 6 is connected to nodes 3 (weight: 3), 8 (weight: 3).\nNode 7 is connected to node 1 (weight: 4).\nNode 8 is connected to nodes 2 (weight: 6), 5 (weight: 10), 6 (weight: 3).\nNode 9 is connected to nodes 2 (weight: 2), 4 (weight: 9), 5 (weight: 7).",
+    "graph_adj": "{0: [(3, weight:1)],\\n1: [(2, weight:8), (7, weight:4)],\\n2: [(1, weight:8), (8, weight:6), (9, weight:2)],\\n3: [(0, weight:1), (6, weight:3)],\\n4: [(9, weight:9)],\\n5: [(8, weight:10), (9, weight:7)],\\n6: [(3, weight:3), (8, weight:3)],\\n7: [(1, weight:4)],\\n8: [(2, weight:6), (5, weight:10), (6, weight:3)],\\n9: [(2, weight:2), (4, weight:9), (5, weight:7)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 10,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 43.0
+  },
+  {
+    "sample_id": 63,
+    "graph_nl": "Node 0 is connected to nodes 2 (weight: 8), 6 (weight: 6), 7 (weight: 4), 8 (weight: 2).\nNode 1 is connected to nodes 2 (weight: 2), 4 (weight: 10), 6 (weight: 9), 7 (weight: 1), 8 (weight: 5).\nNode 2 is connected to nodes 0 (weight: 8), 1 (weight: 2), 4 (weight: 3).\nNode 3 is connected to nodes 5 (weight: 6), 8 (weight: 6).\nNode 4 is connected to nodes 1 (weight: 10), 2 (weight: 3), 7 (weight: 5), 9 (weight: 3).\nNode 5 is connected to nodes 3 (weight: 6), 9 (weight: 9).\nNode 6 is connected to nodes 0 (weight: 6), 1 (weight: 9), 9 (weight: 1).\nNode 7 is connected to nodes 0 (weight: 4), 1 (weight: 1), 4 (weight: 5).\nNode 8 is connected to nodes 0 (weight: 2), 1 (weight: 5), 3 (weight: 6), 9 (weight: 6).\nNode 9 is connected to nodes 4 (weight: 3), 5 (weight: 9), 6 (weight: 1), 8 (weight: 6).",
+    "graph_adj": "{0: [(2, weight:8), (6, weight:6), (7, weight:4), (8, weight:2)],\\n1: [(2, weight:2), (4, weight:10), (6, weight:9), (7, weight:1), (8, weight:5)],\\n2: [(0, weight:8), (1, weight:2), (4, weight:3)],\\n3: [(5, weight:6), (8, weight:6)],\\n4: [(1, weight:10), (2, weight:3), (7, weight:5), (9, weight:3)],\\n5: [(3, weight:6), (9, weight:9)],\\n6: [(0, weight:6), (1, weight:9), (9, weight:1)],\\n7: [(0, weight:4), (1, weight:1), (4, weight:5)],\\n8: [(0, weight:2), (1, weight:5), (3, weight:6), (9, weight:6)],\\n9: [(4, weight:3), (5, weight:9), (6, weight:1), (8, weight:6)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 10,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 28.0
+  },
+  {
+    "sample_id": 64,
+    "graph_nl": "Node 0 is connected to node 8 (weight: 1).\nNode 1 is connected to nodes 6 (weight: 1), 9 (weight: 6), 10 (weight: 2).\nNode 2 is connected to nodes 3 (weight: 1), 6 (weight: 3).\nNode 3 is connected to node 2 (weight: 1).\nNode 4 is connected to nodes 8 (weight: 9), 10 (weight: 8).\nNode 5 is connected to node 10 (weight: 5).\nNode 6 is connected to nodes 1 (weight: 1), 2 (weight: 3).\nNode 7 is connected to node 10 (weight: 6).\nNode 8 is connected to nodes 4 (weight: 9), 0 (weight: 1).\nNode 9 is connected to node 1 (weight: 6).\nNode 10 is connected to nodes 1 (weight: 2), 4 (weight: 8), 5 (weight: 5), 7 (weight: 6).",
+    "graph_adj": "{0: [(8, weight:1)],\\n1: [(6, weight:1), (9, weight:6), (10, weight:2)],\\n2: [(3, weight:1), (6, weight:3)],\\n3: [(2, weight:1)],\\n4: [(8, weight:9), (10, weight:8)],\\n5: [(10, weight:5)],\\n6: [(1, weight:1), (2, weight:3)],\\n7: [(10, weight:6)],\\n8: [(4, weight:9), (0, weight:1)],\\n9: [(1, weight:6)],\\n10: [(1, weight:2), (4, weight:8), (5, weight:5), (7, weight:6)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 42.0
+  },
+  {
+    "sample_id": 65,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 4), 2 (weight: 4), 6 (weight: 1).\nNode 1 is connected to nodes 0 (weight: 4), 2 (weight: 10), 4 (weight: 6), 5 (weight: 9), 7 (weight: 8).\nNode 2 is connected to nodes 0 (weight: 4), 1 (weight: 10), 3 (weight: 3), 5 (weight: 4).\nNode 3 is connected to node 2 (weight: 3).\nNode 4 is connected to nodes 1 (weight: 6), 6 (weight: 9), 8 (weight: 4).\nNode 5 is connected to nodes 1 (weight: 9), 2 (weight: 4), 7 (weight: 7).\nNode 6 is connected to nodes 0 (weight: 1), 4 (weight: 9), 8 (weight: 9).\nNode 7 is connected to nodes 1 (weight: 8), 5 (weight: 7).\nNode 8 is connected to nodes 4 (weight: 4), 6 (weight: 9).",
+    "graph_adj": "{0: [(1, weight:4), (2, weight:4), (6, weight:1)],\\n1: [(0, weight:4), (2, weight:10), (4, weight:6), (5, weight:9), (7, weight:8)],\\n2: [(0, weight:4), (1, weight:10), (3, weight:3), (5, weight:4)],\\n3: [(2, weight:3)],\\n4: [(1, weight:6), (6, weight:9), (8, weight:4)],\\n5: [(1, weight:9), (2, weight:4), (7, weight:7)],\\n6: [(0, weight:1), (4, weight:9), (8, weight:9)],\\n7: [(1, weight:8), (5, weight:7)],\\n8: [(4, weight:4), (6, weight:9)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 9,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 33.0
+  },
+  {
+    "sample_id": 66,
+    "graph_nl": "Node 0 is connected to nodes 6 (weight: 6), 7 (weight: 3).\nNode 1 is connected to node 3 (weight: 4).\nNode 2 is connected to nodes 4 (weight: 4), 5 (weight: 3), 6 (weight: 10).\nNode 3 is connected to nodes 1 (weight: 4), 7 (weight: 8).\nNode 4 is connected to node 2 (weight: 4).\nNode 5 is connected to nodes 2 (weight: 3), 6 (weight: 1).\nNode 6 is connected to nodes 0 (weight: 6), 2 (weight: 10), 5 (weight: 1), 7 (weight: 5).\nNode 7 is connected to nodes 0 (weight: 3), 3 (weight: 8), 6 (weight: 5).",
+    "graph_adj": "{0: [(6, weight:6), (7, weight:3)],\\n1: [(3, weight:4)],\\n2: [(4, weight:4), (5, weight:3), (6, weight:10)],\\n3: [(1, weight:4), (7, weight:8)],\\n4: [(2, weight:4)],\\n5: [(2, weight:3), (6, weight:1)],\\n6: [(0, weight:6), (2, weight:10), (5, weight:1), (7, weight:5)],\\n7: [(0, weight:3), (3, weight:8), (6, weight:5)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 8,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 28.0
+  },
+  {
+    "sample_id": 67,
+    "graph_nl": "Node 0 is connected to node 5 (weight: 8).\nNode 1 is connected to nodes 2 (weight: 3), 6 (weight: 10).\nNode 2 is connected to nodes 1 (weight: 3), 6 (weight: 7), 9 (weight: 6).\nNode 3 is connected to nodes 5 (weight: 8), 9 (weight: 2).\nNode 4 is connected to nodes 5 (weight: 6), 6 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 8), 3 (weight: 8), 4 (weight: 6).\nNode 6 is connected to nodes 1 (weight: 10), 2 (weight: 7), 4 (weight: 7), 8 (weight: 5), 10 (weight: 4).\nNode 7 is connected to node 9 (weight: 9).\nNode 8 is connected to node 6 (weight: 5).\nNode 9 is connected to nodes 2 (weight: 6), 3 (weight: 2), 7 (weight: 9).\nNode 10 is connected to node 6 (weight: 4).",
+    "graph_adj": "{0: [(5, weight:8)],\\n1: [(2, weight:3), (6, weight:10)],\\n2: [(1, weight:3), (6, weight:7), (9, weight:6)],\\n3: [(5, weight:8), (9, weight:2)],\\n4: [(5, weight:6), (6, weight:7)],\\n5: [(0, weight:8), (3, weight:8), (4, weight:6)],\\n6: [(1, weight:10), (2, weight:7), (4, weight:7), (8, weight:5), (10, weight:4)],\\n7: [(9, weight:9)],\\n8: [(6, weight:5)],\\n9: [(2, weight:6), (3, weight:2), (7, weight:9)],\\n10: [(6, weight:4)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 57.0
+  },
+  {
+    "sample_id": 68,
+    "graph_nl": "Node 0 is connected to node 5 (weight: 1).\nNode 1 is connected to nodes 3 (weight: 4), 4 (weight: 7).\nNode 2 is connected to nodes 5 (weight: 10), 6 (weight: 4).\nNode 3 is connected to nodes 1 (weight: 4), 6 (weight: 1).\nNode 4 is connected to node 1 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 1), 2 (weight: 10), 7 (weight: 10).\nNode 6 is connected to nodes 2 (weight: 4), 3 (weight: 1), 7 (weight: 2).\nNode 7 is connected to nodes 5 (weight: 10), 6 (weight: 2).",
+    "graph_adj": "{0: [(5, weight:1)],\\n1: [(3, weight:4), (4, weight:7)],\\n2: [(5, weight:10), (6, weight:4)],\\n3: [(1, weight:4), (6, weight:1)],\\n4: [(1, weight:7)],\\n5: [(0, weight:1), (2, weight:10), (7, weight:10)],\\n6: [(2, weight:4), (3, weight:1), (7, weight:2)],\\n7: [(5, weight:10), (6, weight:2)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 8,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 29.0
+  },
+  {
+    "sample_id": 69,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 4), 4 (weight: 6), 7 (weight: 6), 10 (weight: 5), 11 (weight: 1).\nNode 1 is connected to nodes 3 (weight: 5), 8 (weight: 3), 9 (weight: 4), 10 (weight: 2), 11 (weight: 7).\nNode 2 is connected to nodes 5 (weight: 10), 11 (weight: 8).\nNode 3 is connected to nodes 0 (weight: 4), 1 (weight: 5), 5 (weight: 10).\nNode 4 is connected to nodes 0 (weight: 6), 9 (weight: 3).\nNode 5 is connected to nodes 2 (weight: 10), 3 (weight: 10), 6 (weight: 1), 8 (weight: 7), 11 (weight: 8).\nNode 6 is connected to nodes 5 (weight: 1), 8 (weight: 6), 9 (weight: 5), 11 (weight: 10).\nNode 7 is connected to nodes 0 (weight: 6), 8 (weight: 4), 10 (weight: 10).\nNode 8 is connected to nodes 1 (weight: 3), 5 (weight: 7), 6 (weight: 6), 7 (weight: 4), 10 (weight: 4).\nNode 9 is connected to nodes 1 (weight: 4), 4 (weight: 3), 6 (weight: 5), 11 (weight: 5).\nNode 10 is connected to nodes 0 (weight: 5), 1 (weight: 2), 7 (weight: 10), 8 (weight: 4).\nNode 11 is connected to nodes 0 (weight: 1), 1 (weight: 7), 2 (weight: 8), 5 (weight: 8), 6 (weight: 10), 9 (weight: 5).",
+    "graph_adj": "{0: [(3, weight:4), (4, weight:6), (7, weight:6), (10, weight:5), (11, weight:1)],\\n1: [(3, weight:5), (8, weight:3), (9, weight:4), (10, weight:2), (11, weight:7)],\\n2: [(5, weight:10), (11, weight:8)],\\n3: [(0, weight:4), (1, weight:5), (5, weight:10)],\\n4: [(0, weight:6), (9, weight:3)],\\n5: [(2, weight:10), (3, weight:10), (6, weight:1), (8, weight:7), (11, weight:8)],\\n6: [(5, weight:1), (8, weight:6), (9, weight:5), (11, weight:10)],\\n7: [(0, weight:6), (8, weight:4), (10, weight:10)],\\n8: [(1, weight:3), (5, weight:7), (6, weight:6), (7, weight:4), (10, weight:4)],\\n9: [(1, weight:4), (4, weight:3), (6, weight:5), (11, weight:5)],\\n10: [(0, weight:5), (1, weight:2), (7, weight:10), (8, weight:4)],\\n11: [(0, weight:1), (1, weight:7), (2, weight:8), (5, weight:8), (6, weight:10), (9, weight:5)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 12,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 40.0
+  },
+  {
+    "sample_id": 70,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 1), 5 (weight: 5), 8 (weight: 3).\nNode 1 is connected to nodes 4 (weight: 3), 6 (weight: 5), 10 (weight: 6).\nNode 2 is connected to nodes 4 (weight: 7), 8 (weight: 5), 9 (weight: 2), 10 (weight: 2).\nNode 3 is connected to nodes 0 (weight: 1), 6 (weight: 10), 9 (weight: 10).\nNode 4 is connected to nodes 1 (weight: 3), 2 (weight: 7), 8 (weight: 3), 9 (weight: 6), 10 (weight: 6).\nNode 5 is connected to nodes 0 (weight: 5), 8 (weight: 2).\nNode 6 is connected to nodes 1 (weight: 5), 3 (weight: 10), 9 (weight: 3).\nNode 7 is connected to node 10 (weight: 6).\nNode 8 is connected to nodes 0 (weight: 3), 2 (weight: 5), 4 (weight: 3), 5 (weight: 2).\nNode 9 is connected to nodes 2 (weight: 2), 3 (weight: 10), 4 (weight: 6), 6 (weight: 3).\nNode 10 is connected to nodes 1 (weight: 6), 2 (weight: 2), 4 (weight: 6), 7 (weight: 6).",
+    "graph_adj": "{0: [(3, weight:1), (5, weight:5), (8, weight:3)],\\n1: [(4, weight:3), (6, weight:5), (10, weight:6)],\\n2: [(4, weight:7), (8, weight:5), (9, weight:2), (10, weight:2)],\\n3: [(0, weight:1), (6, weight:10), (9, weight:10)],\\n4: [(1, weight:3), (2, weight:7), (8, weight:3), (9, weight:6), (10, weight:6)],\\n5: [(0, weight:5), (8, weight:2)],\\n6: [(1, weight:5), (3, weight:10), (9, weight:3)],\\n7: [(10, weight:6)],\\n8: [(0, weight:3), (2, weight:5), (4, weight:3), (5, weight:2)],\\n9: [(2, weight:2), (3, weight:10), (4, weight:6), (6, weight:3)],\\n10: [(1, weight:6), (2, weight:2), (4, weight:6), (7, weight:6)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 30.0
+  },
+  {
+    "sample_id": 71,
+    "graph_nl": "Node 0 is connected to nodes 5 (weight: 7), 6 (weight: 10), 7 (weight: 8).\nNode 1 is connected to nodes 2 (weight: 8), 4 (weight: 2), 7 (weight: 5), 9 (weight: 4).\nNode 2 is connected to node 1 (weight: 8).\nNode 3 is connected to nodes 5 (weight: 4), 10 (weight: 7).\nNode 4 is connected to nodes 1 (weight: 2), 6 (weight: 1), 9 (weight: 9).\nNode 5 is connected to nodes 0 (weight: 7), 3 (weight: 4), 8 (weight: 1).\nNode 6 is connected to nodes 0 (weight: 10), 4 (weight: 1), 7 (weight: 10).\nNode 7 is connected to nodes 0 (weight: 8), 1 (weight: 5), 6 (weight: 10), 9 (weight: 1), 10 (weight: 2).\nNode 8 is connected to node 5 (weight: 1).\nNode 9 is connected to nodes 1 (weight: 4), 4 (weight: 9), 7 (weight: 1).\nNode 10 is connected to nodes 3 (weight: 7), 7 (weight: 2).",
+    "graph_adj": "{0: [(5, weight:7), (6, weight:10), (7, weight:8)],\\n1: [(2, weight:8), (4, weight:2), (7, weight:5), (9, weight:4)],\\n2: [(1, weight:8)],\\n3: [(5, weight:4), (10, weight:7)],\\n4: [(1, weight:2), (6, weight:1), (9, weight:9)],\\n5: [(0, weight:7), (3, weight:4), (8, weight:1)],\\n6: [(0, weight:10), (4, weight:1), (7, weight:10)],\\n7: [(0, weight:8), (1, weight:5), (6, weight:10), (9, weight:1), (10, weight:2)],\\n8: [(5, weight:1)],\\n9: [(1, weight:4), (4, weight:9), (7, weight:1)],\\n10: [(3, weight:7), (7, weight:2)]}",
+    "question": "Find the minimum spanning tree of the graph.",
+    "directed": false,
+    "num_nodes": 11,
+    "task_type": "mst",
+    "graph_size": "small",
+    "expected_tool": "minimum_spanning_tree",
+    "expected_params": {},
+    "expected_answer": 37.0
+  },
+  {
+    "sample_id": 72,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 1), 2 (weight: 9).\nNode 1 is connected to nodes 4 (weight: 4), 6 (weight: 1).\nNode 2 is connected to node 4 (weight: 7).\nNode 3 is connected to node 2 (weight: 10).\nNode 5 is connected to nodes 0 (weight: 8), 3 (weight: 9), 7 (weight: 10).\nNode 6 is connected to nodes 0 (weight: 10), 5 (weight: 10), 7 (weight: 6).\nNode 7 is connected to nodes 0 (weight: 2), 1 (weight: 5), 3 (weight: 6).",
+    "graph_adj": "{0: [(1, weight:1), (2, weight:9)],\\n1: [(4, weight:4), (6, weight:1)],\\n2: [(4, weight:7)],\\n3: [(2, weight:10)],\\n4: [],\\n5: [(0, weight:8), (3, weight:9), (7, weight:10)],\\n6: [(0, weight:10), (5, weight:10), (7, weight:6)],\\n7: [(0, weight:2), (1, weight:5), (3, weight:6)]}",
+    "question": "Calculate the maximum flow from node 4 to node 5.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 4,
+      "target": 5
+    },
+    "expected_answer": 0
+  },
+  {
+    "sample_id": 73,
+    "graph_nl": "Node 0 is connected to node 3 (weight: 1).\nNode 1 is connected to nodes 4 (weight: 1), 7 (weight: 3).\nNode 2 is connected to nodes 0 (weight: 3), 4 (weight: 4), 5 (weight: 1), 9 (weight: 3).\nNode 3 is connected to nodes 0 (weight: 4), 6 (weight: 5), 10 (weight: 1).\nNode 4 is connected to nodes 1 (weight: 6), 5 (weight: 7), 8 (weight: 8), 9 (weight: 8).\nNode 5 is connected to nodes 0 (weight: 2), 2 (weight: 3), 4 (weight: 6), 9 (weight: 2), 10 (weight: 6).\nNode 6 is connected to nodes 2 (weight: 9), 9 (weight: 10).\nNode 7 is connected to nodes 5 (weight: 1), 6 (weight: 5), 8 (weight: 2), 10 (weight: 9).\nNode 8 is connected to nodes 2 (weight: 3), 3 (weight: 9), 4 (weight: 1), 5 (weight: 6), 6 (weight: 2).\nNode 9 is connected to node 2 (weight: 7).\nNode 10 is connected to nodes 2 (weight: 7), 3 (weight: 7), 6 (weight: 1), 7 (weight: 9).",
+    "graph_adj": "{0: [(3, weight:1)],\\n1: [(4, weight:1), (7, weight:3)],\\n2: [(0, weight:3), (4, weight:4), (5, weight:1), (9, weight:3)],\\n3: [(0, weight:4), (6, weight:5), (10, weight:1)],\\n4: [(1, weight:6), (5, weight:7), (8, weight:8), (9, weight:8)],\\n5: [(0, weight:2), (2, weight:3), (4, weight:6), (9, weight:2), (10, weight:6)],\\n6: [(2, weight:9), (9, weight:10)],\\n7: [(5, weight:1), (6, weight:5), (8, weight:2), (10, weight:9)],\\n8: [(2, weight:3), (3, weight:9), (4, weight:1), (5, weight:6), (6, weight:2)],\\n9: [(2, weight:7)],\\n10: [(2, weight:7), (3, weight:7), (6, weight:1), (7, weight:9)]}",
+    "question": "Calculate the maximum flow from node 1 to node 3.",
+    "directed": true,
+    "num_nodes": 11,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 1,
+      "target": 3
+    },
+    "expected_answer": 4.0
+  },
+  {
+    "sample_id": 74,
+    "graph_nl": "Node 0 is connected to nodes 9 (weight: 8), 10 (weight: 10).\nNode 1 is connected to nodes 0 (weight: 5), 8 (weight: 1), 9 (weight: 8).\nNode 2 is connected to nodes 0 (weight: 5), 3 (weight: 1), 7 (weight: 4).\nNode 3 is connected to nodes 0 (weight: 4), 6 (weight: 8), 7 (weight: 5).\nNode 4 is connected to nodes 3 (weight: 5), 6 (weight: 10), 7 (weight: 10), 8 (weight: 10).\nNode 5 is connected to node 6 (weight: 9).\nNode 6 is connected to nodes 8 (weight: 8), 10 (weight: 1).\nNode 7 is connected to nodes 0 (weight: 10), 1 (weight: 4), 4 (weight: 4).\nNode 8 is connected to nodes 1 (weight: 10), 3 (weight: 2), 7 (weight: 4), 10 (weight: 7).\nNode 9 is connected to nodes 1 (weight: 10), 7 (weight: 5).\nNode 10 is connected to nodes 0 (weight: 2), 1 (weight: 3), 2 (weight: 7), 6 (weight: 5), 9 (weight: 2).",
+    "graph_adj": "{0: [(9, weight:8), (10, weight:10)],\\n1: [(0, weight:5), (8, weight:1), (9, weight:8)],\\n2: [(0, weight:5), (3, weight:1), (7, weight:4)],\\n3: [(0, weight:4), (6, weight:8), (7, weight:5)],\\n4: [(3, weight:5), (6, weight:10), (7, weight:10), (8, weight:10)],\\n5: [(6, weight:9)],\\n6: [(8, weight:8), (10, weight:1)],\\n7: [(0, weight:10), (1, weight:4), (4, weight:4)],\\n8: [(1, weight:10), (3, weight:2), (7, weight:4), (10, weight:7)],\\n9: [(1, weight:10), (7, weight:5)],\\n10: [(0, weight:2), (1, weight:3), (2, weight:7), (6, weight:5), (9, weight:2)]}",
+    "question": "Calculate the maximum flow from node 0 to node 7.",
+    "directed": true,
+    "num_nodes": 11,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 0,
+      "target": 7
+    },
+    "expected_answer": 16.0
+  },
+  {
+    "sample_id": 75,
+    "graph_nl": "Node 0 is connected to node 1 (weight: 2).\nNode 1 is connected to nodes 4 (weight: 2), 6 (weight: 2).\nNode 2 is connected to nodes 3 (weight: 8), 5 (weight: 2), 6 (weight: 10), 7 (weight: 7).\nNode 3 is connected to nodes 1 (weight: 1), 2 (weight: 1), 4 (weight: 5).\nNode 5 is connected to nodes 2 (weight: 10), 4 (weight: 1), 6 (weight: 3).\nNode 6 is connected to nodes 1 (weight: 2), 2 (weight: 5).",
+    "graph_adj": "{0: [(1, weight:2)],\\n1: [(4, weight:2), (6, weight:2)],\\n2: [(3, weight:8), (5, weight:2), (6, weight:10), (7, weight:7)],\\n3: [(1, weight:1), (2, weight:1), (4, weight:5)],\\n4: [],\\n5: [(2, weight:10), (4, weight:1), (6, weight:3)],\\n6: [(1, weight:2), (2, weight:5)],\\n7: []}",
+    "question": "Calculate the maximum flow from node 4 to node 2.",
+    "directed": true,
+    "num_nodes": 8,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 4,
+      "target": 2
+    },
+    "expected_answer": 0
+  },
+  {
+    "sample_id": 76,
+    "graph_nl": "Node 0 is connected to nodes 6 (weight: 6), 7 (weight: 6).\nNode 1 is connected to node 7 (weight: 9).\nNode 3 is connected to nodes 4 (weight: 2), 7 (weight: 8).\nNode 4 is connected to nodes 0 (weight: 4), 5 (weight: 6), 7 (weight: 8).\nNode 5 is connected to nodes 3 (weight: 10), 8 (weight: 3).\nNode 6 is connected to node 7 (weight: 2).\nNode 7 is connected to node 4 (weight: 2).\nNode 8 is connected to nodes 0 (weight: 7), 1 (weight: 3), 2 (weight: 6).",
+    "graph_adj": "{0: [(6, weight:6), (7, weight:6)],\\n1: [(7, weight:9)],\\n2: [],\\n3: [(4, weight:2), (7, weight:8)],\\n4: [(0, weight:4), (5, weight:6), (7, weight:8)],\\n5: [(3, weight:10), (8, weight:3)],\\n6: [(7, weight:2)],\\n7: [(4, weight:2)],\\n8: [(0, weight:7), (1, weight:3), (2, weight:6)]}",
+    "question": "Calculate the maximum flow from node 0 to node 7.",
+    "directed": true,
+    "num_nodes": 9,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 0,
+      "target": 7
+    },
+    "expected_answer": 8.0
+  },
+  {
+    "sample_id": 77,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 4), 5 (weight: 6), 9 (weight: 10), 10 (weight: 10).\nNode 1 is connected to nodes 4 (weight: 2), 7 (weight: 7).\nNode 2 is connected to nodes 0 (weight: 8), 6 (weight: 7), 10 (weight: 5).\nNode 3 is connected to nodes 0 (weight: 1), 4 (weight: 4), 5 (weight: 3), 6 (weight: 4).\nNode 4 is connected to nodes 0 (weight: 10), 2 (weight: 2), 3 (weight: 10), 6 (weight: 4), 7 (weight: 3), 8 (weight: 6).\nNode 5 is connected to nodes 1 (weight: 3), 2 (weight: 9), 3 (weight: 3), 4 (weight: 7), 9 (weight: 8).\nNode 6 is connected to node 3 (weight: 2).\nNode 7 is connected to nodes 0 (weight: 3), 2 (weight: 7), 3 (weight: 10), 4 (weight: 4), 5 (weight: 8).\nNode 8 is connected to nodes 7 (weight: 10), 9 (weight: 5).\nNode 9 is connected to nodes 2 (weight: 10), 3 (weight: 10), 4 (weight: 10), 7 (weight: 6), 10 (weight: 3).\nNode 10 is connected to nodes 2 (weight: 3), 3 (weight: 6), 4 (weight: 3), 5 (weight: 10), 6 (weight: 7).",
+    "graph_adj": "{0: [(3, weight:4), (5, weight:6), (9, weight:10), (10, weight:10)],\\n1: [(4, weight:2), (7, weight:7)],\\n2: [(0, weight:8), (6, weight:7), (10, weight:5)],\\n3: [(0, weight:1), (4, weight:4), (5, weight:3), (6, weight:4)],\\n4: [(0, weight:10), (2, weight:2), (3, weight:10), (6, weight:4), (7, weight:3), (8, weight:6)],\\n5: [(1, weight:3), (2, weight:9), (3, weight:3), (4, weight:7), (9, weight:8)],\\n6: [(3, weight:2)],\\n7: [(0, weight:3), (2, weight:7), (3, weight:10), (4, weight:4), (5, weight:8)],\\n8: [(7, weight:10), (9, weight:5)],\\n9: [(2, weight:10), (3, weight:10), (4, weight:10), (7, weight:6), (10, weight:3)],\\n10: [(2, weight:3), (3, weight:6), (4, weight:3), (5, weight:10), (6, weight:7)]}",
+    "question": "Calculate the maximum flow from node 4 to node 5.",
+    "directed": true,
+    "num_nodes": 11,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 4,
+      "target": 5
+    },
+    "expected_answer": 25.0
+  },
+  {
+    "sample_id": 78,
+    "graph_nl": "Node 0 is connected to node 2 (weight: 7).\nNode 1 is connected to nodes 0 (weight: 4), 3 (weight: 7), 4 (weight: 6), 5 (weight: 2), 10 (weight: 3).\nNode 2 is connected to node 8 (weight: 10).\nNode 3 is connected to nodes 0 (weight: 6), 2 (weight: 6), 4 (weight: 6), 6 (weight: 2), 8 (weight: 1), 9 (weight: 1).\nNode 4 is connected to nodes 2 (weight: 6), 3 (weight: 2), 6 (weight: 1), 8 (weight: 9).\nNode 5 is connected to node 7 (weight: 2).\nNode 6 is connected to nodes 3 (weight: 10), 5 (weight: 5), 7 (weight: 9), 8 (weight: 5).\nNode 7 is connected to nodes 1 (weight: 3), 3 (weight: 3), 9 (weight: 7).\nNode 8 is connected to nodes 1 (weight: 3), 2 (weight: 4), 7 (weight: 1).\nNode 9 is connected to nodes 0 (weight: 1), 1 (weight: 4), 3 (weight: 7), 7 (weight: 1), 8 (weight: 8).\nNode 10 is connected to nodes 1 (weight: 3), 2 (weight: 3), 7 (weight: 4), 9 (weight: 6).\nNode 11 is connected to nodes 0 (weight: 1), 4 (weight: 3), 7 (weight: 9), 9 (weight: 4).",
+    "graph_adj": "{0: [(2, weight:7)],\\n1: [(0, weight:4), (3, weight:7), (4, weight:6), (5, weight:2), (10, weight:3)],\\n2: [(8, weight:10)],\\n3: [(0, weight:6), (2, weight:6), (4, weight:6), (6, weight:2), (8, weight:1), (9, weight:1)],\\n4: [(2, weight:6), (3, weight:2), (6, weight:1), (8, weight:9)],\\n5: [(7, weight:2)],\\n6: [(3, weight:10), (5, weight:5), (7, weight:9), (8, weight:5)],\\n7: [(1, weight:3), (3, weight:3), (9, weight:7)],\\n8: [(1, weight:3), (2, weight:4), (7, weight:1)],\\n9: [(0, weight:1), (1, weight:4), (3, weight:7), (7, weight:1), (8, weight:8)],\\n10: [(1, weight:3), (2, weight:3), (7, weight:4), (9, weight:6)],\\n11: [(0, weight:1), (4, weight:3), (7, weight:9), (9, weight:4)]}",
+    "question": "Calculate the maximum flow from node 0 to node 4.",
+    "directed": true,
+    "num_nodes": 12,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 0,
+      "target": 4
+    },
+    "expected_answer": 4.0
+  },
+  {
+    "sample_id": 79,
+    "graph_nl": "Node 0 is connected to nodes 4 (weight: 8), 10 (weight: 8).\nNode 1 is connected to nodes 0 (weight: 10), 5 (weight: 10).\nNode 2 is connected to nodes 1 (weight: 2), 4 (weight: 2), 5 (weight: 4), 6 (weight: 8), 10 (weight: 10).\nNode 3 is connected to nodes 0 (weight: 9), 2 (weight: 4), 6 (weight: 1), 8 (weight: 5), 10 (weight: 6).\nNode 4 is connected to nodes 1 (weight: 8), 2 (weight: 7), 3 (weight: 3), 5 (weight: 8), 8 (weight: 5).\nNode 5 is connected to nodes 4 (weight: 6), 11 (weight: 2).\nNode 6 is connected to nodes 2 (weight: 2), 9 (weight: 7).\nNode 7 is connected to nodes 4 (weight: 1), 8 (weight: 9), 11 (weight: 10).\nNode 8 is connected to nodes 10 (weight: 6), 11 (weight: 9).\nNode 9 is connected to nodes 0 (weight: 10), 3 (weight: 8), 4 (weight: 1), 5 (weight: 2), 11 (weight: 6).\nNode 10 is connected to nodes 8 (weight: 3), 11 (weight: 3).\nNode 11 is connected to nodes 3 (weight: 2), 6 (weight: 4).",
+    "graph_adj": "{0: [(4, weight:8), (10, weight:8)],\\n1: [(0, weight:10), (5, weight:10)],\\n2: [(1, weight:2), (4, weight:2), (5, weight:4), (6, weight:8), (10, weight:10)],\\n3: [(0, weight:9), (2, weight:4), (6, weight:1), (8, weight:5), (10, weight:6)],\\n4: [(1, weight:8), (2, weight:7), (3, weight:3), (5, weight:8), (8, weight:5)],\\n5: [(4, weight:6), (11, weight:2)],\\n6: [(2, weight:2), (9, weight:7)],\\n7: [(4, weight:1), (8, weight:9), (11, weight:10)],\\n8: [(10, weight:6), (11, weight:9)],\\n9: [(0, weight:10), (3, weight:8), (4, weight:1), (5, weight:2), (11, weight:6)],\\n10: [(8, weight:3), (11, weight:3)],\\n11: [(3, weight:2), (6, weight:4)]}",
+    "question": "Calculate the maximum flow from node 3 to node 7.",
+    "directed": true,
+    "num_nodes": 12,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 3,
+      "target": 7
+    },
+    "expected_answer": 0
+  },
+  {
+    "sample_id": 80,
+    "graph_nl": "Node 0 is connected to nodes 1 (weight: 4), 3 (weight: 7), 6 (weight: 5), 12 (weight: 5).\nNode 1 is connected to nodes 3 (weight: 6), 4 (weight: 10), 5 (weight: 5).\nNode 2 is connected to node 6 (weight: 8).\nNode 3 is connected to node 13 (weight: 7).\nNode 4 is connected to node 6 (weight: 2).\nNode 5 is connected to nodes 2 (weight: 3), 4 (weight: 2), 7 (weight: 9), 10 (weight: 10).\nNode 6 is connected to nodes 2 (weight: 4), 8 (weight: 10), 10 (weight: 2).\nNode 8 is connected to nodes 10 (weight: 3), 12 (weight: 8).\nNode 9 is connected to nodes 1 (weight: 1), 13 (weight: 7).\nNode 10 is connected to nodes 4 (weight: 6), 5 (weight: 1), 8 (weight: 8), 9 (weight: 7), 11 (weight: 2).\nNode 11 is connected to nodes 0 (weight: 3), 3 (weight: 3), 4 (weight: 3), 5 (weight: 9), 7 (weight: 4), 12 (weight: 1), 13 (weight: 6).\nNode 12 is connected to nodes 3 (weight: 7), 5 (weight: 5), 7 (weight: 5), 9 (weight: 7), 11 (weight: 9).\nNode 13 is connected to nodes 9 (weight: 6), 10 (weight: 4), 11 (weight: 1), 12 (weight: 5).",
+    "graph_adj": "{0: [(1, weight:4), (3, weight:7), (6, weight:5), (12, weight:5)],\\n1: [(3, weight:6), (4, weight:10), (5, weight:5)],\\n2: [(6, weight:8)],\\n3: [(13, weight:7)],\\n4: [(6, weight:2)],\\n5: [(2, weight:3), (4, weight:2), (7, weight:9), (10, weight:10)],\\n6: [(2, weight:4), (8, weight:10), (10, weight:2)],\\n7: [],\\n8: [(10, weight:3), (12, weight:8)],\\n9: [(1, weight:1), (13, weight:7)],\\n10: [(4, weight:6), (5, weight:1), (8, weight:8), (9, weight:7), (11, weight:2)],\\n11: [(0, weight:3), (3, weight:3), (4, weight:3), (5, weight:9), (7, weight:4), (12, weight:1), (13, weight:6)],\\n12: [(3, weight:7), (5, weight:5), (7, weight:5), (9, weight:7), (11, weight:9)],\\n13: [(9, weight:6), (10, weight:4), (11, weight:1), (12, weight:5)]}",
+    "question": "Calculate the maximum flow from node 5 to node 6.",
+    "directed": true,
+    "num_nodes": 14,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 5,
+      "target": 6
+    },
+    "expected_answer": 8.0
+  },
+  {
+    "sample_id": 81,
+    "graph_nl": "Node 0 is connected to node 4 (weight: 3).\nNode 1 is connected to nodes 2 (weight: 7), 3 (weight: 2), 8 (weight: 7), 10 (weight: 5).\nNode 2 is connected to nodes 6 (weight: 2), 10 (weight: 8), 12 (weight: 1).\nNode 3 is connected to nodes 4 (weight: 1), 5 (weight: 6), 7 (weight: 4), 10 (weight: 8).\nNode 4 is connected to nodes 1 (weight: 2), 2 (weight: 9), 5 (weight: 7), 7 (weight: 1), 10 (weight: 6), 11 (weight: 7), 12 (weight: 7).\nNode 5 is connected to nodes 0 (weight: 9), 10 (weight: 9).\nNode 6 is connected to nodes 1 (weight: 1), 3 (weight: 4), 5 (weight: 2), 8 (weight: 7), 9 (weight: 7).\nNode 7 is connected to nodes 2 (weight: 5), 4 (weight: 8), 5 (weight: 10).\nNode 8 is connected to nodes 1 (weight: 6), 2 (weight: 2), 3 (weight: 3), 7 (weight: 8), 9 (weight: 10).\nNode 9 is connected to nodes 0 (weight: 9), 1 (weight: 4), 7 (weight: 2).\nNode 10 is connected to nodes 0 (weight: 3), 3 (weight: 5), 4 (weight: 3), 8 (weight: 9).\nNode 11 is connected to nodes 0 (weight: 6), 3 (weight: 4), 7 (weight: 6), 12 (weight: 5).\nNode 12 is connected to nodes 1 (weight: 2), 7 (weight: 7), 10 (weight: 1).",
+    "graph_adj": "{0: [(4, weight:3)],\\n1: [(2, weight:7), (3, weight:2), (8, weight:7), (10, weight:5)],\\n2: [(6, weight:2), (10, weight:8), (12, weight:1)],\\n3: [(4, weight:1), (5, weight:6), (7, weight:4), (10, weight:8)],\\n4: [(1, weight:2), (2, weight:9), (5, weight:7), (7, weight:1), (10, weight:6), (11, weight:7), (12, weight:7)],\\n5: [(0, weight:9), (10, weight:9)],\\n6: [(1, weight:1), (3, weight:4), (5, weight:2), (8, weight:7), (9, weight:7)],\\n7: [(2, weight:5), (4, weight:8), (5, weight:10)],\\n8: [(1, weight:6), (2, weight:2), (3, weight:3), (7, weight:8), (9, weight:10)],\\n9: [(0, weight:9), (1, weight:4), (7, weight:2)],\\n10: [(0, weight:3), (3, weight:5), (4, weight:3), (8, weight:9)],\\n11: [(0, weight:6), (3, weight:4), (7, weight:6), (12, weight:5)],\\n12: [(1, weight:2), (7, weight:7), (10, weight:1)]}",
+    "question": "Calculate the maximum flow from node 1 to node 10.",
+    "directed": true,
+    "num_nodes": 13,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 1,
+      "target": 10
+    },
+    "expected_answer": 21.0
+  },
+  {
+    "sample_id": 82,
+    "graph_nl": "Node 0 is connected to nodes 3 (weight: 3), 4 (weight: 6), 7 (weight: 3), 8 (weight: 7).\nNode 1 is connected to nodes 5 (weight: 10), 6 (weight: 5).\nNode 2 is connected to nodes 1 (weight: 3), 4 (weight: 1), 5 (weight: 5).\nNode 3 is connected to nodes 5 (weight: 2), 6 (weight: 7), 7 (weight: 5).\nNode 4 is connected to nodes 0 (weight: 2), 3 (weight: 6), 6 (weight: 4), 7 (weight: 8).\nNode 5 is connected to nodes 2 (weight: 5), 3 (weight: 1), 6 (weight: 6).\nNode 6 is connected to nodes 1 (weight: 2), 3 (weight: 4), 4 (weight: 4), 7 (weight: 8).\nNode 8 is connected to nodes 1 (weight: 10), 7 (weight: 4).",
+    "graph_adj": "{0: [(3, weight:3), (4, weight:6), (7, weight:3), (8, weight:7)],\\n1: [(5, weight:10), (6, weight:5)],\\n2: [(1, weight:3), (4, weight:1), (5, weight:5)],\\n3: [(5, weight:2), (6, weight:7), (7, weight:5)],\\n4: [(0, weight:2), (3, weight:6), (6, weight:4), (7, weight:8)],\\n5: [(2, weight:5), (3, weight:1), (6, weight:6)],\\n6: [(1, weight:2), (3, weight:4), (4, weight:4), (7, weight:8)],\\n7: [],\\n8: [(1, weight:10), (7, weight:4)]}",
+    "question": "Calculate the maximum flow from node 7 to node 6.",
+    "directed": true,
+    "num_nodes": 9,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 7,
+      "target": 6
+    },
+    "expected_answer": 0
+  },
+  {
+    "sample_id": 83,
+    "graph_nl": "Node 0 is connected to node 9 (weight: 1).\nNode 1 is connected to nodes 3 (weight: 6), 5 (weight: 4), 8 (weight: 2), 9 (weight: 7), 12 (weight: 1).\nNode 2 is connected to nodes 3 (weight: 3), 4 (weight: 3), 6 (weight: 8), 11 (weight: 5), 13 (weight: 4).\nNode 3 is connected to nodes 0 (weight: 4), 4 (weight: 1), 5 (weight: 4), 7 (weight: 8), 11 (weight: 3).\nNode 4 is connected to nodes 6 (weight: 8), 7 (weight: 2), 8 (weight: 9), 12 (weight: 7).\nNode 5 is connected to nodes 6 (weight: 3), 9 (weight: 5), 11 (weight: 5).\nNode 6 is connected to nodes 2 (weight: 8), 4 (weight: 6).\nNode 7 is connected to nodes 0 (weight: 7), 1 (weight: 4), 3 (weight: 2), 5 (weight: 2), 8 (weight: 3), 10 (weight: 2), 11 (weight: 4), 12 (weight: 9).\nNode 8 is connected to nodes 0 (weight: 1), 6 (weight: 8).\nNode 9 is connected to nodes 0 (weight: 9), 2 (weight: 3).\nNode 10 is connected to nodes 0 (weight: 9), 2 (weight: 8), 4 (weight: 9), 5 (weight: 1), 6 (weight: 7), 7 (weight: 7).\nNode 11 is connected to nodes 0 (weight: 2), 12 (weight: 6).\nNode 12 is connected to nodes 1 (weight: 5), 2 (weight: 6), 3 (weight: 10), 5 (weight: 9), 6 (weight: 6), 11 (weight: 9).\nNode 13 is connected to nodes 3 (weight: 7), 4 (weight: 7), 7 (weight: 4), 12 (weight: 6).",
+    "graph_adj": "{0: [(9, weight:1)],\\n1: [(3, weight:6), (5, weight:4), (8, weight:2), (9, weight:7), (12, weight:1)],\\n2: [(3, weight:3), (4, weight:3), (6, weight:8), (11, weight:5), (13, weight:4)],\\n3: [(0, weight:4), (4, weight:1), (5, weight:4), (7, weight:8), (11, weight:3)],\\n4: [(6, weight:8), (7, weight:2), (8, weight:9), (12, weight:7)],\\n5: [(6, weight:3), (9, weight:5), (11, weight:5)],\\n6: [(2, weight:8), (4, weight:6)],\\n7: [(0, weight:7), (1, weight:4), (3, weight:2), (5, weight:2), (8, weight:3), (10, weight:2), (11, weight:4), (12, weight:9)],\\n8: [(0, weight:1), (6, weight:8)],\\n9: [(0, weight:9), (2, weight:3)],\\n10: [(0, weight:9), (2, weight:8), (4, weight:9), (5, weight:1), (6, weight:7), (7, weight:7)],\\n11: [(0, weight:2), (12, weight:6)],\\n12: [(1, weight:5), (2, weight:6), (3, weight:10), (5, weight:9), (6, weight:6), (11, weight:9)],\\n13: [(3, weight:7), (4, weight:7), (7, weight:4), (12, weight:6)]}",
+    "question": "Calculate the maximum flow from node 6 to node 5.",
+    "directed": true,
+    "num_nodes": 14,
+    "task_type": "maximum_flow",
+    "graph_size": "small",
+    "expected_tool": "maximum_flow",
+    "expected_params": {
+      "source": 6,
+      "target": 5
+    },
+    "expected_answer": 14.0
+  }
+]

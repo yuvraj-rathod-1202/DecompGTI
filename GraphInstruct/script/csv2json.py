@@ -108,6 +108,7 @@ def main():
                         "1. Extract the graph structure as an adjacency list.\n"
                         "2. Identify the correct graph algorithm tool to use.\n"
                         "3. Extract the parameters required by that tool.\n"
+                        "When multiple nodes can be visited next in a traversal, always visit the node with the lowest numerical ID first.\n"
                         "Output your answer as a single valid JSON object."
                     ),
                     "input": graph_nl.strip() + "\n\nQuestion: " + question.strip(),

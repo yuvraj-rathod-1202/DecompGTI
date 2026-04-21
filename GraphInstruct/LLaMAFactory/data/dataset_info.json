@@ -746,7 +746,7 @@
     },
     "folder": "python"
   },
-  "decompgti_3step": {
-    "file_name": "decompgti_3step.json"
+  "graph_reasoning": {
+    "file_name": "graph_reasoning.json"
   }
 }

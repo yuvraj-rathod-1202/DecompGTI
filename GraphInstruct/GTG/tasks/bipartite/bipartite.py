@@ -29,6 +29,16 @@ def question_generation(config, g, n1, n2):
         ques_str += " " + NID(i)
     ques_str += "."
 
+    templates = [
+        "Given the graph, answer this task: {}".format(ques_str),
+        "Based on the graph structure, solve the following request: {}".format(ques_str),
+        "Graph analysis prompt: {}".format(ques_str),
+        "Use graph reasoning to determine the result for: {}".format(ques_str),
+        "For the shown network, provide the answer to: {}".format(ques_str),
+    ]
+
+    ques_str = random.choice(templates)
+
     return ques_str
 
 

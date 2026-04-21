@@ -10,7 +10,15 @@ TASK_NAME = 'maximum_flow'
 
 
 def question_generation(config, start_node, end_node):
-    ques_str = "Calculate the maximum flow between node <{}> and node <{}> in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.".format(start_node, end_node)
+    ques_str = "Calculate the maximum flow from node {} to node {} in this graph. Given a directed graph with capacities assigned to its edges, the maximum flow from a source node to a sink node is the maximum amount of flow that can be sent from the source to the sink, respecting the capacity constraints on each edge. The goal is to find the optimal way to route flow through the network to maximize the flow from source to sink.".format(start_node, end_node)
+    templates = [
+        "Given the graph, answer this task: {}".format(ques_str),
+        "Based on the graph structure, solve the following request: {}".format(ques_str),
+        "Graph analysis prompt: {}".format(ques_str),
+        "Use graph reasoning to determine the result for: {}".format(ques_str),
+        "For the shown network, provide the answer to: {}".format(ques_str),
+    ]
+    ques_str = random.choice(templates)
     return ques_str
 
 
