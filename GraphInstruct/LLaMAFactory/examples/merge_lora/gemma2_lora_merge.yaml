@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: google/gemma-2-2b-it
+adapter_name_or_path: saves/gemma2-2b/lora/sft
+template: gemma2
+trust_remote_code: true
+
+### export
+export_dir: saves/gemma2-2b-decompgti-merged
+export_size: 5
+export_device: cpu
+export_legacy_format: false

@@ -1,0 +1,127 @@
+{
+  "large": {
+    "total_samples": 100,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 100.0,
+    "parameter_f1": 100.0,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 100.0,
+    "by_size": {
+      "large": {
+        "count": 100,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 100.0,
+        "task_success": 100.0
+      }
+    },
+    "by_task": {
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      }
+    }
+  },
+  "medium": {
+    "total_samples": 100,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 100.0,
+    "parameter_f1": 100.0,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 97.0,
+    "by_size": {
+      "medium": {
+        "count": 100,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 100.0,
+        "task_success": 97.0
+      }
+    },
+    "by_task": {
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 94.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      }
+    }
+  },
+  "small": {
+    "total_samples": 100,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 99.0,
+    "parameter_f1": 99.5,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 97.0,
+    "by_size": {
+      "small": {
+        "count": 100,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 99.49748743718592,
+        "task_success": 97.0
+      }
+    },
+    "by_task": {
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 98.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 96.0
+      }
+    }
+  },
+  "mini": {
+    "total_samples": 100,
+    "json_validity_rate": 99.0,
+    "tool_identification_accuracy": 99.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 98.0,
+    "parameter_f1": 99.0,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 89.0,
+    "by_size": {
+      "mini": {
+        "count": 100,
+        "json_validity": 99.0,
+        "tool_accuracy": 99.0,
+        "param_f1": 98.9795918367347,
+        "task_success": 89.0
+      }
+    },
+    "by_task": {
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 98.0,
+        "task_success": 92.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 86.0
+      }
+    }
+  },
+  "_total_time_s": 8760.4
+}

@@ -1,0 +1,25 @@
+# DecompGTI Inference Config — Qwen2.5-1.5B (LoRA)
+# Placeholder for the 2B model being trained tonight.
+# Update the adapter path after training completes.
+
+model:
+  name: "DecompGTI-1.5B"
+  base: "Qwen/Qwen2.5-1.5B"
+  adapter: ""  # TODO: fill after training
+  device_map: "auto"
+  torch_dtype: "auto"
+  trust_remote_code: true
+
+inference:
+  max_new_tokens: 8192
+  temperature: 0.1
+  top_p: 0.7
+  do_sample: true
+  repetition_penalty: 1.1
+
+system_prompt: |
+  You are a graph reasoning agent. Given a graph description and a question, perform these three steps:
+  1. Extract the graph structure as an adjacency list.
+  2. Identify the correct graph algorithm tool to use.
+  3. Extract the parameters required by that tool.
+  Output your answer as a single valid JSON object.

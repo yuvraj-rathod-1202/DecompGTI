@@ -16,7 +16,14 @@ venv/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data and model artifacts
+# ── Large training infrastructure (stays local, NOT on GitHub) ──
+# GraphInstruct/
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+
+# Generated data (too large for Git)
 data/raw/*
 data/interim/*
 data/processed/*
@@ -30,6 +37,10 @@ reports/figures/*
 !models/.gitkeep
 !reports/figures/.gitkeep
 
+# Eval results (regeneratable, but keep structure)
+evaluation/results/*.json
+!evaluation/results/.gitkeep
+
 # Environment files
 .env
 .env.*
@@ -38,5 +49,3 @@ reports/figures/*
 .DS_Store
 Thumbs.db
 .vscode/
-
-data/
