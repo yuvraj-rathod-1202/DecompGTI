@@ -125,7 +125,8 @@ Once generated, datasets are used with **LLaMAFactory** for fine-tuning:
 
 1. Reformat generated CSVs into LLaMA instruction format
 2. Place reformatted data in `GraphInstruct/LLaMAFactory/data/reasoning/`
-3. Configure training via `examples/train_reasoning/llama3_lora_sft.yaml`
+3. Build DecompGTI multitask data with `uv run python scripts/build_decompgti_reasoning_data.py`
+4. Configure training via `GraphInstruct/LLaMAFactory/examples/train_reasoning/decompgti_lora_sft.yaml`
 4. Run training: `bash GraphInstruct/LLaMAFactory/run.sh`
 
 See [GraphInstruct/README.md](GraphInstruct/README.md) for detailed training instructions.

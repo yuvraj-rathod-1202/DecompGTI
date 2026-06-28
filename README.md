@@ -2,6 +2,10 @@
 
 Graph-tool reasoning project with an MCP server for deterministic execution.
 
+Project Report: [PDF](./decompgti.pdf)
+
+Project Presentation: [PDF](./DecompGTI_ppt.pdf)
+
 ## Acknowledgements and Citation
 
 This project uses:
