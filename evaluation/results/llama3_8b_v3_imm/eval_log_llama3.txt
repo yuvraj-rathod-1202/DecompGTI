@@ -1,0 +1,2 @@
+nohup: ignoring input
+ERROR: Must provide --adapter for live inference or --predictions

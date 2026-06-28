@@ -1,0 +1,65 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen2.5-7B",
+    "adapter": "GraphInstruct/LLaMAFactory/saves/Qwen2.5-7B/lora/train_3_epochs_v3",
+    "test_set": "data/test_set_medium.json",
+    "total_time_s": 8398.5,
+    "samples": 350
+  },
+  "metrics": {
+    "total_samples": 350,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 100.0,
+    "parameter_f1": 100.0,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 97.4,
+    "by_size": {
+      "medium": {
+        "count": 350,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 100.0,
+        "task_success": 97.42857142857143
+      }
+    },
+    "by_task": {
+      "cycle": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "connectivity": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 90.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 94.0
+      },
+      "dfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "mst": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 100.0
+      },
+      "maximum_flow": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 98.0
+      }
+    }
+  }
+}

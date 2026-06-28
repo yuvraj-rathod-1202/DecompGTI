@@ -13,7 +13,14 @@ def generate_a_sample(config):
     g, path = generate_Hamiltonian_path_graph(config)
     ans_str = NID(path)
 
-    ques_str = "Find a Hamiltonian path in this graph. A Hamiltonian path in a graph is a path that visits each node exactly once, traversing along edges, and the starting node and ending node may be different. "
+    templates = [
+        "Find a Hamiltonian path in this graph. A Hamiltonian path in a graph is a path that visits each node exactly once, traversing along edges, and the starting node and ending node may be different. ",
+        "Determine a Hamiltonian path in the given graph. A Hamiltonian path visits each node exactly once, following the edges, with the starting and ending nodes potentially being distinct. ",
+        "Identify a Hamiltonian path within this network. A Hamiltonian path ensures every node is visited precisely once, moving along the connections, where the initial and final nodes can vary. ",
+        "Locate a Hamiltonian path in the provided graph. A Hamiltonian path is defined as a route that visits each node exactly once, traversing through edges, and the starting and ending nodes may differ. ",
+        "Discover a Hamiltonian path in this graph. A Hamiltonian path is one that visits"
+    ]
+    ques_str = random.choice(templates)
 
     sample = make_sample(
         TASK_NAME, g, ques_str, ans_str

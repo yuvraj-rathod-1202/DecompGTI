@@ -19,6 +19,16 @@ def question_generation(config, g):
 The dampling factor is {:.2f}. \
 The number of iterations is {}. The initial PageRank values for all nodes are initialized equally as 1/N, where N is the number of nodes.".format(DAMPING, NUM_ITER)
 
+    templates = [
+        "Given the graph, answer this task: {}".format(ques_str),
+        "Based on the graph structure, solve the following request: {}".format(ques_str),
+        "Graph analysis prompt: {}".format(ques_str),
+        "Use graph reasoning to determine the result for: {}".format(ques_str),
+        "For the shown network, provide the answer to: {}".format(ques_str),
+    ]
+
+    ques_str = random.choice(templates)
+
     return ques, ques_str
 
 

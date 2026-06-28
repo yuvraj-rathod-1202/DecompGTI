@@ -1,0 +1,40 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen2.5-7B",
+    "adapter": "GraphInstruct/LLaMAFactory/saves/Qwen2.5-7B/lora/train_3_epochs_v3",
+    "test_set": "data/test_set_small.json",
+    "total_time_s": 924.2,
+    "samples": 100
+  },
+  "metrics": {
+    "total_samples": 100,
+    "json_validity_rate": 100.0,
+    "tool_identification_accuracy": 100.0,
+    "parameter_precision": 100.0,
+    "parameter_recall": 99.0,
+    "parameter_f1": 99.5,
+    "adjacency_extraction_f1": 99.9,
+    "task_success_rate": 97.0,
+    "by_size": {
+      "small": {
+        "count": 100,
+        "json_validity": 100.0,
+        "tool_accuracy": 100.0,
+        "param_f1": 99.49748743718592,
+        "task_success": 97.0
+      }
+    },
+    "by_task": {
+      "shortest_path": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 98.0
+      },
+      "bfs": {
+        "count": 50,
+        "tool_accuracy": 100.0,
+        "task_success": 96.0
+      }
+    }
+  }
+}

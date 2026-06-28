@@ -1,0 +1,24 @@
+# DecompGTI Inference Config — LLaMA-3-8B-Instruct (LoRA)
+# These are the FIXED, OPTIMAL parameters.
+
+model:
+  name: "DecompGTI-LLaMA3-8B"
+  base: "meta-llama/Meta-Llama-3-8B-Instruct"
+  adapter: "GraphInstruct/LLaMAFactory/saves/Llama-3-8B-Instruct/lora/train_llama3_3_epochs"
+  device_map: "auto"
+  torch_dtype: "auto"
+  trust_remote_code: true
+
+inference:
+  max_new_tokens: 16384
+  temperature: 0.1
+  top_p: 0.7
+  do_sample: true
+  repetition_penalty: 1.1
+
+system_prompt: |
+  You are a graph reasoning agent. Given a graph description and a question, perform these three steps:
+  1. Extract the graph structure as an adjacency list.
+  2. Identify the correct graph algorithm tool to use.
+  3. Extract the parameters required by that tool.
+  Output your answer as a single valid JSON object.

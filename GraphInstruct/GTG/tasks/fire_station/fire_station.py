@@ -30,6 +30,16 @@ def question_generation(config, g):
     }
     ques_str = "Given a city network, where the traffic distance is provided. Currently, a fire has occurred at location {}, and as an emergency response system for fire incidents, you need to notify the nearest fire station to proceed to the scene. It is known that there are fire stations at locations {}, {}, and {} in the vicinity. Following the principle of prioritizing the closest distance, which fire station (node) should you notify? Please output the answer behind 'Answer:'.".format(NID(event_node), NID(fire_station_nodes[0]), NID(fire_station_nodes[1]), NID(fire_station_nodes[2]))
 
+    templates = [
+        "Given the graph, answer this task: {}".format(ques_str),
+        "Based on the graph structure, solve the following request: {}".format(ques_str),
+        "Graph analysis prompt: {}".format(ques_str),
+        "Use graph reasoning to determine the result for: {}".format(ques_str),
+        "For the shown network, provide the answer to: {}".format(ques_str),
+    ]
+
+    ques_str = random.choice(templates)
+
     return ques, ques_str
 
 

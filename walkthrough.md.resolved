@@ -1,0 +1,83 @@
+# DecompGTI — Implementation Walkthrough
+
+## What Was Built
+
+All new files were created **alongside** the existing `GraphInstruct/` folder. Nothing in `GraphInstruct/` was moved, deleted, or modified.
+
+## New Files Created
+
+### 📊 Evaluation Framework (`evaluation/`)
+| File | Purpose |
+|------|---------|
+| [metrics.py](file:///home/ramji.purwar/DecompGTI/DecompGTI/evaluation/metrics.py) | 5 evaluation metrics: JSON validity, tool accuracy, parameter F1, adjacency F1, task success rate. Includes `AggregateMetrics` class with per-size and per-task breakdowns. |
+| [benchmarks.py](file:///home/ramji.purwar/DecompGTI/DecompGTI/evaluation/benchmarks.py) | Test set generator. Creates graphs using networkx with known ground-truth answers. Supports 8 task types × 4 sizes (mini/small/medium/large). |
+
+### 📝 Scripts (`scripts/`)
+| File | Purpose |
+|------|---------|
+| [evaluate.py](file:///home/ramji.purwar/DecompGTI/DecompGTI/scripts/evaluate.py) | Main evaluation runner. Loads model → runs inference on test set → parses output → executes tools → computes metrics → prints report. Supports pre-saved predictions for GPU-free re-evaluation. |
+| [compare_baselines.py](file:///home/ramji.purwar/DecompGTI/DecompGTI/scripts/compare_baselines.py) | Baseline comparison against base Qwen (zero-shot), GPT-4o (API), and Claude (API). Uses same metrics for fair comparison. |
+
+### 🌐 Web Demo (`web/`)
+| File | Purpose |
+|------|---------|
+| [app.py](file:///home/ramji.purwar/DecompGTI/DecompGTI/web/app.py) | Gradio web demo. Shows the 3-step decomposition pipeline interactively. **Zero config options** for users — all inference params baked into YAML configs. Has example buttons for quick testing. |
+
+### ⚙️ Configs (`configs/`)
+| File | Purpose |
+|------|---------|
+| [qwen2.5_7b.yaml](file:///home/ramji.purwar/DecompGTI/DecompGTI/configs/qwen2.5_7b.yaml) | Fixed inference params for Qwen2.5-7B model |
+| [llama3_8b.yaml](file:///home/ramji.purwar/DecompGTI/DecompGTI/configs/llama3_8b.yaml) | Fixed inference params for LLaMA-3-8B model |
+| [qwen2.5_1.5b.yaml](file:///home/ramji.purwar/DecompGTI/DecompGTI/configs/qwen2.5_1.5b.yaml) | Placeholder for 2B model (fill adapter path after training) |
+
+### 📚 Documentation (`docs/`)
+| File | Purpose |
+|------|---------|
+| [architecture.md](file:///home/ramji.purwar/DecompGTI/DecompGTI/docs/architecture.md) | Pipeline architecture with diagrams and file map |
+| [training.md](file:///home/ramji.purwar/DecompGTI/DecompGTI/docs/training.md) | Training docs: dataset stats, hyperparameters, reproduction steps |
+| [evaluation.md](file:///home/ramji.purwar/DecompGTI/DecompGTI/docs/evaluation.md) | Evaluation methodology: 5 metrics explained + how to run |
+
+### 🎓 Training Reference (`training/`)
+| File | Purpose |
+|------|---------|
+| [README.md](file:///home/ramji.purwar/DecompGTI/DecompGTI/training/README.md) | How to reproduce training |
+| training_config.yaml | Copied from `saves/Qwen2.5-7B/lora/train_3_epochs_fix/` |
+| csv2json.py | Copied from `GraphInstruct/script/csv2json.py` |
+| data_format_example.json | 5 example training samples |
+
+### 📦 Generated Test Data (`data/`)
+| File | Samples | Tasks |
+|------|---------|-------|
+| test_set_mini.json | 373 | 8 tasks |
+| test_set_small.json | 352 | 8 tasks |
+| test_set_medium.json | 350 | 7 tasks |
+| test_set_large.json | 350 | 7 tasks |
+
+### Modified Files
+| File | Change |
+|------|--------|
+| [.gitignore](file:///home/ramji.purwar/DecompGTI/DecompGTI/.gitignore) | Updated to exclude GraphInstruct/, model weights, eval results |
+| [README.md](file:///home/ramji.purwar/DecompGTI/DecompGTI/README.md) | Complete rewrite with architecture, results table, quick start |
+
+## What You Need To Do Next
+
+1. **Run evaluation on GPU** (fills in the results table):
+   ```bash
+   python scripts/evaluate.py \
+       --base-model Qwen/Qwen2.5-7B \
+       --adapter GraphInstruct/LLaMAFactory/saves/Qwen2.5-7B/lora/train_3_epochs_fix \
+       --test-set data/test_set_small.json \
+       --output evaluation/results/qwen7b_small.json
+   ```
+
+2. **Train the 2B model tonight**, then update `configs/qwen2.5_1.5b.yaml` with the adapter path.
+
+3. **Run the web demo** to verify it works:
+   ```bash
+   pip install gradio pyyaml
+   python web/app.py --config configs/qwen2.5_7b.yaml
+   ```
+
+4. **Upload LoRA adapters to HuggingFace Hub** (optional but recommended for GitHub presentation).
+
+5. **Git commit and push** the new structure.

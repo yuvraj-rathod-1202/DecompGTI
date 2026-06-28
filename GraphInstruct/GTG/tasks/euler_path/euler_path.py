@@ -13,7 +13,15 @@ def generate_a_sample(config):
     g, path = generate_Euler_path_graph(config)
     ans_str = NID(path)
 
-    ques_str = "Find a Euler path in this graph. An Euler path in a graph is a path that traverses each edge exactly once, but not necessarily every node. The starting node and ending node may be different. "
+    templates = [
+        "Find a Euler path in this graph. An Euler path in a graph is a path that traverses each edge exactly once, but not necessarily every node. The starting node and ending node may be different. ",
+        "Determine a Euler path in the given graph. An Euler path traverses each edge exactly once, but not necessarily every node, with the starting and ending nodes potentially being distinct. ",
+        "Identify a Euler path within this network. A Euler path ensures every edge is traversed precisely once, moving along the connections, where the initial and final nodes can vary. ",
+        "Locate a Euler path in the provided graph. A Euler path is defined as a route that traverses each edge exactly once, and the starting and ending nodes may differ. ",
+        "Discover a Euler path in this graph. A Euler path is one that traverses each edge exactly once, but not necessarily every node. The starting and ending nodes may be different. "
+    ]
+    
+    ques_str = random.choice(templates)
 
     sample = make_sample(
         TASK_NAME, g, ques_str, ans_str
