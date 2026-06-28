@@ -29,6 +29,15 @@ class FlowQuery(GraphInput):
     target: Any
 
 
+class ConnectivityQuery(GraphInput):
+    source: Any
+    target: Any
+
+
+class ConnectedComponentQuery(GraphInput):
+    source: Any
+
+
 class TopologicalSortQuery(GraphInput):
     directed: bool = Field(default=True)
 

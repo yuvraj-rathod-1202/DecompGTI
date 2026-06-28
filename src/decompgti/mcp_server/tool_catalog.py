@@ -15,22 +15,32 @@ TOOL_SPECS: list[ToolSpec] = [
     ToolSpec(
         name="bfs",
         description="Breadth-first traversal from a source node.",
-        input_schema={"type": "object", "properties": {"edges": {}, "source": {}}, "required": ["edges", "source"]},
+        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "directed": {}}, "required": ["edges", "source"]},
     ),
     ToolSpec(
         name="dfs",
         description="Depth-first traversal from a source node.",
-        input_schema={"type": "object", "properties": {"edges": {}, "source": {}}, "required": ["edges", "source"]},
+        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "directed": {}}, "required": ["edges", "source"]},
     ),
     ToolSpec(
         name="dijkstra_shortest_path",
         description="Shortest path with non-negative edge weights.",
-        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "target": {}}, "required": ["edges", "source", "target"]},
+        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "target": {}, "directed": {}}, "required": ["edges", "source", "target"]},
     ),
     ToolSpec(
         name="maximum_flow",
         description="Maximum flow between source and target using a directed network.",
         input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "target": {}}, "required": ["edges", "source", "target"]},
+    ),
+    ToolSpec(
+        name="connectivity",
+        description="Check whether a path exists between two nodes.",
+        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "target": {}, "directed": {}}, "required": ["edges", "source", "target"]},
+    ),
+    ToolSpec(
+        name="connected_component",
+        description="Connected or strongly connected component containing a source node.",
+        input_schema={"type": "object", "properties": {"edges": {}, "source": {}, "directed": {}}, "required": ["edges", "source"]},
     ),
     ToolSpec(
         name="bipartite_maximum_matching",

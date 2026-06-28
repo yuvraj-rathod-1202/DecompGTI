@@ -2,7 +2,11 @@
 
 **Augmenting Small LLMs with Decomposed Graph Tool Instruction**
 
-DecompGTI enables small language models (≤8B parameters) to achieve near-perfect accuracy on graph reasoning tasks by decomposing problems into structured tool calls executed by a deterministic MCP server.
+Project Report: [PDF](./decompgti.pdf)
+
+Project Presentation: [PDF](./DecompGTI_ppt.pdf)
+
+## Acknowledgements and Citation
 
 > **Key Insight:** The LLM never solves graph problems directly. It only *parses, classifies, and extracts* — all computation is offloaded to verified graph algorithms.
 

@@ -13,6 +13,8 @@ _TOOL_REGISTRY: dict[str, ToolFn] = {
     "dfs": graph_tools.dfs,
     "dijkstra_shortest_path": graph_tools.dijkstra_shortest_path,
     "maximum_flow": graph_tools.maximum_flow,
+    "connectivity": graph_tools.connectivity,
+    "connected_component": graph_tools.connected_component,
     "bipartite_maximum_matching": graph_tools.bipartite_maximum_matching,
     "topological_sort": graph_tools.topological_sort,
     "cycle_detection": graph_tools.cycle_detection,
