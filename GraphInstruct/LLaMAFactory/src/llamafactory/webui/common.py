@@ -17,7 +17,7 @@ import os
 import signal
 from collections import defaultdict
 from datetime import datetime
-from typing import Any, Optional, Union
+from typing import Any
 
 from psutil import Process
 from yaml import safe_dump, safe_load
@@ -36,8 +36,8 @@ from ..extras.misc import use_modelscope, use_openmind
 
 logger = logging.get_logger(__name__)
 
-DEFAULT_CACHE_DIR = "cache"
-DEFAULT_CONFIG_DIR = "config"
+DEFAULT_CACHE_DIR = "llamaboard_cache"
+DEFAULT_CONFIG_DIR = "llamaboard_config"
 DEFAULT_DATA_DIR = "data"
 DEFAULT_SAVE_DIR = "saves"
 USER_CONFIG = "user_config.yaml"
@@ -71,20 +71,25 @@ def _get_config_path() -> os.PathLike:
     return os.path.join(DEFAULT_CACHE_DIR, USER_CONFIG)
 
 
-def load_config() -> dict[str, Union[str, dict[str, Any]]]:
+def load_config() -> dict[str, str | dict[str, Any]]:
     r"""Load user config if exists."""
     try:
         with open(_get_config_path(), encoding="utf-8") as f:
             return safe_load(f)
     except Exception:
-        return {"lang": None, "last_model": None, "path_dict": {}, "cache_dir": None}
+        return {"lang": None, "hub_name": None, "last_model": None, "path_dict": {}, "cache_dir": None}
 
 
-def save_config(lang: str, model_name: Optional[str] = None, model_path: Optional[str] = None) -> None:
+def save_config(
+    lang: str, hub_name: str | None = None, model_name: str | None = None, model_path: str | None = None
+) -> None:
     r"""Save user config."""
     os.makedirs(DEFAULT_CACHE_DIR, exist_ok=True)
     user_config = load_config()
     user_config["lang"] = lang or user_config["lang"]
+    if hub_name:
+        user_config["hub_name"] = hub_name
+
     if model_name:
         user_config["last_model"] = model_name
 
@@ -146,7 +151,7 @@ def load_dataset_info(dataset_dir: str) -> dict[str, dict[str, Any]]:
         return {}
 
 
-def load_args(config_path: str) -> Optional[dict[str, Any]]:
+def load_args(config_path: str) -> dict[str, Any] | None:
     r"""Load the training configuration from config path."""
     try:
         with open(config_path, encoding="utf-8") as f:
@@ -247,7 +252,7 @@ def create_ds_config() -> None:
         "stage": 2,
         "allgather_partitions": True,
         "allgather_bucket_size": 5e8,
-        "overlap_comm": True,
+        "overlap_comm": False,
         "reduce_scatter": True,
         "reduce_bucket_size": 5e8,
         "contiguous_gradients": True,
@@ -262,7 +267,7 @@ def create_ds_config() -> None:
 
     ds_config["zero_optimization"] = {
         "stage": 3,
-        "overlap_comm": True,
+        "overlap_comm": False,
         "contiguous_gradients": True,
         "sub_group_size": 1e9,
         "reduce_bucket_size": "auto",

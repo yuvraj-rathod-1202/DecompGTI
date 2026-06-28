@@ -16,10 +16,12 @@ import re
 from typing import TYPE_CHECKING
 
 import torch
-from peft import LoraConfig, LoraModel, PeftModel, TaskType, get_peft_model
+from peft import LoraConfig, LoraModel, OFTConfig, PeftModel, TaskType, get_peft_model
 from transformers.integrations import is_deepspeed_zero3_enabled
 
 from ..extras import logging
+from ..extras.constants import EngineName
+from .model_utils.ktransformers import get_kt_peft_model, load_kt_peft_model
 from .model_utils.misc import find_all_linear_modules, find_expanded_modules
 from .model_utils.quantization import QuantizationMethod
 from .model_utils.unsloth import get_unsloth_peft_model, load_unsloth_peft_model
@@ -147,7 +149,10 @@ def _setup_lora_tuning(
     cast_trainable_params_to_fp32: bool,
 ) -> "PeftModel":
     if is_trainable:
-        logger.info_rank0("Fine-tuning method: {}".format("DoRA" if finetuning_args.use_dora else "LoRA"))
+        if finetuning_args.finetuning_type == "oft":
+            logger.info_rank0("Fine-tuning method: OFT")
+        else:
+            logger.info_rank0("Fine-tuning method: {}".format("DoRA" if finetuning_args.use_dora else "LoRA"))
 
     adapter_to_resume = None
 
@@ -159,6 +164,10 @@ def _setup_lora_tuning(
 
         if is_deepspeed_zero3_enabled():
             assert len(model_args.adapter_name_or_path) == 1, "Cannot use multiple adapters in DeepSpeed ZeRO-3."
+            is_mergeable = False
+
+        if model_args.use_kt:
+            assert len(model_args.adapter_name_or_path) == 1, "KTransformers model only accepts a single adapter"
             is_mergeable = False
 
         if model_args.use_unsloth:
@@ -179,6 +188,12 @@ def _setup_lora_tuning(
             "token": model_args.hf_hub_token,
         }
 
+        if model_args.use_kt:
+            if model_args.infer_backend != EngineName.KT:
+                raise ValueError(
+                    "We should use ktransformers as backend to infer the adapter fine-tuned by ktransformers."
+                )
+
         for adapter in adapter_to_merge:
             model: LoraModel = PeftModel.from_pretrained(model, adapter, **init_kwargs)
             model = model.merge_and_unload()
@@ -187,7 +202,9 @@ def _setup_lora_tuning(
             logger.info_rank0(f"Merged {len(adapter_to_merge)} adapter(s).")
 
         if adapter_to_resume is not None:  # resume lora training
-            if model_args.use_unsloth:
+            if model_args.use_kt:
+                model = load_kt_peft_model(model_args, model)
+            elif model_args.use_unsloth:
                 model = load_unsloth_peft_model(config, model_args, finetuning_args, is_trainable=is_trainable)
             else:
                 model = PeftModel.from_pretrained(model, adapter_to_resume, is_trainable=is_trainable, **init_kwargs)
@@ -199,6 +216,16 @@ def _setup_lora_tuning(
             target_modules = find_all_linear_modules(model, finetuning_args.freeze_vision_tower)
         else:
             target_modules = finetuning_args.lora_target
+
+        if model_args.use_kt:
+            new_list = []
+            for m in target_modules:
+                if m in ("down_proj", "up_proj", "gate_proj"):
+                    new_list.extend([f"mlp.{m}", f"shared_experts.{m}"])
+                elif m not in ("generate_linear", "orig_module", "prefill_linear"):
+                    new_list.append(m)
+
+            target_modules[:] = new_list
 
         if finetuning_args.use_llama_pro:
             target_modules = find_expanded_modules(model, target_modules, finetuning_args.freeze_trainable_layers)
@@ -223,17 +250,43 @@ def _setup_lora_tuning(
             finetuning_args.additional_target = module_names
             logger.warning_rank0("Vocab has been resized, add {} to trainable params.".format(",".join(module_names)))
 
-        peft_kwargs = {
-            "r": finetuning_args.lora_rank,
-            "target_modules": target_modules,
-            "lora_alpha": finetuning_args.lora_alpha,
-            "lora_dropout": finetuning_args.lora_dropout,
-            "use_rslora": finetuning_args.use_rslora,
-            "use_dora": finetuning_args.use_dora,
-            "modules_to_save": finetuning_args.additional_target,
-        }
+        if finetuning_args.finetuning_type == "lora":
+            peft_kwargs = {
+                "r": finetuning_args.lora_rank,
+                "target_modules": target_modules,
+                "lora_alpha": finetuning_args.lora_alpha,
+                "lora_dropout": finetuning_args.lora_dropout,
+                "use_rslora": finetuning_args.use_rslora,
+                "use_dora": finetuning_args.use_dora,
+                "modules_to_save": finetuning_args.additional_target,
+            }
+        elif finetuning_args.finetuning_type == "oft":
+            peft_kwargs = {
+                "r": finetuning_args.oft_rank,
+                "oft_block_size": finetuning_args.oft_block_size,
+                "target_modules": target_modules,
+                "module_dropout": finetuning_args.module_dropout,
+                "modules_to_save": finetuning_args.additional_target,
+            }
 
-        if model_args.use_unsloth:
+        if model_args.use_kt:
+            if finetuning_args.finetuning_type == "oft":
+                raise ValueError("KTransformers is currently not supported for OFT.")
+            if finetuning_args.finetuning_type == "lora":
+                peft_config = LoraConfig(
+                    task_type=TaskType.CAUSAL_LM,
+                    inference_mode=False,
+                    **peft_kwargs,
+                )
+            else:
+                raise ValueError("KTransformers is currently only supported for LoRA.")
+
+            model = get_kt_peft_model(model, peft_config)
+            print(f"KT_model:{model}")
+        elif model_args.use_unsloth:
+            if finetuning_args.finetuning_type == "oft":
+                raise ValueError("Unsloth is currently not supported for OFT.")
+
             model = get_unsloth_peft_model(model, model_args, peft_kwargs)
         else:
             if finetuning_args.pissa_init:
@@ -244,12 +297,19 @@ def _setup_lora_tuning(
                     logger.info_rank0(f"Using PiSSA initialization with FSVD steps {finetuning_args.pissa_iter}.")
                     peft_kwargs["init_lora_weights"] = f"pissa_niter_{finetuning_args.pissa_iter}"
 
-            lora_config = LoraConfig(
-                task_type=TaskType.CAUSAL_LM,
-                inference_mode=False,
-                **peft_kwargs,
-            )
-            model = get_peft_model(model, lora_config)
+            if finetuning_args.finetuning_type == "lora":
+                peft_config = LoraConfig(
+                    task_type=TaskType.CAUSAL_LM,
+                    inference_mode=False,
+                    **peft_kwargs,
+                )
+            elif finetuning_args.finetuning_type == "oft":
+                peft_config = OFTConfig(
+                    task_type=TaskType.CAUSAL_LM,
+                    inference_mode=False,
+                    **peft_kwargs,
+                )
+            model = get_peft_model(model, peft_config)
 
     if is_trainable and cast_trainable_params_to_fp32:
         for param in filter(lambda p: p.requires_grad, model.parameters()):
@@ -272,8 +332,8 @@ def init_adapter(
     Note that the trainable parameters must be cast to float32.
     """
     if is_trainable and getattr(model, "quantization_method", None) is not None:
-        if finetuning_args.finetuning_type != "lora":
-            raise ValueError("Quantized models can only be used for the LoRA tuning.")
+        if finetuning_args.finetuning_type not in ["lora", "oft"]:
+            raise ValueError("Quantized models can only be used for the LoRA or OFT tuning.")
 
         if finetuning_args.pissa_init:
             raise ValueError("Cannot initialize PiSSA adapter on quantized models.")
@@ -296,7 +356,7 @@ def init_adapter(
         _setup_full_tuning(model, finetuning_args, is_trainable, cast_trainable_params_to_fp32)
     elif finetuning_args.finetuning_type == "freeze":
         _setup_freeze_tuning(model, finetuning_args, is_trainable, cast_trainable_params_to_fp32)
-    elif finetuning_args.finetuning_type == "lora":
+    elif finetuning_args.finetuning_type in ["lora", "oft"]:
         model = _setup_lora_tuning(
             config, model, model_args, finetuning_args, is_trainable, cast_trainable_params_to_fp32
         )
